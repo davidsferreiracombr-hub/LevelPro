@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import { Swords, Instagram, Facebook } from 'lucide-react';
+import { Instagram, Facebook } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 export default function Footer() {
   const socialLinks = [
@@ -12,10 +13,9 @@ export default function Footer() {
     <footer className="bg-card/50 border-t border-border/50">
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-2 text-xl font-bold text-accent">
-            <Swords className="h-6 w-6" />
-            <span className="font-headline">LEVELPRO</span>
-          </div>
+          <Link href="/" className="flex items-center">
+            <Image src="https://i.imgur.com/xMMdp0j.png" alt="LevelPro Logo" width={160} height={40} className="object-contain" />
+          </Link>
           <p className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} LevelPro Accelerator. Todos os direitos reservados.
           </p>

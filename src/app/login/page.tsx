@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Swords } from 'lucide-react';
+import Image from 'next/image';
 
 export default function LoginPage() {
   return (
@@ -14,10 +14,10 @@ export default function LoginPage() {
         </Button>
       </div>
       <Card className="w-full max-w-md">
-        <CardHeader className="text-center space-y-2">
-          <div className="inline-block mx-auto">
-            <Swords className="h-12 w-12 text-accent" />
-          </div>
+        <CardHeader className="text-center space-y-4">
+          <Link href="/" className="inline-block mx-auto">
+            <Image src="https://i.imgur.com/xMMdp0j.png" alt="LevelPro Logo" width={200} height={50} className="object-contain" />
+          </Link>
           <CardTitle className="text-3xl font-headline">Acesse sua Conta</CardTitle>
           <CardDescription>Bem-vindo de volta! Acompanhe seus pedidos.</CardDescription>
         </CardHeader>

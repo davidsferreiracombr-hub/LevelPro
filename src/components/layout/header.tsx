@@ -1,12 +1,12 @@
-
 "use client";
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, Swords } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
+import Image from 'next/image';
 
 const navLinks = [
   { href: '/', label: 'Início' },
@@ -22,9 +22,8 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm">
       <div className="container mx-auto px-4 h-20 flex justify-between items-center">
-        <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-accent">
-          <Swords className="h-7 w-7" />
-          <span className="font-headline">LEVELPRO</span>
+        <Link href="/" className="flex items-center">
+          <Image src="https://i.imgur.com/xMMdp0j.png" alt="LevelPro Logo" width={160} height={40} className="object-contain" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
@@ -52,9 +51,8 @@ export default function Header() {
             <SheetContent side="right" className="bg-background/95 w-[80%]">
               <div className="flex flex-col h-full">
                 <div className="flex justify-between items-center border-b pb-4">
-                  <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-accent" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Swords className="h-7 w-7" />
-                    <span className="font-headline">LEVELPRO</span>
+                  <Link href="/" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
+                     <Image src="https://i.imgur.com/xMMdp0j.png" alt="LevelPro Logo" width={160} height={40} className="object-contain" />
                   </Link>
                   <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
                     <X className="h-6 w-6" />

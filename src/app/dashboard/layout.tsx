@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import { Bot, Home, LogOut, Package, Settings, Swords } from 'lucide-react';
+import { Bot, Home, LogOut, Package, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import Image from 'next/image';
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
 
@@ -16,9 +17,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     <div className="flex min-h-screen bg-card">
       <aside className="w-64 bg-background border-r border-border/50 flex-col hidden md:flex">
         <div className="h-20 flex items-center px-6 border-b border-border/50">
-           <Link href="/" className="flex items-center gap-2 text-2xl font-bold text-accent">
-            <Swords className="h-7 w-7" />
-            <span className="font-headline">LEVELPRO</span>
+           <Link href="/" className="flex items-center">
+            <Image src="https://i.imgur.com/xMMdp0j.png" alt="LevelPro Logo" width={160} height={40} className="object-contain" />
           </Link>
         </div>
         <nav className="flex-1 px-4 py-4 space-y-2">
@@ -43,9 +43,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <div className="flex-1 flex flex-col">
         <header className="h-20 flex items-center justify-between px-8 border-b border-border/50">
             <div className="md:hidden">
-                <Link href="/" className="flex items-center gap-2 text-xl font-bold text-accent">
-                    <Swords className="h-6 w-6" />
-                    <span className="font-headline">LEVELPRO</span>
+                <Link href="/" className="flex items-center">
+                  <Image src="https://i.imgur.com/xMMdp0j.png" alt="LevelPro Logo" width={160} height={40} className="object-contain" />
                 </Link>
             </div>
             <div className="flex-1" />
