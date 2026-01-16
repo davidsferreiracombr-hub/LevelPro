@@ -5,6 +5,7 @@ import { Flame, Zap, Lock, Rocket, Gamepad2, KeyRound, Star } from 'lucide-react
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import Link from 'next/link';
+import { Card } from '@/components/ui/card';
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-background');
@@ -37,7 +38,7 @@ export default function Home() {
               data-ai-hint={heroImage.imageHint}
             />
           )}
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40" />
           <div className="absolute inset-0 hero-gradient" />
           <div className="container mx-auto px-4 relative">
             <div className="flex flex-col gap-6 items-center md:items-start max-w-2xl">
@@ -70,14 +71,22 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-card/50 py-8">
+        <section className="bg-black py-16 sm:py-24">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+             <div className="text-center mb-12">
+                <h2 className="text-4xl md:text-5xl font-bold font-headline text-accent">Por que nos escolher?</h2>
+                <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Garantimos uma experiência de alto nível do início ao fim.
+                </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {infoBarItems.map((item, index) => (
-                <div key={index} className="flex flex-col items-center gap-3">
-                  <item.icon className="h-8 w-8 text-accent" />
-                  <span className="font-semibold text-foreground">{item.text}</span>
-                </div>
+                 <Card key={index} className="bg-card border-border/50 text-center p-6 flex flex-col items-center gap-4 transition-all duration-300 hover:border-accent hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/10 group">
+                    <div className="w-16 h-16 rounded-full bg-background flex items-center justify-center border-2 border-accent/50 group-hover:border-accent transition-colors">
+                        <item.icon className="h-8 w-8 text-accent" />
+                    </div>
+                    <h3 className="text-lg font-semibold text-card-foreground">{item.text}</h3>
+                </Card>
               ))}
             </div>
           </div>

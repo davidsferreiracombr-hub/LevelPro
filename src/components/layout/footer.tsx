@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import { Swords, Twitter, Instagram, Facebook } from 'lucide-react';
+import { Swords, Instagram, Facebook } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 export default function Footer() {
   const socialLinks = [
-    { icon: Twitter, href: '#', name: 'Twitter' },
-    { icon: Instagram, href: '#', name: 'Instagram' },
-    { icon: Facebook, href: '#', name: 'Facebook' },
+    { icon: Instagram, href: '#', name: 'Instagram', colorClass: 'hover:text-[#E1306C]' },
+    { icon: Facebook, href: '#', name: 'Facebook', colorClass: 'hover:text-[#1877F2]' },
   ];
 
   return (
@@ -21,7 +21,14 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => (
-              <Link key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name} className="text-muted-foreground hover:text-accent transition-colors">
+              <Link 
+                key={social.name} 
+                href={social.href} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label={social.name} 
+                className={cn("text-muted-foreground transition-colors", social.colorClass)}
+              >
                 <social.icon className="h-5 w-5" />
               </Link>
             ))}
