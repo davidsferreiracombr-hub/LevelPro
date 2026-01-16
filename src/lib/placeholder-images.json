@@ -8,9 +8,9 @@
     },
     {
       "id": "hero-background",
-      "description": "Abstract gaming background with glowing particles.",
-      "imageUrl": "https://images.unsplash.com/photo-1684503830683-108f3e0fd03f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxhYnN0cmFjdCUyMHRlY2hub2xvZ3l8ZW58MHx8fHwxNzY4NTUyNTgyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "abstract technology"
+      "description": "Abstract gaming background with glowing particles and a character.",
+      "imageUrl": "https://i.imgur.com/eDAYTvC.jpeg",
+      "imageHint": "gamer hero background"
     }
   ]
 }
