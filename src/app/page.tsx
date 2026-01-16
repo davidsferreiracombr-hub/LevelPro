@@ -39,7 +39,6 @@ export default function Home() {
             />
           )}
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40" />
-          <div className="absolute inset-0 hero-gradient" />
           <div className="container mx-auto px-4 relative">
             <div className="flex flex-col gap-6 items-center md:items-start max-w-2xl">
               <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-wider text-balance">
