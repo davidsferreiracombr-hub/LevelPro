@@ -16,7 +16,7 @@ export default function LoginPage() {
       <Card className="w-full max-w-md">
         <CardHeader className="text-center space-y-4">
           <Link href="/" className="inline-block mx-auto">
-            <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={180} height={45} className="object-contain" />
+            <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={140} height={35} className="object-contain" />
           </Link>
           <CardTitle className="text-3xl font-headline">Acesse sua Conta</CardTitle>
           <CardDescription>Bem-vindo de volta! Acompanhe seus pedidos.</CardDescription>
