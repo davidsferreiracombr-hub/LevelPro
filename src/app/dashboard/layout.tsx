@@ -18,7 +18,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       <aside className="w-64 bg-background border-r border-border/50 flex-col hidden md:flex">
         <div className="h-20 flex items-center px-6 border-b border-border/50">
            <Link href="/" className="flex items-center">
-            <Image src="https://i.imgur.com/xMMdp0j.png" alt="LevelPro Logo" width={160} height={40} className="object-contain" />
+            <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={140} height={35} className="object-contain" />
           </Link>
         </div>
         <nav className="flex-1 px-4 py-4 space-y-2">
@@ -44,7 +44,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         <header className="h-20 flex items-center justify-between px-8 border-b border-border/50">
             <div className="md:hidden">
                 <Link href="/" className="flex items-center">
-                  <Image src="https://i.imgur.com/xMMdp0j.png" alt="LevelPro Logo" width={160} height={40} className="object-contain" />
+                  <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={140} height={35} className="object-contain" />
                 </Link>
             </div>
             <div className="flex-1" />
