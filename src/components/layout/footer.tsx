@@ -17,7 +17,7 @@ export default function Footer() {
             <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={80} height={20} className="object-contain" />
           </Link>
           <p className="text-xs text-center md:text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} LevelPro Accelerator. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} LevelPro. Todos os direitos reservados.
           </p>
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => (
