@@ -46,7 +46,6 @@ export default function Home() {
               src={heroBackground.imageUrl}
               alt={heroBackground.description}
               fill
-              priority
               className="hidden md:block object-cover object-center"
               data-ai-hint={heroBackground.imageHint}
             />
@@ -77,10 +76,10 @@ export default function Home() {
               </p>
              
               <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
-                <Button asChild className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300 shadow-[0_0_20px_hsl(var(--accent))]">
+                <Button asChild className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 transition-colors duration-300 shadow-[0_0_15px_hsl(var(--accent))]">
                   <Link href="/pricing">Começar agora</Link>
                 </Button>
-                <Button asChild variant="outline" className="w-full sm:w-auto bg-transparent border-primary text-primary hover:bg-primary/10 hover:shadow-[0_0_20px_hsl(var(--primary))] transition-all duration-300">
+                <Button asChild variant="outline" className="w-full sm:w-auto bg-transparent border-primary text-primary hover:bg-primary/10 hover:shadow-[0_0_20px_hsl(var(--primary))] transition-[background-color,box-shadow] duration-300">
                   <Link href="/games">Ver jogos</Link>
                 </Button>
               </div>
@@ -101,7 +100,7 @@ export default function Home() {
                   <Card
                     key={index}
                     className={cn(
-                      "bg-card/50 backdrop-blur-sm border border-white/10 text-left p-6 transition-all duration-300 hover:border-accent/80 hover:shadow-accent/10 hover:shadow-2xl rounded-xl group",
+                      "bg-card/50 backdrop-blur-sm border border-white/10 text-left p-6 transition-[border-color,box-shadow] duration-300 hover:border-accent/80 hover:shadow-accent/10 hover:shadow-2xl rounded-xl group",
                       item.text === 'Qualidade premium' && "border-accent shadow-lg shadow-accent/20"
                     )}
                   >
