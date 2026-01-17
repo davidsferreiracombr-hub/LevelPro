@@ -78,7 +78,7 @@ function BoosterCarousel({
             key={profileIndex}
             asChild
             size="lg"
-            className="w-full bg-black/50 text-foreground hover:bg-black/70 border border-white/20 hover:border-white hover:shadow-[0_0_10px_rgba(255,255,255,0.4)] transition-all duration-300"
+            className="w-full bg-black/50 text-foreground hover:bg-black/70 border border-white hover:border-white hover:shadow-[0_0_10px_rgba(255,255,255,0.4)] transition-all duration-300"
           >
             <Link href={profile.link} target="_blank">
               Contato {profileIndex + 1}
@@ -176,10 +176,10 @@ export default function ContactBoosterPage() {
           {contacts.map((contact, index) => (
             <Card
               key={index}
-              className="bg-black/50 border border-white/20 hover:border-white/70 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all duration-300 flex flex-col text-center rounded-xl overflow-hidden"
+              className="bg-black/50 border border-white hover:border-white hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-all duration-300 flex flex-col text-center rounded-xl overflow-hidden"
             >
               <CardHeader className="items-center p-6 pb-2">
-                <div className="flex -space-x-4 mb-3">
+                <div className={cn("flex mb-3", contact.profiles.length > 1 ? "-space-x-4" : "justify-center")}>
                   {contact.profiles.map((profile) => (
                     <Image
                       key={profile.name}
@@ -189,7 +189,8 @@ export default function ContactBoosterPage() {
                       height={80}
                       className={cn(
                         'w-20 h-20 rounded-full border-2 border-black/50 bg-card object-cover',
-                        profile.name === 'Booster 1' && 'object-[0_20%]'
+                        profile.name === 'Booster 1' && 'object-[0_20%]',
+                        profile.name === 'Booster Geral' && 'object-center'
                       )}
                       data-ai-hint="profile picture"
                     />
@@ -215,7 +216,7 @@ export default function ContactBoosterPage() {
                     <Button
                       asChild
                       size="lg"
-                      className="w-full bg-black/50 text-foreground hover:bg-black/70 border border-white/20 hover:border-white hover:shadow-[0_0_10px_rgba(255,255,255,0.4)] transition-all duration-300"
+                      className="w-full bg-black/50 text-foreground hover:bg-black/70 border border-white hover:border-white hover:shadow-[0_0_10px_rgba(255,255,255,0.4)] transition-all duration-300"
                     >
                       <Link href={contact.profiles[0].link} target="_blank">
                         Entrar em Contato
