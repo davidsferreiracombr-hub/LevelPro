@@ -1,9 +1,9 @@
 // IMPORTANT: Populate the .env.local file with your actual Firebase project configuration
 export const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  apiKey: "AIzaSyCJ1h9t9lEyvXt2BkzqgPHoointLSW6Kps",
+  authDomain: "studio-9846334710-a80ac.firebaseapp.com",
+  projectId: "studio-9846334710-a80ac",
+  storageBucket: "studio-9846334710-a80ac.appspot.com",
+  messagingSenderId: "638334388858",
+  appId: "1:638334388858:web:d7eac714fc1a7a81d149c3",
 };
