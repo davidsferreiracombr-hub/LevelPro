@@ -105,9 +105,9 @@ export default function ContactBoosterPage() {
                       key={profile.name}
                       src={profile.imageUrl}
                       alt={`Foto de perfil de ${profile.name}`}
-                      width={48}
-                      height={48}
-                      className="w-12 h-12 rounded-full border-2 border-black/50 bg-card"
+                      width={64}
+                      height={64}
+                      className="w-16 h-16 rounded-full border-2 border-black/50 bg-card"
                       data-ai-hint="profile picture"
                     />
                   ))}
