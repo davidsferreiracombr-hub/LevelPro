@@ -78,7 +78,7 @@ function BoosterCarousel({
             key={profileIndex}
             asChild
             size="sm"
-            className="w-full text-xs h-7 bg-white text-black hover:bg-white/90 border border-muted-foreground"
+            className="w-full text-xs h-7 bg-white text-black hover:bg-white/90 border border-border md:h-9"
           >
             <Link href={profile.link} target="_blank">
               Contato {profileIndex + 1}
@@ -155,7 +155,7 @@ export default function ContactBoosterPage() {
         data-ai-hint="abstract background"
       />
       <Image
-        src="https://i.imgur.com/FKfESU8.png"
+        src="https://i.imgur.com/Bewcdqn.png"
         alt="Fundo abstrato mobile"
         fill
         className="md:hidden object-cover object-center z-0"
@@ -212,7 +212,7 @@ export default function ContactBoosterPage() {
                     <Button
                       asChild
                       size="sm"
-                      className="w-full text-xs h-7 bg-white text-black hover:bg-white/90 border border-muted-foreground"
+                      className="w-full text-xs h-7 bg-white text-black hover:bg-white/90 border border-border md:h-9"
                     >
                       <Link href={contact.profiles[0].link} target="_blank">
                         Entrar em Contato

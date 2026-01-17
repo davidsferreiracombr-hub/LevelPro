@@ -54,7 +54,7 @@ export default function HowItWorksPage() {
             data-ai-hint="abstract background"
         />
         <Image
-            src="https://i.imgur.com/FKfESU8.png"
+            src="https://i.imgur.com/Bewcdqn.png"
             alt="Fundo abstrato mobile"
             fill
             className="md:hidden object-cover object-center z-0"
