@@ -1,7 +1,7 @@
 'use client';
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardFooter, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Mail } from 'lucide-react';
@@ -26,14 +26,14 @@ export default function ContactBoosterPage() {
   return (
     <div className="min-h-screen overflow-y-auto relative md:overflow-hidden">
       <Image
-        src="https://imgur.com/J4NRuCh.png"
+        src="https://i.imgur.com/J4NRuCh.png"
         alt="Fundo abstrato"
         fill
         className="hidden md:block object-cover object-center z-0"
         data-ai-hint="abstract background"
       />
       <Image
-        src="https://imgur.com/Iyqjxgp.png"
+        src="https://i.imgur.com/Iyqjxgp.png"
         alt="Fundo abstrato mobile"
         fill
         className="md:hidden object-cover object-center z-0"
@@ -54,47 +54,41 @@ export default function ContactBoosterPage() {
           {contacts.map((contact, index) => (
             <Card
               key={index}
-              className="relative bg-zinc-900/95 border border-zinc-800 w-full md:max-w-sm transition-all duration-300 flex flex-col rounded-2xl overflow-hidden group hover:border-zinc-700 shadow-lg shadow-black/30"
+              className="bg-card/70 backdrop-blur-md border border-zinc-800 w-full max-w-md text-center p-8 rounded-2xl transition-all duration-300 hover:border-accent hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-2 flex flex-col items-center"
             >
-              <div className="absolute inset-0 bg-[url('https://i.imgur.com/eqAsbOD.png')] bg-cover bg-center opacity-[0.02] group-hover:opacity-[0.03] transition-opacity duration-300"></div>
-              <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white/[.04] to-transparent pointer-events-none"></div>
-
-              <div className="relative flex-grow flex flex-col p-6">
-                <div className="flex items-center gap-4">
-                  <div className="bg-zinc-800/50 rounded-full p-1 border border-zinc-700 flex-shrink-0">
-                    <Image
+              <div className="relative mb-6">
+                  <Image
                       src={contact.profiles[0].imageUrl}
                       alt={`Foto de perfil de ${contact.profiles[0].name}`}
-                      width={48}
-                      height={48}
-                      className='w-12 h-12 rounded-full object-cover'
+                      width={112}
+                      height={112}
+                      className="w-28 h-28 rounded-full object-cover border-4 border-accent/50"
                       data-ai-hint="profile picture"
-                    />
-                  </div>
-                  <div>
-                    <CardTitle className="text-xl font-bold text-foreground">{contact.title}</CardTitle>
-                    <p className="text-sm text-muted-foreground">{contact.profiles[0].name}</p>
-                  </div>
-                </div>
-                
-                <p className="text-sm text-muted-foreground mt-6 flex-grow">
-                  {contact.profiles[0].description}
-                </p>
+                  />
+                  <div className="absolute inset-0 rounded-full border-2 border-accent animate-ping opacity-50"></div>
+              </div>
+              
+              <CardTitle className="text-3xl font-bold font-headline text-white">{contact.title}</CardTitle>
+              <p className="text-lg text-accent font-semibold mb-4">{contact.profiles[0].name}</p>
+              
+              <CardContent className="p-0 flex-grow mb-8">
+                  <p className="text-sm text-muted-foreground text-balance">
+                      {contact.profiles[0].description}
+                  </p>
+              </CardContent>
 
-                <div className="mt-8">
-                  <h4 className="text-base font-semibold text-foreground">Entre em contato</h4>
-                  <Button
+              <CardFooter className="p-0 w-full mt-auto">
+                <Button
                     asChild
                     size="lg"
-                    className="w-full mt-3 bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white transition-colors border border-zinc-700 hover:border-zinc-600"
-                  >
+                    className="w-full bg-accent text-accent-foreground hover:bg-accent/90 transition-transform duration-300 hover:scale-105 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_25px_hsl(var(--accent))]"
+                >
                     <Link href={contact.profiles[0].link} target="_blank">
-                      <Mail className="mr-2 h-4 w-4" />
-                      Entrar em contato
+                        <Mail className="mr-2 h-4 w-4" />
+                        Entrar em contato
                     </Link>
-                  </Button>
-                </div>
-              </div>
+                </Button>
+              </CardFooter>
             </Card>
           ))}
         </div>
