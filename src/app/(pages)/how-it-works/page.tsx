@@ -50,7 +50,14 @@ export default function HowItWorksPage() {
             src="https://i.imgur.com/CE1pl3a.png"
             alt="Fundo abstrato"
             fill
-            className="object-cover object-center z-0"
+            className="hidden md:block object-cover object-center z-0"
+            data-ai-hint="abstract background"
+        />
+        <Image
+            src="https://i.imgur.com/FKfESU8.png"
+            alt="Fundo abstrato mobile"
+            fill
+            className="md:hidden object-cover object-center z-0"
             data-ai-hint="abstract background"
         />
         <div className="absolute inset-0 bg-background/80 z-10" />
