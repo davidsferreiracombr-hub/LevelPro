@@ -54,7 +54,7 @@ export default function ContactBoosterPage() {
           {contacts.map((contact, index) => (
             <Card
               key={index}
-              className="bg-card/70 backdrop-blur-md border border-zinc-800 w-11/12 sm:w-full max-w-md text-center p-6 sm:p-8 rounded-2xl transition-all duration-300 hover:border-accent hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-2 flex flex-col items-center"
+              className="bg-card/70 backdrop-blur-md border border-zinc-800 w-11/12 sm:w-full max-w-sm text-center p-4 sm:p-6 rounded-2xl transition-all duration-300 hover:border-white/50 hover:shadow-2xl hover:shadow-white/10 hover:-translate-y-2 flex flex-col items-center"
             >
               <div className="relative mb-6">
                   <Image
@@ -62,14 +62,14 @@ export default function ContactBoosterPage() {
                       alt={`Foto de perfil de ${contact.profiles[0].name}`}
                       width={112}
                       height={112}
-                      className="w-28 h-28 rounded-full object-cover border-4 border-accent/50"
+                      className="w-28 h-28 rounded-full object-cover border-4 border-white/50"
                       data-ai-hint="profile picture"
                   />
-                  <div className="absolute inset-0 rounded-full border-2 border-accent animate-ping opacity-50"></div>
+                  <div className="absolute inset-0 rounded-full border-2 border-white animate-ping opacity-50"></div>
               </div>
               
               <CardTitle className="text-3xl font-bold font-headline text-white">{contact.title}</CardTitle>
-              <p className="text-lg text-accent font-semibold mb-4">{contact.profiles[0].name}</p>
+              <p className="text-lg text-white font-semibold mb-4">{contact.profiles[0].name}</p>
               
               <CardContent className="p-0 flex-grow mb-8">
                   <p className="text-sm text-muted-foreground text-balance">
@@ -81,7 +81,7 @@ export default function ContactBoosterPage() {
                 <Button
                     asChild
                     size="lg"
-                    className="w-full bg-accent text-accent-foreground hover:bg-accent/90 transition-transform duration-300 hover:scale-105 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_25px_hsl(var(--accent))]"
+                    className="w-full bg-white text-black hover:bg-white/90 transition-transform duration-300 hover:scale-105 shadow-[0_0_15px_rgba(255,255,255,0.5)] hover:shadow-[0_0_25px_rgba(255,255,0.7)]"
                 >
                     <Link href={contact.profiles[0].link} target="_blank">
                         <Mail className="mr-2 h-4 w-4" />
