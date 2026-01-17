@@ -112,45 +112,62 @@ export default function GamesPage() {
   ];
 
   return (
-    <div className="space-y-12">
-      <div className="text-center">
-        <h1 className="text-4xl md:text-5xl font-bold font-headline text-white">Jogos Suportados</h1>
-        <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-          Apoiamos uma vasta gama de jogos populares. Veja os detalhes de cada serviço.
-        </p>
-      </div>
+    <div className="relative overflow-hidden">
+        <Image
+            src="https://i.imgur.com/J4NRuCh.png"
+            alt="Fundo abstrato"
+            fill
+            className="hidden md:block object-cover object-center z-0"
+            data-ai-hint="abstract background"
+        />
+        <Image
+            src="https://i.imgur.com/Iyqjxgp.png"
+            alt="Fundo abstrato mobile"
+            fill
+            className="md:hidden object-cover object-center z-0"
+            data-ai-hint="abstract background"
+        />
+        <div className="absolute inset-0 bg-background/80 z-10" />
+        <div className="relative z-20 space-y-12 container mx-auto px-4 pt-24 pb-12">
+            <div className="text-center">
+                <h1 className="text-4xl md:text-5xl font-bold font-headline text-white">Jogos Suportados</h1>
+                <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+                Apoiamos uma vasta gama de jogos populares. Veja os detalhes de cada serviço.
+                </p>
+            </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {games.map((game) => (
-          <Card key={game.name} className="bg-card/50 border border-transparent rounded-xl overflow-hidden group transition-all duration-300 hover:border-accent/30 hover:shadow-2xl hover:shadow-accent/10">
-            <CardContent className="p-0">
-               <div className="overflow-hidden rounded-t-xl">
-                <Image
-                  src={game.imageUrl}
-                  alt={`Capa do jogo ${game.name}`}
-                  width={400}
-                  height={225}
-                  className="object-cover w-full aspect-video transition-transform duration-500 ease-in-out group-hover:scale-110"
-                  data-ai-hint={game.imageHint}
-                />
-              </div>
-              <div className="p-5 space-y-3">
-                <CardTitle className="text-lg font-bold font-headline">{game.name}</CardTitle>
-                <Accordion type="single" collapsible className="w-full">
-                  <AccordionItem value="item-1" className="border-b-0">
-                    <AccordionTrigger className="p-0 text-sm font-medium text-muted-foreground hover:text-accent hover:no-underline [&[data-state=open]]:text-accent">
-                      Ver detalhes do serviço
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      {game.description}
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {games.map((game) => (
+                <Card key={game.name} className="bg-card/50 border border-transparent rounded-xl overflow-hidden group transition-all duration-300 hover:border-accent/30 hover:shadow-2xl hover:shadow-accent/10">
+                    <CardContent className="p-0">
+                    <div className="overflow-hidden rounded-t-xl">
+                        <Image
+                        src={game.imageUrl}
+                        alt={`Capa do jogo ${game.name}`}
+                        width={400}
+                        height={225}
+                        className="object-cover w-full aspect-video transition-transform duration-500 ease-in-out group-hover:scale-110"
+                        data-ai-hint={game.imageHint}
+                        />
+                    </div>
+                    <div className="p-5 space-y-3">
+                        <CardTitle className="text-lg font-bold font-headline">{game.name}</CardTitle>
+                        <Accordion type="single" collapsible className="w-full">
+                        <AccordionItem value="item-1" className="border-b-0">
+                            <AccordionTrigger className="p-0 text-sm font-medium text-muted-foreground hover:text-accent hover:no-underline [&[data-state=open]]:text-accent">
+                            Ver detalhes do serviço
+                            </AccordionTrigger>
+                            <AccordionContent>
+                            {game.description}
+                            </AccordionContent>
+                        </AccordionItem>
+                        </Accordion>
+                    </div>
+                    </CardContent>
+                </Card>
+                ))}
+            </div>
+        </div>
     </div>
   );
 }

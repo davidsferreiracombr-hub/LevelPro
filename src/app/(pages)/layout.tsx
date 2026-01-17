@@ -13,6 +13,7 @@ export default function PagesLayout({
   const pathname = usePathname();
   const isPricingPage = pathname === '/pricing';
   const isHowItWorksPage = pathname === '/how-it-works';
+  const isGamesPage = pathname === '/games';
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -22,6 +23,7 @@ export default function PagesLayout({
           'flex-grow',
           !isPricingPage &&
             !isHowItWorksPage &&
+            !isGamesPage &&
             'container mx-auto px-4 pt-20 md:pt-24 pb-8 md:pb-12'
         )}
       >
