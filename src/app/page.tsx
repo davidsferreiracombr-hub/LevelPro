@@ -9,7 +9,8 @@ import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 
 export default function Home() {
-  const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-character');
+  const heroCharacter = PlaceHolderImages.find((img) => img.id === 'hero-character');
+  const heroBackground = PlaceHolderImages.find((img) => img.id === 'hero-background');
 
   const infoBarItems = [
     { 
@@ -40,14 +41,24 @@ export default function Home() {
       <main className="flex-grow">
         <section className="relative overflow-hidden h-screen flex items-center justify-center text-center text-white pt-24">
           <div className="absolute inset-0 hero-gradient" />
-          {heroImage && (
+           {heroBackground && (
             <Image
-              src={heroImage.imageUrl}
-              alt={heroImage.description}
+              src={heroBackground.imageUrl}
+              alt={heroBackground.description}
               fill
               priority
-              className="object-contain object-bottom"
-              data-ai-hint={heroImage.imageHint}
+              className="hidden md:block object-cover object-center"
+              data-ai-hint={heroBackground.imageHint}
+            />
+          )}
+          {heroCharacter && (
+            <Image
+              src={heroCharacter.imageUrl}
+              alt={heroCharacter.description}
+              fill
+              priority
+              className="md:hidden object-contain object-bottom"
+              data-ai-hint={heroCharacter.imageHint}
             />
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
