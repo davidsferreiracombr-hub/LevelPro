@@ -99,7 +99,10 @@ export default function Home() {
               {infoBarItems.map((item, index) => (
                   <Card
                     key={index}
-                    className="bg-card/50 backdrop-blur-sm border border-white/10 text-left p-6 transition-all duration-300 hover:border-accent/80 hover:shadow-accent/10 hover:shadow-2xl rounded-xl group"
+                    className={cn(
+                      "bg-card/50 backdrop-blur-sm border border-white/10 text-left p-6 transition-all duration-300 hover:border-accent/80 hover:shadow-accent/10 hover:shadow-2xl rounded-xl group",
+                      item.text === 'Qualidade premium' && "border-accent shadow-lg shadow-accent/20"
+                    )}
                   >
                     <div className="space-y-4">
                         <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-accent/10 text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-accent-foreground">
