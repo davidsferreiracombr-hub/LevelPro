@@ -73,10 +73,10 @@ export default function Home() {
               </p>
              
               <div className="flex flex-col sm:flex-row gap-4 pt-4 md:pt-6 w-full sm:w-auto">
-                <Button asChild size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 py-5 bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--accent))]">
+                <Button asChild size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 py-5 bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300 shadow-[0_0_20px_hsl(var(--accent))]">
                   <Link href="/pricing">Começar agora</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="w-full sm:w-auto text-base md:text-lg px-8 py-5 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors">
+                <Button asChild size="lg" className="w-full sm:w-auto text-base md:text-lg px-8 py-5 bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--primary))]">
                   <Link href="/games">Ver jogos</Link>
                 </Button>
               </div>

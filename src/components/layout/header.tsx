@@ -32,8 +32,7 @@ export default function Header() {
           
           <div className="flex-1 flex justify-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
             <Link href="/" className="flex items-center">
-              <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={80} height={20} className="object-contain hidden md:block" />
-              <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={80} height={20} className="object-contain md:hidden" />
+              <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={80} height={20} className="object-contain" />
             </Link>
           </div>
 
@@ -66,7 +65,7 @@ export default function Header() {
                       ))}
                     </nav>
                     <div className="mt-auto pt-8">
-                      <Button asChild className="w-full font-semibold border-accent/30 bg-accent/20 text-accent hover:bg-accent/30 hover:text-accent backdrop-blur-sm text-base py-5">
+                      <Button asChild className="w-full font-semibold bg-accent text-accent-foreground hover:bg-accent/90 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_20px_hsl(var(--accent))] transition-all duration-300 text-base py-5">
                         <Link href="/login" onClick={() => setIsMobileMenuOpen(false)}>Entrar</Link>
                       </Button>
                     </div>
@@ -75,7 +74,7 @@ export default function Header() {
               </Sheet>
             </div>
              <div className="hidden md:flex items-center">
-                <Button asChild className="font-semibold border-accent/30 bg-accent/20 text-accent hover:bg-accent/30 hover:text-accent backdrop-blur-sm">
+                <Button asChild className="font-semibold bg-accent text-accent-foreground hover:bg-accent/90 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_20px_hsl(var(--accent))] transition-all duration-300">
                 <Link href="/login">Entrar</Link>
                 </Button>
             </div>
