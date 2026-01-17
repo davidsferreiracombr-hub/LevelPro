@@ -1,12 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
-import { Orbitron, Inter } from 'next/font/google';
-
-const orbitron = Orbitron({
-  subsets: ['latin'],
-  variable: '--font-orbitron',
-});
+import { Inter } from 'next/font/google';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -25,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${orbitron.variable} ${inter.variable} dark`}>
+    <html lang="pt-BR" className={`${inter.variable} dark`}>
       <body className="font-body antialiased">
         {children}
         <Toaster />
