@@ -1,4 +1,4 @@
-import { ShoppingCart, ShieldCheck, Gamepad, Rocket, KeyRound, Camera, CircleDollarSign } from 'lucide-react';
+import { ShoppingCart, ShieldCheck, Gamepad, Rocket, KeyRound, Camera, CircleDollarSign, Lock, Handshake, Shield } from 'lucide-react';
 import Image from 'next/image';
 
 export const metadata = {
@@ -96,9 +96,9 @@ export default function HowItWorksPage() {
             <div className="text-center pt-8">
                 <h3 className="text-3xl font-bold font-headline text-white">Tudo é feito de forma:</h3>
                 <div className="mt-6 flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-lg">
-                    <span className="flex items-center gap-2 font-semibold text-foreground">🔒 100% segura</span>
-                    <span className="flex items-center gap-2 font-semibold text-foreground">🤝 100% confidencial</span>
-                    <span className="flex items-center gap-2 font-semibold text-foreground">🛡️ 100% discreta</span>
+                    <span className="flex items-center gap-2 font-semibold text-foreground"><Lock className="h-5 w-5 text-primary" /> 100% segura</span>
+                    <span className="flex items-center gap-2 font-semibold text-foreground"><Handshake className="h-5 w-5 text-primary" /> 100% confidencial</span>
+                    <span className="flex items-center gap-2 font-semibold text-foreground"><Shield className="h-5 w-5 text-primary" /> 100% discreta</span>
                 </div>
             </div>
         </div>
