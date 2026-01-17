@@ -77,10 +77,10 @@ export default function Home() {
               </p>
              
               <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
-                <Button asChild size="sm" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 transition-shadow duration-300 shadow-[0_0_15px_hsl(var(--accent))]">
+                <Button asChild size="sm" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300 shadow-[0_0_15px_hsl(var(--accent))] hover:scale-105 hover:shadow-[0_0_25px_hsl(var(--accent))]">
                   <Link href="/pricing">Começar agora</Link>
                 </Button>
-                <Button asChild size="sm" variant="outline" className="w-full sm:w-auto bg-transparent border-primary text-primary hover:bg-primary/10 transition-shadow duration-300 hover:shadow-[0_0_20px_hsl(var(--primary))]">
+                <Button asChild size="sm" variant="outline" className="w-full sm:w-auto bg-transparent border-primary text-primary hover:bg-primary/10 transition-all duration-300 hover:shadow-[0_0_20px_hsl(var(--primary))] hover:scale-105">
                   <Link href="/games">Ver jogos</Link>
                 </Button>
               </div>
@@ -101,10 +101,10 @@ export default function Home() {
                   <Card
                     key={index}
                     className={cn(
-                      "text-left p-6 rounded-xl group transition-transform duration-300 hover:-translate-y-1",
+                      "text-left p-6 rounded-xl group transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl",
                       index === infoBarItems.length - 1
-                        ? "bg-accent text-accent-foreground shadow-[0_0_15px_hsl(var(--accent))]"
-                        : "bg-card text-foreground border border-border"
+                        ? "bg-accent text-accent-foreground shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_25px_hsl(var(--accent))]"
+                        : "bg-card text-foreground border border-border hover:border-accent hover:shadow-accent/10"
                     )}
                   >
                     <div className="space-y-4">

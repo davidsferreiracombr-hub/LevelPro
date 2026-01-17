@@ -24,7 +24,7 @@ export default function ContactPage() {
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-        <Card>
+        <Card className="transition-all duration-300 hover:shadow-accent/20 hover:shadow-lg hover:-translate-y-1">
           <CardHeader>
             <CardTitle>Envie uma Mensagem</CardTitle>
             <CardDescription>Preencha o formulário e responderemos o mais breve possível.</CardDescription>
@@ -47,7 +47,7 @@ export default function ContactPage() {
                 <Label htmlFor="message">Mensagem</Label>
                 <Textarea id="message" placeholder="Escreva sua mensagem aqui..." rows={5} />
               </div>
-              <Button type="submit" className="w-full bg-primary hover:bg-primary/90">Enviar Mensagem</Button>
+              <Button type="submit" className="w-full bg-primary hover:bg-primary/90 transition-transform duration-300 hover:scale-105">Enviar Mensagem</Button>
             </form>
           </CardContent>
         </Card>
@@ -55,9 +55,9 @@ export default function ContactPage() {
             <h2 className="text-2xl font-bold font-headline">Nossas Informações</h2>
             <div className="space-y-4">
             {contactInfo.map((info) => (
-              <div key={info.text} className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-md bg-card flex items-center justify-center">
-                    <info.icon className="h-6 w-6 text-accent" />
+              <div key={info.text} className="flex items-center gap-4 group">
+                <div className="w-12 h-12 rounded-md bg-card flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-accent/80 group-hover:shadow-lg group-hover:shadow-accent/20">
+                    <info.icon className="h-6 w-6 text-accent transition-colors duration-300 group-hover:text-accent-foreground" />
                 </div>
                 <a href={info.href} className="text-muted-foreground hover:text-accent transition-colors">{info.text}</a>
               </div>

@@ -64,7 +64,7 @@ export default function GamesPage() {
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                 {games.map((game) => (
-                <Card key={game.name} className="bg-card/50 border border-transparent rounded-xl overflow-hidden group transition-all duration-300 hover:border-accent/30 hover:shadow-2xl hover:shadow-accent/10 flex flex-col">
+                <Card key={game.name} className="bg-card/50 border border-transparent rounded-xl overflow-hidden group transition-all duration-300 hover:border-accent/30 hover:shadow-2xl hover:shadow-accent/10 flex flex-col hover:-translate-y-2">
                     <CardContent className="p-0 flex flex-col flex-grow">
                         <div className="overflow-hidden rounded-t-xl">
                             <Image
@@ -72,7 +72,7 @@ export default function GamesPage() {
                             alt={`Capa do jogo ${game.name}`}
                             width={400}
                             height={225}
-                            className="object-cover w-full aspect-video transition-transform duration-500 ease-in-out group-hover:scale-110"
+                            className="object-cover w-full aspect-video transition-transform duration-500 ease-in-out group-hover:scale-105"
                             data-ai-hint={game.imageHint}
                             />
                         </div>

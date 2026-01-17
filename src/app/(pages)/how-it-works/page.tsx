@@ -75,15 +75,15 @@ export default function HowItWorksPage() {
 
                 <div className="space-y-12">
                 {steps.map((step) => (
-                    <div key={step.title} className="relative flex items-start">
+                    <div key={step.title} className="relative flex items-start group">
                     {/* Dot on the timeline and Icon */}
-                    <div className="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-background border-2 border-primary">
-                        <step.icon className="h-5 w-5 text-primary" />
+                    <div className="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-background border-2 border-primary transition-all duration-300 group-hover:scale-110 group-hover:bg-primary">
+                        <step.icon className="h-5 w-5 text-primary transition-colors duration-300 group-hover:text-primary-foreground" />
                     </div>
                     
                     {/* Card content */}
                     <div className="ml-6 flex-1">
-                        <div className="p-6 bg-card/70 border border-border/30 rounded-xl transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10">
+                        <div className="p-6 bg-card/70 border border-border/30 rounded-xl transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1">
                         <h3 className="text-xl font-headline text-primary-foreground mb-2">{step.title}</h3>
                         <p className="text-muted-foreground text-sm text-balance">{step.description}</p>
                         </div>
@@ -96,9 +96,9 @@ export default function HowItWorksPage() {
             <div className="text-center pt-8">
                 <h3 className="text-3xl font-bold font-headline text-white">Tudo é feito de forma:</h3>
                 <div className="mt-6 flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-lg">
-                    <span className="flex items-center gap-2 font-semibold text-foreground"><Lock className="h-5 w-5 text-primary" /> 100% segura</span>
-                    <span className="flex items-center gap-2 font-semibold text-foreground"><Handshake className="h-5 w-5 text-primary" /> 100% confidencial</span>
-                    <span className="flex items-center gap-2 font-semibold text-foreground"><Shield className="h-5 w-5 text-primary" /> 100% discreta</span>
+                    <span className="flex items-center gap-2 font-semibold text-foreground transition-transform duration-300 hover:scale-110"><Lock className="h-5 w-5 text-primary" /> 100% segura</span>
+                    <span className="flex items-center gap-2 font-semibold text-foreground transition-transform duration-300 hover:scale-110"><Handshake className="h-5 w-5 text-primary" /> 100% confidencial</span>
+                    <span className="flex items-center gap-2 font-semibold text-foreground transition-transform duration-300 hover:scale-110"><Shield className="h-5 w-5 text-primary" /> 100% discreta</span>
                 </div>
             </div>
         </div>
