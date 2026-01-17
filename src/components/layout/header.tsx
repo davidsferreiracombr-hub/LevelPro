@@ -31,7 +31,7 @@ export default function Header() {
           </div>
 
           <Link href="/" className="justify-self-center">
-            <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={80} height={20} className="object-contain" />
+            <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={80} height={20} className="object-contain h-auto" />
           </Link>
 
           <div className="flex items-center justify-end gap-2">
@@ -57,7 +57,7 @@ export default function Header() {
                   <div className="flex h-full flex-col">
                     <div className="flex items-center justify-center border-b pb-4">
                       <Link href="/" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
-                        <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={80} height={20} className="object-contain" />
+                        <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={80} height={20} className="object-contain h-auto" />
                       </Link>
                     </div>
                     <nav className="mt-6 flex flex-col gap-4">

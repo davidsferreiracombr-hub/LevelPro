@@ -40,9 +40,9 @@ export default function ContactBoosterPage() {
         data-ai-hint="abstract background"
       />
       <div className="absolute inset-0 bg-background/80 z-10" />
-      <div className="relative z-20 space-y-10 md:space-y-16 pt-24 md:pt-32 pb-12 container mx-auto px-4">
+      <div className="relative z-20 space-y-10 md:space-y-16 pt-20 md:pt-32 pb-12 container mx-auto px-4">
         <div className="text-center">
-          <h1 className="text-4xl md:text-5xl font-bold font-headline text-white uppercase">
+          <h1 className="text-3xl md:text-5xl font-bold font-headline text-white uppercase">
             ENTRE EM CONTATO COM A NOSSA EQUIPE
           </h1>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
