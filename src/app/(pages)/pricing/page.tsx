@@ -139,7 +139,7 @@ export default function ContactBoosterPage() {
           imageUrl: 'https://i.imgur.com/p3IdzSN.png',
           link: 'https://chat.whatsapp.com/BlKFlq712KuKCreqnioSMf',
           description:
-            'Minha vida sempre girou em torno de games. De consoles antigos aos mais novos jogos mobile, minha curiosidade me fez dominar dezenas de títulos. Essa versatilidade me permite oferecer um serviço de boosting de alta qualidade em vários jogos, com foco em segurança e no resultado.',
+            'Aqui no contato Geral, você encontra pessoas que estão disponiveis para te atender a qualquer momento em qualquer jogo, basta clicar no botão e sera atendido sem complicação e de imediato pela equipe',
         },
       ],
     },
