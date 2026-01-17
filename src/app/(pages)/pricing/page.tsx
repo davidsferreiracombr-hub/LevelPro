@@ -41,39 +41,39 @@ export default function PricingPage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
         {tiers.map((tier) => (
           <Card
             key={tier.name}
             className={`flex flex-col h-full ${tier.isPopular ? 'border-accent shadow-accent/20 shadow-lg' : 'border-border'}`}
           >
-            <CardHeader>
+            <CardHeader className="p-4">
               {tier.isPopular && (
-                <div className="text-center">
+                <div className="text-center mb-2">
                   <span className="inline-block bg-accent text-accent-foreground text-xs font-bold uppercase px-3 py-1 rounded-full">
                     Mais Popular
                   </span>
                 </div>
               )}
-              <CardTitle className="text-3xl font-bold text-center pt-4">{tier.name}</CardTitle>
-              <CardDescription className="text-center min-h-[40px]">{tier.description}</CardDescription>
+              <CardTitle className="text-2xl font-bold text-center">{tier.name}</CardTitle>
+              <CardDescription className="text-center text-sm">{tier.description}</CardDescription>
             </CardHeader>
-            <CardContent className="flex-grow">
-              <div className="text-center my-4">
-                <span className="text-5xl font-bold">{tier.price}</span>
-                <span className="text-muted-foreground"> /pedido</span>
+            <CardContent className="flex-grow p-4">
+              <div className="text-center my-2">
+                <span className="text-4xl font-bold">{tier.price}</span>
+                <span className="text-muted-foreground text-sm"> /pedido</span>
               </div>
-              <ul className="space-y-3">
+              <ul className="space-y-2 text-sm">
                 {tier.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-3">
-                    <Check className="h-5 w-5 text-accent flex-shrink-0" />
+                  <li key={feature} className="flex items-center gap-2">
+                    <Check className="h-4 w-4 text-accent flex-shrink-0" />
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
             </CardContent>
-            <CardFooter>
-              <Button asChild className={`w-full text-lg py-6 ${tier.isPopular ? 'bg-accent text-accent-foreground hover:bg-accent/90' : 'bg-primary text-primary-foreground hover:bg-primary/90'}`}>
+            <CardFooter className="p-4">
+              <Button asChild className={`w-full ${tier.isPopular ? 'bg-accent text-accent-foreground hover:bg-accent/90' : 'bg-primary text-primary-foreground hover:bg-primary/90'}`}>
                 <Link href="/login">Pedir Agora</Link>
               </Button>
             </CardFooter>
