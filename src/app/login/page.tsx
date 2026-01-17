@@ -46,9 +46,23 @@ export default function LoginPage() {
       });
       router.push('/dashboard');
     } catch (error: any) {
+      console.error("Login Error:", error);
       let description = 'Ocorreu um erro desconhecido.';
-      if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password' || error.code === 'auth/invalid-credential') {
-        description = 'E-mail ou senha inválidos. Por favor, tente novamente.';
+      switch (error.code) {
+        case 'auth/user-not-found':
+        case 'auth/wrong-password':
+        case 'auth/invalid-credential':
+          description = 'E-mail ou senha inválidos. Por favor, tente novamente.';
+          break;
+        case 'auth/invalid-email':
+          description = 'O formato do e-mail é inválido.';
+          break;
+        case 'auth/user-disabled':
+          description = 'Esta conta de usuário foi desativada.';
+          break;
+        default:
+          description = error.message || 'Não foi possível fazer login. Tente novamente.';
+          break;
       }
       toast({
         variant: 'destructive',

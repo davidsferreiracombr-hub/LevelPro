@@ -46,9 +46,24 @@ export default function RegisterPage() {
       });
       router.push('/dashboard');
     } catch (error: any) {
+      console.error("Registration Error:", error);
       let description = 'Ocorreu um erro desconhecido.';
-      if (error.code === 'auth/email-already-in-use') {
-        description = 'Este e-mail já está em uso.';
+      switch (error.code) {
+        case 'auth/email-already-in-use':
+          description = 'Este e-mail já está em uso por outra conta.';
+          break;
+        case 'auth/invalid-email':
+          description = 'O endereço de e-mail não é válido.';
+          break;
+        case 'auth/operation-not-allowed':
+          description = 'O cadastro com e-mail e senha não está ativado.';
+          break;
+        case 'auth/weak-password':
+          description = 'A senha é muito fraca. Tente uma senha mais forte.';
+          break;
+        default:
+          description = error.message || 'Não foi possível completar o cadastro. Tente novamente.';
+          break;
       }
       toast({
         variant: 'destructive',
