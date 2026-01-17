@@ -120,11 +120,11 @@ export default function GamesPage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {games.map((game) => (
-          <Card key={game.name} className="bg-card/50 backdrop-blur-sm border-border/50 rounded-xl overflow-hidden group transition-all duration-300 hover:border-accent/50 hover:shadow-2xl hover:shadow-accent/10">
-            <CardContent className="p-4 space-y-4">
-               <div className="overflow-hidden rounded-lg">
+          <Card key={game.name} className="bg-card border-border/50 rounded-xl overflow-hidden group transition-all duration-300 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10">
+            <CardContent className="p-0">
+               <div className="overflow-hidden">
                 <Image
                   src={game.imageUrl}
                   alt={`Capa do jogo ${game.name}`}
@@ -134,11 +134,11 @@ export default function GamesPage() {
                   data-ai-hint={game.imageHint}
                 />
               </div>
-              <div className="px-2">
-                <CardTitle className="text-xl font-bold font-headline">{game.name}</CardTitle>
+              <div className="p-4 space-y-2">
+                <CardTitle className="text-lg font-bold font-headline">{game.name}</CardTitle>
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="item-1" className="border-b-0">
-                    <AccordionTrigger className="text-sm font-medium text-muted-foreground hover:no-underline hover:text-accent [&[data-state=open]]:text-accent py-2">
+                    <AccordionTrigger className="text-sm font-medium text-muted-foreground hover:no-underline hover:text-accent [&[data-state=open]]:text-accent py-1">
                       Ver detalhes do serviço
                     </AccordionTrigger>
                     <AccordionContent>
