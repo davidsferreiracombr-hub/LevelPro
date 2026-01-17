@@ -77,12 +77,11 @@ function BoosterCarousel({
           <Button
             key={profileIndex}
             asChild
-            size="sm"
-            className="w-full text-xs h-7 bg-white text-black hover:bg-white/90 border border-border md:h-9"
+            className="w-full bg-accent text-accent-foreground hover:bg-accent/90 shadow-[0_0_15px_hsl(var(--accent))] transition-shadow duration-300"
           >
             <Link href={profile.link} target="_blank">
               Contato {profileIndex + 1}
-              <ArrowRight className="ml-2 h-3 w-3" />
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         ))}
@@ -214,12 +213,11 @@ export default function ContactBoosterPage() {
                     </div>
                     <Button
                       asChild
-                      size="sm"
-                      className="w-full text-xs h-7 bg-white text-black hover:bg-white/90 border border-border md:h-9"
+                      className="w-full bg-accent text-accent-foreground hover:bg-accent/90 shadow-[0_0_15px_hsl(var(--accent))] transition-shadow duration-300"
                     >
                       <Link href={contact.profiles[0].link} target="_blank">
                         Entrar em Contato
-                        <ArrowRight className="ml-2 h-3 w-3" />
+                        <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
                   </div>
