@@ -1,5 +1,11 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export const metadata = {
   title: 'Jogos | LevelPro Accelerator',
@@ -7,10 +13,102 @@ export const metadata = {
 
 export default function GamesPage() {
   const games = [
-    { name: 'Free Fire', imageUrl: 'https://picsum.photos/seed/freefire/400/300', imageHint: 'soldier battle' },
-    { name: 'Brawl Stars', imageUrl: 'https://picsum.photos/seed/brawlstars/400/300', imageHint: 'cartoon fight' },
-    { name: 'Clash Royale', imageUrl: 'https://picsum.photos/seed/clashroyale/400/300', imageHint: 'castle fantasy' },
-    { name: 'Drive Zone', imageUrl: 'https://picsum.photos/seed/drivezone/400/300', imageHint: 'racing car' },
+    {
+      name: 'Free Fire',
+      imageUrl: 'https://picsum.photos/seed/freefire/400/300',
+      imageHint: 'soldier battle',
+      description: (
+        <div className="space-y-3 text-left">
+          <div>
+            <h4 className="font-bold text-accent">Rank</h4>
+            <p className="text-sm text-muted-foreground">É o tipo de up mais rápido. Em elos baixos o progresso acontece em poucas partidas, pois os pontos são ganhos facilmente. Exige menos tempo e menos esforço operacional.</p>
+          </div>
+          <div>
+            <h4 className="font-bold text-accent">Nível da conta</h4>
+            <p className="text-sm text-muted-foreground">Depende de muitas horas de jogo acumuladas. Exige constância, repetição de partidas e dedicação contínua, tornando o processo mais trabalhoso.</p>
+          </div>
+          <div>
+            <h4 className="font-bold text-accent">Nível de personagem</h4>
+            <p className="text-sm text-muted-foreground">É o mais demorado. A evolução é individual, exige uso frequente do personagem, experiência progressiva e planejamento. Por ser o serviço que mais consome tempo e esforço, é o que naturalmente exige um valor mais alto.</p>
+          </div>
+          <div className="pt-2 border-t border-border">
+            <p className="text-sm font-semibold text-foreground"><strong className="text-accent">Resumo:</strong> Quanto maior o tempo, a dificuldade e a dedicação exigida, maior é o valor do serviço.</p>
+          </div>
+        </div>
+      )
+    },
+    {
+      name: '⭐ Brawl Stars',
+      imageUrl: 'https://picsum.photos/seed/brawlstars/400/300',
+      imageHint: 'cartoon fight',
+      description: (
+        <div className="space-y-3 text-left">
+          <div>
+            <h4 className="font-bold text-accent">Rank</h4>
+            <p className="text-sm text-muted-foreground">Exige habilidade, estratégia e constância. É mais demorado que os troféus, mas ainda possui progresso relativamente estável.</p>
+          </div>
+          <div>
+            <h4 className="font-bold text-accent">Troféus (nível)</h4>
+            <p className="text-sm text-muted-foreground">São mais rápidos de upar, pois dependem de partidas normais e progresso direto.</p>
+          </div>
+          <div>
+            <h4 className="font-bold text-accent">Nível de personagem</h4>
+            <p className="text-sm text-muted-foreground">É o mais difícil e demorado. Envolve evolução individual do brawler, recursos específicos e tempo prolongado de jogo. Por exigir mais esforço, tempo e controle de progressão, é o serviço que naturalmente possui o valor mais alto.</p>
+          </div>
+          <div className="pt-2 border-t border-border">
+            <p className="text-sm font-semibold text-foreground"><strong className="text-accent">Resumo:</strong> Serviços que exigem mais tempo, mais habilidade e mais dedicação sempre resultam em um valor maior, pois demandam mais esforço operacional e responsabilidade.</p>
+          </div>
+        </div>
+      )
+    },
+    {
+      name: '👑 Clash Royale',
+      imageUrl: 'https://picsum.photos/seed/clashroyale/400/300',
+      imageHint: 'castle fantasy',
+      description: (
+        <div className="space-y-3 text-left">
+          <div>
+            <h4 className="font-bold text-accent">Troféus</h4>
+            <p className="text-sm text-muted-foreground">Subir troféus é rápido, pois depende diretamente de vitórias. Com boa performance, o progresso acontece em pouco tempo.</p>
+          </div>
+          <div>
+            <h4 className="font-bold text-accent">Cartas</h4>
+            <p className="text-sm text-muted-foreground">O up de cartas também é ágil, desde que haja estratégia e organização dos recursos.</p>
+          </div>
+          <div className="pt-2 border-t border-border">
+            <p className="text-sm font-semibold text-foreground"><strong className="text-accent">Resumo:</strong> Como ambos têm progresso rápido e menos complexidade, exigem menos esforço e, consequentemente, um valor mais baixo e mais justo.</p>
+          </div>
+        </div>
+      )
+    },
+    {
+      name: '🚗 Drive Zone',
+      imageUrl: 'https://picsum.photos/seed/drivezone/400/300',
+      imageHint: 'racing car',
+      description: (
+        <div className="space-y-3 text-left">
+          <div>
+            <h4 className="font-bold text-accent">Up de carros</h4>
+            <p className="text-sm text-muted-foreground">Envolve desbloqueio e evolução de veículos. Exige tempo de jogo, consistência e progresso contínuo.</p>
+          </div>
+          <div>
+            <h4 className="font-bold text-accent">Up de performance</h4>
+            <p className="text-sm text-muted-foreground">Inclui melhorias mecânicas que impactam diretamente no desempenho. Exige planejamento, partidas frequentes e maior dedicação.</p>
+          </div>
+          <div>
+            <h4 className="font-bold text-accent">Up de personalização</h4>
+            <p className="text-sm text-muted-foreground">Focado na parte estética. Normalmente exige menos esforço técnico.</p>
+          </div>
+          <div>
+            <h4 className="font-bold text-accent">Progresso geral</h4>
+            <p className="text-sm text-muted-foreground">Relaciona-se ao avanço completo da conta, desbloqueio de conteúdos e evolução total no jogo. Por envolver várias etapas e exigir muitas horas de jogo, é um dos serviços que naturalmente demanda maior valor.</p>
+          </div>
+          <div className="pt-2 border-t border-border">
+            <p className="text-sm font-semibold text-foreground"><strong className="text-accent">Resumo:</strong> Quanto mais completo e trabalhoso o serviço, maior é o nível de dedicação exigido e maior é o valor aplicado.</p>
+          </div>
+        </div>
+      )
+    },
   ];
 
   return (
@@ -18,11 +116,11 @@ export default function GamesPage() {
       <div className="text-center">
         <h1 className="text-4xl md:text-5xl font-bold font-headline text-accent">Jogos Suportados</h1>
         <p className="mt-4 text-lg text-muted-foreground">
-          Apoiamos uma vasta gama de jogos populares. Escolha o seu e comece a subir de nível.
+          Apoiamos uma vasta gama de jogos populares. Veja os detalhes de cada serviço.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
         {games.map((game) => (
           <Card key={game.name} className="overflow-hidden bg-card border-border hover:border-accent transition-all duration-300 group">
             <CardHeader className="p-0">
@@ -38,6 +136,14 @@ export default function GamesPage() {
             </CardHeader>
             <CardContent className="p-6">
               <CardTitle className="text-2xl font-bold font-headline">{game.name}</CardTitle>
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1" className="border-b-0">
+                  <AccordionTrigger>Detalhes do serviço</AccordionTrigger>
+                  <AccordionContent>
+                    {game.description}
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </CardContent>
           </Card>
         ))}
