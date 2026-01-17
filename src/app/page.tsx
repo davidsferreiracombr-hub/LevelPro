@@ -101,11 +101,19 @@ export default function Home() {
                   <Card
                     key={index}
                     className={cn(
-                      "bg-accent text-accent-foreground text-left p-6 rounded-xl group transition-transform duration-300 hover:-translate-y-1 shadow-[0_0_15px_hsl(var(--accent))]"
+                      "text-left p-6 rounded-xl group transition-transform duration-300 hover:-translate-y-1",
+                      index === infoBarItems.length - 1
+                        ? "bg-primary text-primary-foreground shadow-[0_0_15px_hsl(var(--primary))]"
+                        : "bg-accent text-accent-foreground shadow-[0_0_15px_hsl(var(--accent))]"
                     )}
                   >
                     <div className="space-y-4">
-                        <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-black/10 text-accent-foreground transition-colors duration-300 group-hover:bg-black/20">
+                        <div className={cn(
+                          "w-12 h-12 rounded-lg flex items-center justify-center bg-black/10 transition-colors duration-300 group-hover:bg-black/20",
+                           index === infoBarItems.length - 1
+                            ? ""
+                            : "text-accent-foreground"
+                        )}>
                             <item.icon className="h-6 w-6" />
                         </div>
                         <div className="space-y-1">
