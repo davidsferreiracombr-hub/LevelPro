@@ -101,12 +101,12 @@ export default function Home() {
                   <Card
                     key={index}
                     className={cn(
-                      "bg-card/50 border border-white/10 text-left p-6 transition-colors duration-300 hover:border-accent/80 rounded-xl group md:backdrop-blur-sm",
-                      item.text === 'Qualidade premium' && "border-accent shadow-lg shadow-accent/20"
+                      "bg-card border border-border text-left p-6 transition-all duration-300 hover:border-accent hover:-translate-y-1 rounded-xl group",
+                      item.text === 'Qualidade premium' && "border-accent shadow-md shadow-accent/10"
                     )}
                   >
                     <div className="space-y-4">
-                        <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-accent/10 text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-accent-foreground">
+                        <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-muted text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-accent-foreground">
                             <item.icon className="h-6 w-6" />
                         </div>
                         <div className="space-y-1">
