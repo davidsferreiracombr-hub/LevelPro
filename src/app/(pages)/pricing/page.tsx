@@ -70,7 +70,7 @@ export default function ContactBoosterPage() {
         data-ai-hint="abstract background"
       />
       <div className="absolute inset-0 bg-background/70 z-10" />
-      <div className="relative z-20 space-y-16 py-8 pt-24 container mx-auto px-4">
+      <div className="relative z-20 space-y-10 md:space-y-16 py-8 pt-24 container mx-auto px-4">
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl font-bold font-headline text-white uppercase">
             Entre em Contato com seu Booster
@@ -80,38 +80,38 @@ export default function ContactBoosterPage() {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {contacts.map((contact, index) => (
-            <Card key={index} className="bg-card/70 border border-border/50 hover:border-accent hover:bg-card/90 transition-all duration-300 flex flex-col text-center backdrop-blur-sm">
-              <CardHeader className="items-center">
+            <Card key={index} className="bg-black/40 border border-white/10 hover:border-accent/50 transition-all duration-300 flex flex-col text-center rounded-xl overflow-hidden">
+              <CardHeader className="items-center p-4 md:p-6">
                 <div className="flex -space-x-4 mb-4">
                   {contact.profiles.map((profile) => (
                     <Image
                       key={profile.name}
                       src={profile.imageUrl}
                       alt={`Foto de perfil de ${profile.name}`}
-                      width={80}
-                      height={80}
-                      className="w-20 h-20 rounded-full border-4 border-card bg-card"
+                      width={64}
+                      height={64}
+                      className="w-16 h-16 rounded-full border-2 border-black/50 bg-card"
                       data-ai-hint="profile picture"
                     />
                   ))}
                 </div>
-                <CardTitle className="text-xl text-primary-foreground">{contact.title}</CardTitle>
+                <CardTitle className="text-lg font-semibold text-primary-foreground">{contact.title}</CardTitle>
               </CardHeader>
-              <CardContent className="flex-grow">
+              <CardContent className="flex-grow px-4 md:px-6 pb-4 md:pb-6 pt-0">
                 <p className="text-muted-foreground text-sm text-balance">{contact.description}</p>
               </CardContent>
-              <div className="p-6 pt-0 space-y-3">
+              <div className="p-4 md:p-6 pt-0 space-y-3">
                 {contact.profiles.length > 1 ? (
                   <>
-                    <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                    <Button asChild size="default" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
                       <Link href={contact.profiles[0].link} target="_blank">
                         Contato 1
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
-                    <Button asChild size="lg" variant="secondary" className="w-full">
+                    <Button asChild size="default" variant="secondary" className="w-full">
                       <Link href={contact.profiles[1].link} target="_blank">
                         Contato 2
                         <ArrowRight className="ml-2 h-4 w-4" />
@@ -119,7 +119,7 @@ export default function ContactBoosterPage() {
                     </Button>
                   </>
                 ) : (
-                  <Button asChild size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                  <Button asChild size="default" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
                     <Link href={contact.profiles[0].link} target="_blank">
                       Começar
                       <ArrowRight className="ml-2 h-4 w-4" />
