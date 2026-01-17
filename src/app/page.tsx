@@ -87,7 +87,7 @@ export default function Home() {
         <section className="bg-black py-12 sm:py-20">
           <div className="container mx-auto px-4">
              <div className="text-center mb-10 md:mb-12">
-                <h2 className="text-3xl md:text-5xl font-bold font-headline text-accent">Por que nos escolher?</h2>
+                <h2 className="text-3xl md:text-5xl font-bold font-headline text-card-foreground">Por que nos escolher?</h2>
                 <p className="mt-3 md:mt-4 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
                     Garantimos uma experiência de alto nível do início ao fim.
                 </p>
@@ -99,29 +99,24 @@ export default function Home() {
                   <Card
                     key={index}
                     className={cn(
-                      'bg-card/80 border-border/50 text-center p-4 md:p-6 flex flex-col items-center gap-3 md:gap-4 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg group',
+                      'bg-card border border-transparent text-center p-6 flex flex-col items-center gap-4 transition-all duration-300 hover:-translate-y-2 group',
                       isPremium
-                        ? 'hover:border-accent hover:shadow-accent/10'
-                        : 'hover:border-primary hover:shadow-primary/10'
+                        ? 'hover:border-accent/50 hover:shadow-accent/10 hover:shadow-lg'
+                        : 'hover:border-primary/50 hover:shadow-primary/10 hover:shadow-lg'
                     )}
                   >
                     <div
                       className={cn(
-                        'w-14 h-14 md:w-16 md:h-16 rounded-full bg-black flex items-center justify-center border-2 transition-colors',
+                        'w-16 h-16 rounded-xl flex items-center justify-center transition-colors',
                         isPremium
-                          ? 'border-accent/50 group-hover:border-accent'
-                          : 'border-primary/50 group-hover:border-primary'
+                          ? 'bg-accent/10 text-accent'
+                          : 'bg-primary/10 text-primary'
                       )}
                     >
-                      <item.icon
-                        className={cn(
-                          'h-7 w-7 md:h-8 md:w-8',
-                          isPremium ? 'text-accent' : 'text-primary'
-                        )}
-                      />
+                      <item.icon className="h-8 w-8" />
                     </div>
-                    <h3 className="text-lg md:text-xl font-semibold text-card-foreground">{item.text}</h3>
-                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                    <h3 className="text-xl font-bold text-card-foreground">{item.text}</h3>
+                    <p className="text-sm text-muted-foreground text-balance">{item.description}</p>
                   </Card>
                 );
               })}
