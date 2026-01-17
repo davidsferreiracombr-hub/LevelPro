@@ -12,24 +12,28 @@ export default function GamesPage() {
       imageUrl: 'https://i.imgur.com/9WbMrpf.png',
       imageHint: 'soldier battle',
       summary: 'O valor varia com o tempo, dificuldade e dedicação exigida.',
+      price: '20,00',
     },
     {
       name: '⭐ Brawl Stars',
       imageUrl: 'https://i.imgur.com/eqAsbOD.png',
       imageHint: 'cartoon fight',
       summary: 'Serviços que exigem mais tempo, habilidade e dedicação custam mais.',
+      price: '15,00',
     },
     {
       name: '👑 Clash Royale',
       imageUrl: 'https://i.imgur.com/SjS2DnD.png',
       imageHint: 'castle fantasy',
       summary: 'Progresso rápido e menor complexidade resultam em um valor mais justo.',
+      price: '15,00',
     },
     {
       name: '🚗 Drive Zone',
       imageUrl: 'https://i.imgur.com/sjmlTL6.png',
       imageHint: 'racing car',
       summary: 'Serviços mais completos e trabalhosos têm um valor maior.',
+      price: '20,00',
     },
   ];
 
@@ -52,7 +56,7 @@ export default function GamesPage() {
         <div className="absolute inset-0 bg-background/80 z-10" />
         <div className="relative z-20 space-y-12 container mx-auto px-4 pt-24 pb-12">
             <div className="text-center">
-                <h1 className="text-4xl md:text-5xl font-bold font-headline text-white">Jogos Suportados</h1>
+                <h1 className="text-4xl md:text-5xl font-bold font-headline text-white">Games Populares</h1>
                 <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
                 Apoiamos uma vasta gama de jogos populares. Veja os detalhes de cada serviço.
                 </p>
@@ -75,7 +79,7 @@ export default function GamesPage() {
                         <div className="p-4 space-y-3 flex flex-col flex-grow">
                             <CardTitle className="text-base font-bold font-headline">{game.name}</CardTitle>
                             <p className="text-xs text-muted-foreground flex-grow text-balance">{game.summary}</p>
-                            <p className="text-sm font-bold text-foreground pt-2 mt-auto border-t border-border">A partir de <span className="text-accent">R$ 20,00</span></p>
+                            <p className="text-sm font-bold text-foreground pt-2 mt-auto border-t border-border">A partir de <span className="text-accent">R$ {game.price}</span></p>
                         </div>
                     </CardContent>
                 </Card>
