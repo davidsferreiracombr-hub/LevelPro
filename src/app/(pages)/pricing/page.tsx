@@ -155,7 +155,7 @@ export default function ContactBoosterPage() {
         data-ai-hint="abstract background"
       />
       <Image
-        src="https://i.imgur.com/Bewcdqn.png"
+        src="https://i.imgur.com/Iyqjxgp.png"
         alt="Fundo abstrato mobile"
         fill
         className="md:hidden object-cover object-center z-0"
