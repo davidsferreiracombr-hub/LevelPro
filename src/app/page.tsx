@@ -101,7 +101,7 @@ export default function Home() {
                   <Card
                     key={index}
                     className={cn(
-                      "bg-accent text-accent-foreground text-left p-6 transition-all duration-300 hover:-translate-y-1 rounded-xl group"
+                      "bg-accent text-accent-foreground text-left p-6 rounded-xl group transition-transform duration-300 hover:-translate-y-1 shadow-[0_0_15px_hsl(var(--accent))]"
                     )}
                   >
                     <div className="space-y-4">
