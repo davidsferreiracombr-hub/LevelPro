@@ -31,7 +31,7 @@ export default function Header() {
           </div>
 
           <Link href="/" className="justify-self-center">
-            <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={80} height={20} className="object-contain h-auto" />
+            <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={80} height={20} className="object-contain h-auto w-[70px] md:w-[80px]" />
           </Link>
 
           <div className="flex items-center justify-end gap-2">
