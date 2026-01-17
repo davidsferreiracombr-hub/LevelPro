@@ -10,7 +10,7 @@ export default function ContactBoosterPage() {
   const contacts = [
     {
       title: 'Free Fire & Clash Royale',
-      description: 'Contato exclusivo para quem joga Free Fire ou Clash Royale.',
+      description: 'Temos 2 Boosters disponíveis. O primeiro é especialista em ranqueadas, pronto para te levar ao topo. O segundo é focado em evolução rápida de contas e personagens.',
       profiles: [
         {
           name: 'Booster 1',
@@ -26,7 +26,7 @@ export default function ContactBoosterPage() {
     },
     {
       title: 'Drive Zone & Brawl Stars',
-      description: 'Contato dedicado para jogadores de Drive Zone e Brawl Stars.',
+      description: 'Temos 2 Boosters disponíveis. O primeiro é veterano em jogos de corrida, mestre em otimização de carros. O segundo é especialista em Brawl Stars, rápido e eficiente na subida de troféus.',
       profiles: [
         {
           name: 'Booster 3',
@@ -42,7 +42,7 @@ export default function ContactBoosterPage() {
     },
     {
       title: 'Contato Geral',
-      description: 'Para outros jogos ou se você joga vários da nossa lista.',
+      description: 'Nosso booster geral está pronto para atender qualquer jogo da nossa lista com a mesma qualidade e eficiência.',
       profiles: [
         {
           name: 'General Booster',
@@ -54,7 +54,7 @@ export default function ContactBoosterPage() {
   ];
 
   return (
-    <div className="relative overflow-hidden min-h-screen">
+    <div className="relative overflow-hidden min-h-[calc(100vh_-_theme(spacing.16))]">
       <Image
         src="https://i.imgur.com/CE1pl3a.png"
         alt="Fundo abstrato"
@@ -62,15 +62,15 @@ export default function ContactBoosterPage() {
         className="hidden md:block object-cover object-center z-0"
         data-ai-hint="abstract background"
       />
-      <Image
+       <Image
         src="https://i.imgur.com/FKfESU8.png"
         alt="Fundo abstrato mobile"
         fill
         className="md:hidden object-cover object-center z-0"
         data-ai-hint="abstract background"
       />
-      <div className="absolute inset-0 bg-background/70 z-10" />
-      <div className="relative z-20 space-y-10 md:space-y-16 py-8 pt-24 container mx-auto px-4">
+      <div className="absolute inset-0 bg-background/80 z-10" />
+      <div className="relative z-20 space-y-10 md:space-y-16 pt-24 md:pt-32 pb-12 container mx-auto px-4">
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl font-bold font-headline text-white uppercase">
             Entre em Contato com seu Booster
@@ -83,26 +83,24 @@ export default function ContactBoosterPage() {
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {contacts.map((contact, index) => (
             <Card key={index} className="bg-black/40 border border-white/10 hover:border-accent/50 transition-all duration-300 flex flex-col text-center rounded-xl overflow-hidden">
-              <CardHeader className="items-center p-4 md:p-6">
+              <CardHeader className="items-center p-4 pt-6 md:p-6">
                 <div className="flex -space-x-4 mb-4">
                   {contact.profiles.map((profile) => (
                     <Image
                       key={profile.name}
                       src={profile.imageUrl}
                       alt={`Foto de perfil de ${profile.name}`}
-                      width={64}
-                      height={64}
-                      className="w-16 h-16 rounded-full border-2 border-black/50 bg-card"
+                      width={48}
+                      height={48}
+                      className="w-12 h-12 rounded-full border-2 border-black/50 bg-card"
                       data-ai-hint="profile picture"
                     />
                   ))}
                 </div>
                 <CardTitle className="text-lg font-semibold text-primary-foreground">{contact.title}</CardTitle>
               </CardHeader>
-              <CardContent className="flex-grow px-4 md:px-6 pb-4 md:pb-6 pt-0">
-                <p className="text-muted-foreground text-sm text-balance">{contact.description}</p>
-              </CardContent>
-              <div className="p-4 md:p-6 pt-0 space-y-3">
+              <CardContent className="flex-grow flex flex-col justify-end px-4 md:px-6 pb-4 md:pb-6 pt-0 space-y-3">
+                 <p className="text-muted-foreground text-sm text-balance flex-grow">{contact.description}</p>
                 {contact.profiles.length > 1 ? (
                   <>
                     <Button asChild size="sm" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
@@ -126,7 +124,7 @@ export default function ContactBoosterPage() {
                     </Link>
                   </Button>
                 )}
-              </div>
+              </CardContent>
             </Card>
           ))}
         </div>
