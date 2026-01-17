@@ -71,20 +71,23 @@ export default function ContactBoosterPage() {
             className={`bg-black/70 backdrop-blur-sm border rounded-xl transition-all duration-300 hover:-translate-y-2 ${contact.borderColor} ${contact.shadowColor} ${contact.hoverBorderColor} ${contact.hoverShadowColor}`}
           >
             <CardHeader className="items-center text-center p-6">
-              <div className="flex justify-center items-center h-32 mb-4">
+              <div className="flex justify-center items-center h-40 mb-4">
                 {contact.avatarLayout === 'side-by-side' && (
-                  <div className="flex -space-x-8">
+                  <div className="flex w-full justify-evenly items-center">
                     {contact.avatars.map((avatar, i) => (
-                       <div key={i} className={`relative w-20 h-20 rounded-full p-1 bg-gradient-to-tr shadow-md ${contact.avatarRingColor} ${contact.avatarShadow}`}>
-                        <Image
-                          src={avatar}
-                          alt="Booster profile picture"
-                          width={80}
-                          height={80}
-                          className="rounded-full object-cover border-2 border-background"
-                          data-ai-hint={contact.avatarHint}
-                        />
-                       </div>
+                      <div key={i} className="flex flex-col items-center gap-2">
+                        <div className={`relative w-20 h-20 rounded-full p-1 bg-gradient-to-tr shadow-md ${contact.avatarRingColor} ${contact.avatarShadow}`}>
+                          <Image
+                            src={avatar}
+                            alt="Booster profile picture"
+                            width={80}
+                            height={80}
+                            className="rounded-full object-cover border-2 border-background"
+                            data-ai-hint={contact.avatarHint}
+                          />
+                        </div>
+                        <span className="text-sm font-semibold text-white">Contato {i + 1}</span>
+                      </div>
                     ))}
                   </div>
                 )}
