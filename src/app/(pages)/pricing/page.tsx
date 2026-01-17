@@ -54,7 +54,7 @@ export default function ContactBoosterPage() {
   ];
 
   return (
-    <div className="relative overflow-hidden min-h-[calc(100vh-15rem)] flex items-center justify-center rounded-xl">
+    <div className="relative overflow-hidden h-screen flex items-center justify-center">
       <Image
         src="https://i.imgur.com/CE1pl3a.png"
         alt="Fundo abstrato"
@@ -63,7 +63,7 @@ export default function ContactBoosterPage() {
         data-ai-hint="abstract background"
       />
       <div className="absolute inset-0 bg-background/70 z-10" />
-      <div className="relative z-20 space-y-16 py-8">
+      <div className="relative z-20 space-y-16 py-8 container mx-auto px-4">
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl font-bold font-headline text-white uppercase">
             Entre em Contato com seu Booster
@@ -73,7 +73,7 @@ export default function ContactBoosterPage() {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           {contacts.map((contact, index) => (
             <Card key={index} className="bg-card/70 border border-border/50 hover:border-accent hover:bg-card/90 transition-all duration-300 flex flex-col text-center backdrop-blur-sm">
               <CardHeader className="items-center">
