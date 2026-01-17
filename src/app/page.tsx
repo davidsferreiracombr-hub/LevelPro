@@ -103,8 +103,8 @@ export default function Home() {
                     className={cn(
                       "text-left p-6 rounded-xl group transition-transform duration-300 hover:-translate-y-1",
                       index === infoBarItems.length - 1
-                        ? "bg-primary text-primary-foreground shadow-[0_0_15px_hsl(var(--primary))]"
-                        : "bg-accent text-accent-foreground shadow-[0_0_15px_hsl(var(--accent))]"
+                        ? "bg-accent text-accent-foreground shadow-[0_0_15px_hsl(var(--accent))]"
+                        : "bg-card text-foreground border border-border"
                     )}
                   >
                     <div className="space-y-4">
@@ -112,7 +112,7 @@ export default function Home() {
                           "w-12 h-12 rounded-lg flex items-center justify-center bg-black/10 transition-colors duration-300 group-hover:bg-black/20",
                            index === infoBarItems.length - 1
                             ? ""
-                            : "text-accent-foreground"
+                            : "text-accent"
                         )}>
                             <item.icon className="h-6 w-6" />
                         </div>
