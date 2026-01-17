@@ -22,8 +22,8 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm">
       <div className="container mx-auto px-6 h-14 flex justify-between items-center">
-        <Link href="/" className="flex items-center">
-          <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={60} height={15} className="object-contain" />
+        <Link href="/" className="flex items-center pl-4">
+          <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={80} height={20} className="object-contain" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
@@ -52,7 +52,7 @@ export default function Header() {
               <div className="flex flex-col h-full">
                 <div className="flex justify-between items-center border-b pb-4">
                   <Link href="/" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
-                     <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={60} height={15} className="object-contain" />
+                     <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={80} height={20} className="object-contain" />
                   </Link>
                   <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
                     <X className="h-6 w-6" />
