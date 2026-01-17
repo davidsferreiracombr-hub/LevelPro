@@ -83,7 +83,7 @@ export default function GamesPage() {
     },
     {
       name: '🚗 Drive Zone',
-      imageUrl: 'https://picsum.photos/seed/drivezone/400/225',
+      imageUrl: 'https://i.imgur.com/sjmlTL6.png',
       imageHint: 'racing car',
       description: (
         <div className="space-y-3 text-left">
