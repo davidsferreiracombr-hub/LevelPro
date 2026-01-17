@@ -76,9 +76,12 @@ export default function Home() {
                 Serviço profissional para upar contas de jogos mobile com rapidez, segurança e total sigilo.
               </p>
              
-              <div className="flex justify-center pt-6">
+              <div className="flex flex-col items-center gap-4 pt-6">
                 <Button asChild size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 transition-colors duration-300 animate-pulse-strong">
                   <Link href="/games">Começar agora</Link>
+                </Button>
+                <Button asChild variant="outline" className="w-full sm:w-auto bg-transparent border-foreground/30 text-foreground/80 hover:bg-foreground/10 hover:text-foreground">
+                  <Link href="/how-it-works">Como funciona</Link>
                 </Button>
               </div>
             </div>
