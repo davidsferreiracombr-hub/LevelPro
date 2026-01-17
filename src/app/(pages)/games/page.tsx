@@ -1,5 +1,7 @@
 import { Card, CardContent, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'Jogos | LevelPro Accelerator',
@@ -84,6 +86,12 @@ export default function GamesPage() {
                     </CardContent>
                 </Card>
                 ))}
+            </div>
+
+            <div className="text-center">
+                <Button asChild size="lg" className="bg-white text-black hover:bg-white/90 transition-transform duration-300 hover:scale-105 shadow-[0_0_15px_rgba(255,255,255,0.5)] hover:shadow-[0_0_25px_rgba(255,255,0.7)]">
+                    <Link href="/pricing">Continuar</Link>
+                </Button>
             </div>
         </div>
     </div>
