@@ -99,7 +99,7 @@ export default function Home() {
                   <Card
                     key={index}
                     className={cn(
-                      'bg-card border border-transparent text-center p-6 flex flex-col items-center gap-4 transition-all duration-300 hover:-translate-y-2 group',
+                      'bg-card border border-white/10 text-left p-8 flex flex-col items-start gap-6 transition-all duration-300 hover:-translate-y-2 group rounded-3xl',
                       isPremium
                         ? 'hover:border-accent/50 hover:shadow-accent/10 hover:shadow-lg'
                         : 'hover:border-primary/50 hover:shadow-primary/10 hover:shadow-lg'
@@ -107,16 +107,18 @@ export default function Home() {
                   >
                     <div
                       className={cn(
-                        'w-16 h-16 rounded-xl flex items-center justify-center transition-colors',
+                        'w-14 h-14 rounded-2xl flex items-center justify-center transition-colors',
                         isPremium
                           ? 'bg-accent/10 text-accent'
                           : 'bg-primary/10 text-primary'
                       )}
                     >
-                      <item.icon className="h-8 w-8" />
+                      <item.icon className="h-7 w-7" />
                     </div>
-                    <h3 className="text-xl font-bold text-card-foreground">{item.text}</h3>
-                    <p className="text-sm text-muted-foreground text-balance">{item.description}</p>
+                    <div className="space-y-2">
+                        <h3 className="text-xl font-bold text-card-foreground">{item.text}</h3>
+                        <p className="text-sm text-muted-foreground text-balance">{item.description}</p>
+                    </div>
                   </Card>
                 );
               })}
