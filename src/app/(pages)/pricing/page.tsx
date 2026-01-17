@@ -40,9 +40,9 @@ export default function ContactBoosterPage() {
         data-ai-hint="abstract background"
       />
       <div className="absolute inset-0 bg-background/80 z-10" />
-      <div className="relative z-20 space-y-10 md:space-y-16 pt-20 md:pt-32 pb-12 container mx-auto px-4">
+      <div className="relative z-20 space-y-10 md:space-y-16 pt-12 sm:pt-20 md:pt-32 pb-12 container mx-auto px-4">
         <div className="text-center">
-          <h1 className="text-3xl md:text-5xl font-bold font-headline text-white uppercase">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold font-headline text-white uppercase">
             ENTRE EM CONTATO COM A NOSSA EQUIPE
           </h1>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -54,7 +54,7 @@ export default function ContactBoosterPage() {
           {contacts.map((contact, index) => (
             <Card
               key={index}
-              className="bg-card/70 backdrop-blur-md border border-zinc-800 w-full max-w-md text-center p-8 rounded-2xl transition-all duration-300 hover:border-accent hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-2 flex flex-col items-center"
+              className="bg-card/70 backdrop-blur-md border border-zinc-800 w-11/12 sm:w-full max-w-md text-center p-6 sm:p-8 rounded-2xl transition-all duration-300 hover:border-accent hover:shadow-2xl hover:shadow-accent/20 hover:-translate-y-2 flex flex-col items-center"
             >
               <div className="relative mb-6">
                   <Image
