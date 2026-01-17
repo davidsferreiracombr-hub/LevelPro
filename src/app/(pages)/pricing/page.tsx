@@ -56,7 +56,7 @@ export default function ContactBoosterPage() {
   return (
     <div className="space-y-12">
       <div className="text-center">
-        <h1 className="text-4xl md:text-5xl font-bold font-headline text-accent uppercase">
+        <h1 className="text-4xl md:text-5xl font-bold font-headline text-white uppercase">
           ENTRE EM CONTATO COM SEU BOOSTER
         </h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
