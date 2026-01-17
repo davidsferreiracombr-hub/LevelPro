@@ -7,12 +7,10 @@ export const metadata = {
 
 export default function GamesPage() {
   const games = [
-    { name: 'Arena of Valor', imageUrl: 'https://picsum.photos/seed/aov/400/300', imageHint: 'fantasy battle' },
-    { name: 'Genshin Impact', imageUrl: 'https://picsum.photos/seed/genshin/400/300', imageHint: 'anime adventure' },
-    { name: 'Clash Royale', imageUrl: 'https://picsum.photos/seed/clash/400/300', imageHint: 'castle fantasy' },
-    { name: 'Brawl Stars', imageUrl: 'https://picsum.photos/seed/brawl/400/300', imageHint: 'cartoon fight' },
-    { name: 'PUBG Mobile', imageUrl: 'https://picsum.photos/seed/pubg/400/300', imageHint: 'soldier battleground' },
-    { name: 'League of Legends: Wild Rift', imageUrl: 'https://picsum.photos/seed/wildrift/400/300', imageHint: 'fantasy moba' },
+    { name: 'Free Fire', imageUrl: 'https://picsum.photos/seed/freefire/400/300', imageHint: 'soldier battle' },
+    { name: 'Brawl Stars', imageUrl: 'https://picsum.photos/seed/brawlstars/400/300', imageHint: 'cartoon fight' },
+    { name: 'Clash Royale', imageUrl: 'https://picsum.photos/seed/clashroyale/400/300', imageHint: 'castle fantasy' },
+    { name: 'Drive Zone', imageUrl: 'https://picsum.photos/seed/drivezone/400/300', imageHint: 'racing car' },
   ];
 
   return (
@@ -24,7 +22,7 @@ export default function GamesPage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {games.map((game) => (
           <Card key={game.name} className="overflow-hidden bg-card border-border hover:border-accent transition-all duration-300 group">
             <CardHeader className="p-0">
