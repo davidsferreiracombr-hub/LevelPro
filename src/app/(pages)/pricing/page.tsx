@@ -99,15 +99,15 @@ export default function ContactBoosterPage() {
               className="bg-black/50 border border-white/10 hover:border-accent/50 transition-all duration-300 flex flex-col text-center rounded-xl overflow-hidden"
             >
               <CardHeader className="items-center p-4 pt-6 md:p-5">
-                <div className="flex -space-x-2 mb-4">
+                <div className="flex -space-x-4 mb-4">
                   {contact.profiles.map((profile) => (
                     <Image
                       key={profile.name}
                       src={profile.imageUrl}
                       alt={`Foto de perfil de ${profile.name}`}
-                      width={32}
-                      height={32}
-                      className="w-8 h-8 rounded-full border-2 border-black/50 bg-card"
+                      width={48}
+                      height={48}
+                      className="w-12 h-12 rounded-full border-2 border-black/50 bg-card"
                       data-ai-hint="profile picture"
                     />
                   ))}
@@ -117,35 +117,67 @@ export default function ContactBoosterPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="flex-grow flex flex-col justify-between px-4 md:px-5 pb-4 md:pb-5 pt-0">
-                <Carousel
-                  opts={{ loop: contact.profiles.length > 1 }}
-                  className="w-full max-w-xs mx-auto"
-                >
-                  <CarouselContent>
-                    {contact.profiles.map((profile, profileIndex) => (
-                      <CarouselItem key={profileIndex}>
-                        <div className="flex flex-col items-center justify-between h-full space-y-4 py-1">
-                           <div className="text-center space-y-2 h-48 flex flex-col justify-center">
-                             <p className="font-bold text-sm text-foreground">{profile.name}</p>
-                            <p className="text-muted-foreground text-xs text-balance">
-                              {profile.description}
-                            </p>
-                          </div>
-                          <Button
-                            asChild
-                            size="sm"
-                            className="w-full text-xs h-8 bg-accent text-accent-foreground hover:bg-accent/90"
-                          >
-                            <Link href={profile.link} target="_blank">
-                              Entrar em Contato
-                              <ArrowRight className="ml-2 h-3 w-3" />
-                            </Link>
-                          </Button>
-                        </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                </Carousel>
+                {contact.profiles.length > 1 ? (
+                  <>
+                    <Carousel
+                      opts={{ loop: true }}
+                      className="w-full max-w-xs mx-auto"
+                    >
+                      <CarouselContent>
+                        {contact.profiles.map((profile, profileIndex) => (
+                          <CarouselItem key={profileIndex}>
+                            <div className="flex flex-col items-center justify-between h-full space-y-2 py-1">
+                              <div className="text-center space-y-2 min-h-[12rem] flex flex-col justify-center">
+                                <p className="font-bold text-sm text-foreground">
+                                  Contato {profileIndex + 1}
+                                </p>
+                                <p className="text-muted-foreground text-xs text-balance">
+                                  {profile.description}
+                                </p>
+                              </div>
+                            </div>
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                    </Carousel>
+                    <div className="space-y-2 mt-4">
+                      {contact.profiles.map((profile, profileIndex) => (
+                        <Button
+                          key={profileIndex}
+                          asChild
+                          size="sm"
+                          className="w-full text-xs h-8 bg-accent text-accent-foreground hover:bg-accent/90"
+                        >
+                          <Link href={profile.link} target="_blank">
+                            Contato {profileIndex + 1}
+                            <ArrowRight className="ml-2 h-3 w-3" />
+                          </Link>
+                        </Button>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <div className="flex flex-col items-center justify-between h-full space-y-4 py-1">
+                    <div className="text-center space-y-2 min-h-[12rem] flex flex-col justify-center">
+                      <p className="font-bold text-sm text-foreground">
+                        {contact.profiles[0].name}
+                      </p>
+                      <p className="text-muted-foreground text-xs text-balance">
+                        {contact.profiles[0].description}
+                      </p>
+                    </div>
+                    <Button
+                      asChild
+                      size="sm"
+                      className="w-full text-xs h-8 bg-accent text-accent-foreground hover:bg-accent/90"
+                    >
+                      <Link href={contact.profiles[0].link} target="_blank">
+                        Entrar em Contato
+                        <ArrowRight className="ml-2 h-3 w-3" />
+                      </Link>
+                    </Button>
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))}
