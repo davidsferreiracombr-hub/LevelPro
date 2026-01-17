@@ -15,7 +15,7 @@ export default function GamesPage() {
   const games = [
     {
       name: 'Free Fire',
-      imageUrl: 'https://picsum.photos/seed/freefire/400/225',
+      imageUrl: 'https://i.imgur.com/9WbMrpf.png',
       imageHint: 'soldier battle',
       description: (
         <div className="space-y-3 text-left">
@@ -63,7 +63,7 @@ export default function GamesPage() {
     },
     {
       name: '👑 Clash Royale',
-      imageUrl: 'https://picsum.photos/seed/clashroyale/400/225',
+      imageUrl: 'https://i.imgur.com/SjS2DnD.png',
       imageHint: 'castle fantasy',
       description: (
         <div className="space-y-3 text-left">
