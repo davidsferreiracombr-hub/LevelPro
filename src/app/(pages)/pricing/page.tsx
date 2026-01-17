@@ -187,7 +187,10 @@ export default function ContactBoosterPage() {
                       alt={`Foto de perfil de ${profile.name}`}
                       width={80}
                       height={80}
-                      className="w-20 h-20 rounded-full border-2 border-black/50 bg-card object-cover"
+                      className={cn(
+                        'w-20 h-20 rounded-full border-2 border-black/50 bg-card object-cover',
+                        profile.name === 'Booster 1' && 'object-bottom'
+                      )}
                       data-ai-hint="profile picture"
                     />
                   ))}
