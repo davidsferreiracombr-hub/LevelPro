@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function Footer() {
   const socialLinks = [
-    { icon: Instagram, href: '#', name: 'Instagram', colorClass: 'hover:text-[#E1306C]' },
+    { icon: Instagram, href: 'https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==', name: 'Instagram', colorClass: 'hover:text-[#E1306C]' },
     { icon: Facebook, href: '#', name: 'Facebook', colorClass: 'hover:text-[#1877F2]' },
   ];
 
