@@ -1,95 +1,11 @@
 'use client';
 import * as React from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  type CarouselApi,
-} from '@/components/ui/carousel';
+import { Mail } from 'lucide-react';
 import { cn } from '@/lib/utils';
-
-// This component will handle the carousel with indicators
-function BoosterCarousel({
-  profiles,
-}: {
-  profiles: Array<{ name: string; description: string; link: string }>;
-}) {
-  const [api, setApi] = React.useState<CarouselApi>();
-  const [current, setCurrent] = React.useState(0);
-
-  React.useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCurrent(api.selectedScrollSnap());
-    api.on('select', () => {
-      setCurrent(api.selectedScrollSnap());
-    });
-  }, [api]);
-
-  return (
-    <>
-      <Carousel
-        setApi={setApi}
-        opts={{ loop: true }}
-        className="w-full max-w-xs mx-auto"
-      >
-        <CarouselContent>
-          {profiles.map((profile, profileIndex) => (
-            <CarouselItem key={profileIndex}>
-              <div className="flex flex-col items-center justify-between h-full space-y-2 py-1">
-                <div className="text-center space-y-1 min-h-[12rem] flex flex-col justify-center">
-                  <p className="font-bold text-sm text-foreground">
-                    Contato {profileIndex + 1}
-                  </p>
-                  <p className="text-muted-foreground text-xs text-balance">
-                    {profile.description}
-                  </p>
-                </div>
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-      </Carousel>
-      <div className="flex items-center justify-center gap-2 mt-2">
-        {profiles.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => api?.scrollTo(i)}
-            className={cn(
-              'h-2 w-2 rounded-full transition-all',
-              i === current
-                ? 'w-4 bg-accent'
-                : 'bg-muted hover:bg-muted-foreground/50'
-            )}
-            aria-label={`Go to slide ${i + 1}`}
-          />
-        ))}
-      </div>
-      <div className="space-y-2 mt-3">
-        {profiles.map((profile, profileIndex) => (
-          <Button
-            key={profileIndex}
-            asChild
-            size="lg"
-            className="w-full bg-black/50 text-foreground hover:bg-black/70 border border-white hover:border-white hover:shadow-[0_0_10px_rgba(255,255,255,0.4)] transition-all duration-300 hover:scale-105"
-          >
-            <Link href={profile.link} target="_blank">
-              Contato {profileIndex + 1}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
-          </Button>
-        ))}
-      </div>
-    </>
-  );
-}
 
 export default function ContactBoosterPage() {
   const contacts = [
@@ -138,51 +54,47 @@ export default function ContactBoosterPage() {
           {contacts.map((contact, index) => (
             <Card
               key={index}
-              className="bg-black/50 border border-white w-full md:max-w-sm hover:border-white hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-all duration-300 flex flex-col text-center rounded-xl overflow-hidden group hover:-translate-y-2"
+              className="relative bg-zinc-900/95 border border-zinc-800 w-full md:max-w-sm transition-all duration-300 flex flex-col rounded-2xl overflow-hidden group hover:border-zinc-700 shadow-lg shadow-black/30"
             >
-              <CardHeader className="items-center p-6 pb-2">
-                <div className={cn("flex mb-3 transition-transform duration-300 group-hover:scale-105 justify-center")}>
+              <div className="absolute inset-0 bg-[url('https://i.imgur.com/eqAsbOD.png')] bg-cover bg-center opacity-[0.02] group-hover:opacity-[0.03] transition-opacity duration-300"></div>
+              <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white/[.04] to-transparent pointer-events-none"></div>
+
+              <div className="relative flex-grow flex flex-col p-6">
+                <div className="flex items-center gap-4">
+                  <div className="bg-zinc-800/50 rounded-full p-1 border border-zinc-700 flex-shrink-0">
                     <Image
                       src={contact.profiles[0].imageUrl}
                       alt={`Foto de perfil de ${contact.profiles[0].name}`}
-                      width={80}
-                      height={80}
-                      className={cn(
-                        'w-20 h-20 rounded-full border-2 border-black/50 bg-card object-cover object-center'
-                      )}
+                      width={48}
+                      height={48}
+                      className='w-12 h-12 rounded-full object-cover'
                       data-ai-hint="profile picture"
                     />
-                </div>
-                <CardTitle className="text-base font-semibold text-primary-foreground">
-                  {contact.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow flex flex-col justify-between px-6 pb-6 pt-2">
-                {contact.profiles.length > 1 ? (
-                  <BoosterCarousel profiles={contact.profiles} />
-                ) : (
-                  <div className="flex flex-col items-center justify-between h-full space-y-2 py-1">
-                    <div className="text-center space-y-1 min-h-[12rem] flex flex-col justify-center">
-                      <p className="font-bold text-sm text-foreground">
-                        {contact.profiles[0].name}
-                      </p>
-                      <p className="text-muted-foreground text-xs text-balance">
-                        {contact.profiles[0].description}
-                      </p>
-                    </div>
-                    <Button
-                      asChild
-                      size="lg"
-                      className="w-full bg-black/50 text-foreground hover:bg-black/70 border border-white hover:border-white hover:shadow-[0_0_10px_rgba(255,255,255,0.4)] transition-all duration-300 hover:scale-105"
-                    >
-                      <Link href={contact.profiles[0].link} target="_blank">
-                        Entrar em Contato
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
                   </div>
-                )}
-              </CardContent>
+                  <div>
+                    <CardTitle className="text-xl font-bold text-foreground">{contact.title}</CardTitle>
+                    <p className="text-sm text-muted-foreground">{contact.profiles[0].name}</p>
+                  </div>
+                </div>
+                
+                <p className="text-sm text-muted-foreground mt-6 flex-grow">
+                  {contact.profiles[0].description}
+                </p>
+
+                <div className="mt-8">
+                  <h4 className="text-base font-semibold text-foreground">Entre em contato</h4>
+                  <Button
+                    asChild
+                    size="lg"
+                    className="w-full mt-3 bg-zinc-800 text-zinc-300 hover:bg-zinc-700 hover:text-white transition-colors border border-zinc-700 hover:border-zinc-600"
+                  >
+                    <Link href={contact.profiles[0].link} target="_blank">
+                      <Mail className="mr-2 h-4 w-4" />
+                      Entrar em contato
+                    </Link>
+                  </Button>
+                </div>
+              </div>
             </Card>
           ))}
         </div>
