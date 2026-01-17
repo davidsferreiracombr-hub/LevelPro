@@ -1,17 +1,46 @@
+'use client';
+
 import Link from 'next/link';
 import { Bot, Home, LogOut, Package, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import Image from 'next/image';
+import { useUser, useFirebase } from '@/firebase';
+import { logOut } from '@/firebase/auth';
+import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
+import { Loader2 } from 'lucide-react';
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+  const { user, loading } = useUser();
+  const { auth } = useFirebase();
+  const router = useRouter();
 
+  useEffect(() => {
+    if (!loading && !user) {
+      router.push('/login');
+    }
+  }, [user, loading, router]);
+
+  const handleLogout = async () => {
+    await logOut(auth);
+    router.push('/');
+  };
+  
   const navItems = [
     { href: '/dashboard', label: 'Visão Geral', icon: Home },
     { href: '/dashboard/recommendations', label: 'Recomendações IA', icon: Bot },
     { href: '#', label: 'Meus Pedidos', icon: Package },
     { href: '#', label: 'Configurações', icon: Settings },
   ];
+
+  if (loading || !user) {
+    return (
+      <div className="flex justify-center items-center min-h-screen bg-card">
+        <Loader2 className="h-12 w-12 animate-spin text-accent" />
+      </div>
+    );
+  }
 
   return (
     <div className="flex min-h-screen bg-card">
@@ -34,7 +63,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           ))}
         </nav>
         <div className="p-4 border-t border-border/50">
-            <Button variant="ghost" className="w-full justify-start gap-3 text-muted-foreground hover:text-foreground">
+            <Button variant="ghost" className="w-full justify-start gap-3 text-muted-foreground hover:text-foreground" onClick={handleLogout}>
                 <LogOut className="h-5 w-5" />
                 <span>Sair</span>
             </Button>
@@ -49,10 +78,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             </div>
             <div className="flex-1" />
             <div className="flex items-center gap-4">
-                <span className="text-sm font-medium hidden sm:inline">User Name</span>
+                <span className="text-sm font-medium hidden sm:inline">{user.displayName || user.email}</span>
                 <Avatar>
-                    <AvatarImage src="https://picsum.photos/seed/avatar/100/100" data-ai-hint="person avatar"/>
-                    <AvatarFallback>UN</AvatarFallback>
+                    <AvatarImage src={user.photoURL ?? "https://picsum.photos/seed/avatar/100/100"} data-ai-hint="person avatar"/>
+                    <AvatarFallback>{user.displayName?.charAt(0).toUpperCase() || user.email?.charAt(0).toUpperCase()}</AvatarFallback>
                 </Avatar>
             </div>
         </header>

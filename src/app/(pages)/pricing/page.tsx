@@ -1,13 +1,32 @@
+'use client';
+
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
-
-export const metadata = {
-  title: 'Contato | LevelPro Accelerator',
-};
+import { useUser } from '@/firebase';
+import { Loader2 } from 'lucide-react';
 
 export default function ContactBoosterPage() {
+  const { user, loading } = useUser();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!loading && !user) {
+      router.push('/login');
+    }
+  }, [user, loading, router]);
+
+  if (loading || !user) {
+    return (
+      <div className="flex justify-center items-center min-h-[60vh]">
+        <Loader2 className="h-12 w-12 animate-spin text-accent" />
+      </div>
+    );
+  }
+  
   const contacts = [
     {
       title: 'Free Fire & Clash Royale',
@@ -70,18 +89,18 @@ export default function ContactBoosterPage() {
             key={index}
             className={`bg-card border rounded-xl transition-all duration-300 hover:-translate-y-1 ${contact.borderColor} ${contact.shadowColor} ${contact.hoverBorderColor} ${contact.hoverShadowColor}`}
           >
-            <CardHeader className="items-center text-center p-4">
-              <div className="flex justify-center items-center h-28 mb-3">
+            <CardHeader className="items-center text-center p-4 pt-6">
+              <div className="flex justify-center items-center h-24 mb-2">
                 {contact.avatarLayout === 'side-by-side' && (
                   <div className="flex w-full justify-evenly items-center">
                     {contact.avatars.map((avatar, i) => (
                       <div key={i} className="flex flex-col items-center gap-2">
-                        <div className={`relative w-16 h-16 rounded-full p-0.5 bg-gradient-to-tr shadow-md ${contact.avatarRingColor} ${contact.avatarShadow}`}>
+                        <div className={`relative w-14 h-14 rounded-full p-0.5 bg-gradient-to-tr shadow-md ${contact.avatarRingColor} ${contact.avatarShadow}`}>
                           <Image
                             src={avatar}
                             alt="Booster profile picture"
-                            width={64}
-                            height={64}
+                            width={56}
+                            height={56}
                             className="rounded-full object-cover border-2 border-background"
                             data-ai-hint={contact.avatarHint}
                           />
@@ -92,45 +111,45 @@ export default function ContactBoosterPage() {
                   </div>
                 )}
                  {contact.avatarLayout === 'single' && (
-                   <div className={`relative w-20 h-20 rounded-full p-1 bg-gradient-to-tr shadow-lg ${contact.avatarRingColor} ${contact.avatarShadow}`}>
+                   <div className={`relative w-16 h-16 rounded-full p-1 bg-gradient-to-tr shadow-lg ${contact.avatarRingColor} ${contact.avatarShadow}`}>
                       <Image
                         src={contact.avatars[0]}
                         alt="Booster profile picture"
-                        width={80}
-                        height={80}
+                        width={64}
+                        height={64}
                         className="rounded-full object-cover border-2 border-background"
                         data-ai-hint={contact.avatarHint}
                       />
                    </div>
                 )}
                 {contact.avatarLayout === 'single-large' && (
-                  <div className={`relative w-24 h-24 rounded-full p-1 bg-gradient-to-tr shadow-lg ${contact.avatarRingColor} ${contact.avatarShadow}`}>
+                  <div className={`relative w-20 h-20 rounded-full p-1 bg-gradient-to-tr shadow-lg ${contact.avatarRingColor} ${contact.avatarShadow}`}>
                     <Image
                       src={contact.avatars[0]}
                       alt="Booster profile picture"
-                      width={96}
-                      height={96}
+                      width={80}
+                      height={80}
                       className="rounded-full object-cover border-2 border-background"
                       data-ai-hint={contact.avatarHint}
                     />
                   </div>
                 )}
               </div>
-              <CardTitle className="text-xl font-bold font-headline text-white">{contact.title}</CardTitle>
-              <CardDescription className="text-muted-foreground text-balance text-sm pt-1">{contact.description}</CardDescription>
+              <CardTitle className="text-lg font-bold font-headline text-white">{contact.title}</CardTitle>
+              <CardDescription className="text-muted-foreground text-balance text-xs pt-1">{contact.description}</CardDescription>
             </CardHeader>
             <CardContent className="p-4 pt-0">
               {contact.avatarLayout === 'side-by-side' ? (
                 <div className="grid grid-cols-2 gap-2">
-                  <Button asChild className="w-full h-10 bg-accent text-accent-foreground font-bold text-xs transition-all duration-300 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_25px_hsl(var(--accent))] hover:scale-105">
+                  <Button asChild className="w-full h-9 bg-accent text-accent-foreground font-bold text-xs transition-all duration-300 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_25px_hsl(var(--accent))] hover:scale-105">
                     <Link href="https://wa.me/5511999998888" target="_blank">Contato 1</Link>
                   </Button>
-                  <Button asChild className="w-full h-10 bg-accent text-accent-foreground font-bold text-xs transition-all duration-300 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_25px_hsl(var(--accent))] hover:scale-105">
+                  <Button asChild className="w-full h-9 bg-accent text-accent-foreground font-bold text-xs transition-all duration-300 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_25px_hsl(var(--accent))] hover:scale-105">
                     <Link href="https://wa.me/5511999998888" target="_blank">Contato 2</Link>
                   </Button>
                 </div>
               ) : (
-                <Button asChild className="w-full h-10 bg-accent text-accent-foreground font-bold text-sm transition-all duration-300 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_25px_hsl(var(--accent))] hover:scale-105">
+                <Button asChild className="w-full h-9 bg-accent text-accent-foreground font-bold text-sm transition-all duration-300 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_25px_hsl(var(--accent))] hover:scale-105">
                   <Link href="https://wa.me/5511999998888" target="_blank">Falar com o contato</Link>
                 </Button>
               )}

@@ -8,9 +8,55 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Eye, EyeOff } from 'lucide-react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+import { signIn } from '@/firebase/auth';
+import { useFirebase } from '@/firebase';
+import { useToast } from '@/hooks/use-toast';
+import { useRouter } from 'next/navigation';
+import { LoginSchema } from '@/lib/auth-schemas';
+
+type FormData = z.infer<typeof LoginSchema>;
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
+  const { auth } = useFirebase();
+  const { toast } = useToast();
+  const router = useRouter();
+
+  const form = useForm<FormData>({
+    resolver: zodResolver(LoginSchema),
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+  });
+
+  const {
+    formState: { isSubmitting },
+  } = form;
+
+  const onSubmit = async (data: FormData) => {
+    try {
+      await signIn(auth, data);
+      toast({
+        title: 'Login bem-sucedido!',
+        description: 'Redirecionando para o seu painel.',
+      });
+      router.push('/dashboard');
+    } catch (error: any) {
+      let description = 'Ocorreu um erro desconhecido.';
+      if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password' || error.code === 'auth/invalid-credential') {
+        description = 'E-mail ou senha inválidos. Por favor, tente novamente.';
+      }
+      toast({
+        variant: 'destructive',
+        title: 'Erro no login',
+        description,
+      });
+    }
+  };
 
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center bg-background p-4 overflow-hidden">
@@ -33,10 +79,11 @@ export default function LoginPage() {
           <p className="text-muted-foreground mt-2">Faça login para subir de nível no seu jogo.</p>
         </div>
 
-        <form className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="email">Endereço de e-mail</Label>
-            <Input id="email" type="email" placeholder="seu@email.com" required className="bg-card/50 border-border/50" />
+            <Input id="email" type="email" placeholder="seu@email.com" required className="bg-card/50 border-border/50" {...form.register('email')} />
+            {form.formState.errors.email && <p className="text-sm text-destructive">{form.formState.errors.email.message}</p>}
           </div>
           <div className="space-y-2">
             <Label htmlFor="password">Senha</Label>
@@ -47,6 +94,7 @@ export default function LoginPage() {
                 placeholder="••••••••"
                 required
                 className="bg-card/50 border-border/50 pr-10"
+                {...form.register('password')}
               />
               <button
                 type="button"
@@ -57,6 +105,7 @@ export default function LoginPage() {
                 {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
             </div>
+             {form.formState.errors.password && <p className="text-sm text-destructive">{form.formState.errors.password.message}</p>}
           </div>
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
@@ -67,8 +116,8 @@ export default function LoginPage() {
               Esqueceu a senha?
             </Link>
           </div>
-          <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 h-12 text-base font-semibold">
-            Entrar
+          <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 h-12 text-base font-semibold" disabled={isSubmitting}>
+            {isSubmitting ? 'Entrando...' : 'Entrar'}
           </Button>
         </form>
 

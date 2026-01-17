@@ -7,9 +7,57 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Eye, EyeOff } from 'lucide-react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+import { signUp } from '@/firebase/auth';
+import { useFirebase } from '@/firebase';
+import { useToast } from '@/hooks/use-toast';
+import { useRouter } from 'next/navigation';
+import { RegisterSchema } from '@/lib/auth-schemas';
+
+type FormData = z.infer<typeof RegisterSchema>;
 
 export default function RegisterPage() {
   const [showPassword, setShowPassword] = useState(false);
+  const { auth, firestore } = useFirebase();
+  const { toast } = useToast();
+  const router = useRouter();
+
+  const form = useForm<FormData>({
+    resolver: zodResolver(RegisterSchema),
+    defaultValues: {
+      fullname: '',
+      email: '',
+      password: '',
+    },
+  });
+
+  const {
+    formState: { isSubmitting },
+  } = form;
+
+  const onSubmit = async (data: FormData) => {
+    try {
+      await signUp(auth, firestore, data);
+      toast({
+        title: 'Conta criada com sucesso!',
+        description: 'Redirecionando para o seu painel.',
+      });
+      router.push('/dashboard');
+    } catch (error: any) {
+      let description = 'Ocorreu um erro desconhecido.';
+      if (error.code === 'auth/email-already-in-use') {
+        description = 'Este e-mail já está em uso.';
+      }
+      toast({
+        variant: 'destructive',
+        title: 'Erro no cadastro',
+        description,
+      });
+    }
+  };
+
 
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center bg-background p-4 overflow-hidden">
@@ -32,14 +80,16 @@ export default function RegisterPage() {
           <p className="text-muted-foreground mt-2">Junte-se a nós e comece sua jornada para o pro.</p>
         </div>
 
-        <form className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <div className="space-y-2">
             <Label htmlFor="fullname">Nome Completo</Label>
-            <Input id="fullname" type="text" placeholder="Seu Nome Completo" required className="bg-card/50 border-border/50" />
+            <Input id="fullname" type="text" placeholder="Seu Nome Completo" required className="bg-card/50 border-border/50" {...form.register('fullname')} />
+            {form.formState.errors.fullname && <p className="text-sm text-destructive">{form.formState.errors.fullname.message}</p>}
           </div>
           <div className="space-y-2">
             <Label htmlFor="email">Endereço de e-mail</Label>
-            <Input id="email" type="email" placeholder="seu@email.com" required className="bg-card/50 border-border/50" />
+            <Input id="email" type="email" placeholder="seu@email.com" required className="bg-card/50 border-border/50" {...form.register('email')} />
+            {form.formState.errors.email && <p className="text-sm text-destructive">{form.formState.errors.email.message}</p>}
           </div>
           <div className="space-y-2">
             <Label htmlFor="password">Senha</Label>
@@ -50,6 +100,7 @@ export default function RegisterPage() {
                 placeholder="••••••••"
                 required
                 className="bg-card/50 border-border/50 pr-10"
+                {...form.register('password')}
               />
               <button
                 type="button"
@@ -60,10 +111,11 @@ export default function RegisterPage() {
                 {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
             </div>
+            {form.formState.errors.password && <p className="text-sm text-destructive">{form.formState.errors.password.message}</p>}
           </div>
           
-          <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 h-12 text-base font-semibold">
-            Cadastrar
+          <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 h-12 text-base font-semibold" disabled={isSubmitting}>
+            {isSubmitting ? 'Cadastrando...' : 'Cadastrar'}
           </Button>
         </form>
 
