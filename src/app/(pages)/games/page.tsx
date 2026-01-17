@@ -39,7 +39,7 @@ export default function GamesPage() {
     },
     {
       name: '⭐ Brawl Stars',
-      imageUrl: 'https://picsum.photos/seed/brawlstars/400/225',
+      imageUrl: 'https://i.imgur.com/eqAsbOD.png',
       imageHint: 'cartoon fight',
       description: (
         <div className="space-y-3 text-left">
