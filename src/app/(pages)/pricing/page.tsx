@@ -106,7 +106,7 @@ export default function ContactBoosterPage() {
         {
           name: 'Booster 2',
           imageUrl: 'https://picsum.photos/seed/booster2/100/100',
-          link: 'https://wa.me/5511999998888',
+          link: 'https://wa.me/5512992295142?text=Vim%20da%20LevelPro',
           description:
             'O Clash Royale me fisgou pela complexidade em partidas curtas e intensas. O que começou como hobby virou paixão por montar decks perfeitos e prever cada movimento do adversário. Hoje, meu foco é acelerar a evolução de contas e levar meus clientes às Ligas mais altas.',
         },
