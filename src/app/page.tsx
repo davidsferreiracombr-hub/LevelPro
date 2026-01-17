@@ -57,7 +57,7 @@ export default function Home() {
               alt={heroCharacter.description}
               fill
               priority
-              className="md:hidden object-contain object-bottom"
+              className="md:hidden object-cover object-center"
               data-ai-hint={heroCharacter.imageHint}
             />
           )}
