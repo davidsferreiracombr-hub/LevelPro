@@ -1,139 +1,69 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import Image from 'next/image';
+import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
+import { Sparkles, ArrowRight } from 'lucide-react';
 
 export default function ContactBoosterPage() {
   const contacts = [
     {
       title: 'Free Fire & Clash Royale',
       description: 'Contato exclusivo para quem joga Free Fire ou Clash Royale.',
-      avatars: [
-        'https://picsum.photos/seed/booster1/100/100',
-        'https://picsum.photos/seed/booster2/100/100',
-      ],
-      avatarHint: 'pro gamer avatar',
-      avatarLayout: 'side-by-side',
-      borderColor: 'border-yellow-400/30',
-      shadowColor: 'shadow-yellow-500/10',
-      hoverBorderColor: 'hover:border-yellow-400/60',
-      hoverShadowColor: 'hover:shadow-yellow-400/30',
-      avatarRingColor: 'from-yellow-400 to-yellow-600',
-      avatarShadow: 'shadow-yellow-500/30',
+      link: 'https://wa.me/5511999998888',
     },
     {
       title: 'Drive Zone & Brawl Stars',
       description: 'Contato dedicado para jogadores de Drive Zone e Brawl Stars.',
-      avatars: ['https://picsum.photos/seed/booster3/100/100'],
-      avatarHint: 'pro gamer avatar',
-      avatarLayout: 'single',
-      borderColor: 'border-yellow-400/30',
-      shadowColor: 'shadow-yellow-500/10',
-      hoverBorderColor: 'hover:border-yellow-400/60',
-      hoverShadowColor: 'hover:shadow-yellow-400/30',
-      avatarRingColor: 'from-yellow-400 to-yellow-600',
-      avatarShadow: 'shadow-yellow-500/40',
+      link: 'https://wa.me/5511999998888',
     },
     {
       title: 'Contato para jogo único',
       description: 'Escolha esse contato se você joga apenas um jogo específico.',
-      avatars: ['https://picsum.photos/seed/booster4/120/120'],
-      avatarHint: 'pro gamer avatar',
-      avatarLayout: 'single-large',
-      borderColor: 'border-red-500/30',
-      shadowColor: 'shadow-red-500/10',
-      hoverBorderColor: 'hover:border-red-500/60',
-      hoverShadowColor: 'hover:shadow-red-500/30',
-      avatarRingColor: 'from-red-500 to-yellow-500',
-      avatarShadow: 'shadow-red-500/50',
+      link: 'https://wa.me/5511999998888',
     },
   ];
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-16">
       <div className="text-center">
         <h1 className="text-4xl md:text-5xl font-bold font-headline text-white uppercase">
-          ENTRE EM CONTATO COM SEU BOOSTER
+          Entre em Contato com seu Booster
         </h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
           Escolha o contato de acordo com o jogo que você deseja upar.
         </p>
       </div>
 
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
         {contacts.map((contact, index) => (
-          <Card
-            key={index}
-            className={`bg-card/50 border rounded-xl transition-all duration-300 hover:-translate-y-1 ${contact.borderColor} ${contact.shadowColor} ${contact.hoverBorderColor} ${contact.hoverShadowColor}`}
-          >
-            <CardHeader className="items-center text-center p-4 pt-6">
-              <div className="flex justify-center items-center h-24 mb-2">
-                {contact.avatarLayout === 'side-by-side' && (
-                  <div className="flex w-full justify-evenly items-center">
-                    {contact.avatars.map((avatar, i) => (
-                      <div key={i} className="flex flex-col items-center gap-2">
-                        <div className={`relative w-14 h-14 rounded-full p-0.5 bg-gradient-to-tr shadow-md ${contact.avatarRingColor} ${contact.avatarShadow}`}>
-                          <Image
-                            src={avatar}
-                            alt="Booster profile picture"
-                            width={56}
-                            height={56}
-                            className="rounded-full object-cover border-2 border-background"
-                            data-ai-hint={contact.avatarHint}
-                          />
-                        </div>
-                        <span className="text-xs font-semibold text-white">Contato {i + 1}</span>
-                      </div>
-                    ))}
+          <div key={index} className="relative group">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
+            <Card
+              className="relative bg-black/80 backdrop-blur-lg border border-white/10 rounded-3xl text-center overflow-hidden"
+            >
+              <CardContent className="p-8 flex flex-col items-center justify-center gap-6">
+                <div className="relative w-24 h-24">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400/40 via-purple-500/40 to-pink-500/40 rounded-full blur-lg"></div>
+                  <div className="relative w-full h-full flex items-center justify-center bg-black/30 rounded-full border border-white/10">
+                    <Sparkles className="w-10 h-10 text-white" />
                   </div>
-                )}
-                 {contact.avatarLayout === 'single' && (
-                   <div className={`relative w-16 h-16 rounded-full p-1 bg-gradient-to-tr shadow-lg ${contact.avatarRingColor} ${contact.avatarShadow}`}>
-                      <Image
-                        src={contact.avatars[0]}
-                        alt="Booster profile picture"
-                        width={64}
-                        height={64}
-                        className="rounded-full object-cover border-2 border-background"
-                        data-ai-hint={contact.avatarHint}
-                      />
-                   </div>
-                )}
-                {contact.avatarLayout === 'single-large' && (
-                  <div className={`relative w-20 h-20 rounded-full p-1 bg-gradient-to-tr shadow-lg ${contact.avatarRingColor} ${contact.avatarShadow}`}>
-                    <Image
-                      src={contact.avatars[0]}
-                      alt="Booster profile picture"
-                      width={80}
-                      height={80}
-                      className="rounded-full object-cover border-2 border-background"
-                      data-ai-hint={contact.avatarHint}
-                    />
-                  </div>
-                )}
-              </div>
-              <CardTitle className="text-lg font-bold font-headline text-white">{contact.title}</CardTitle>
-              <CardDescription className="text-muted-foreground text-balance text-xs pt-1">{contact.description}</CardDescription>
-            </CardHeader>
-            <CardContent className="p-4 pt-0">
-              {contact.avatarLayout === 'side-by-side' ? (
-                <div className="grid grid-cols-2 gap-2">
-                  <Button asChild className="w-full h-9 bg-accent text-accent-foreground font-bold text-xs transition-all duration-300 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_25px_hsl(var(--accent))] hover:scale-105">
-                    <Link href="https://wa.me/5511999998888" target="_blank">Contato 1</Link>
-                  </Button>
-                  <Button asChild className="w-full h-9 bg-accent text-accent-foreground font-bold text-xs transition-all duration-300 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_25px_hsl(var(--accent))] hover:scale-105">
-                    <Link href="https://wa.me/5511999998888" target="_blank">Contato 2</Link>
-                  </Button>
                 </div>
-              ) : (
-                <Button asChild className="w-full h-9 bg-accent text-accent-foreground font-bold text-sm transition-all duration-300 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_25px_hsl(var(--accent))] hover:scale-105">
-                  <Link href="https://wa.me/5511999998888" target="_blank">Falar com o contato</Link>
+
+                <div className="space-y-2">
+                  <h2 className="text-xl font-bold text-white text-balance">{contact.title}</h2>
+                  <p className="text-muted-foreground text-sm text-balance">{contact.description}</p>
+                </div>
+
+                <Button asChild size="lg" className="bg-white text-black font-bold rounded-full shadow-lg shadow-white/20 transition-all duration-300 hover:bg-gray-200 hover:shadow-xl hover:shadow-white/30 hover:scale-105 w-full">
+                  <Link href={contact.link} target="_blank">
+                    Começar
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
-              )}
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </div>
         ))}
       </div>
     </div>
