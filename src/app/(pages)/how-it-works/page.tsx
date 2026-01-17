@@ -63,7 +63,7 @@ export default function HowItWorksPage() {
         <div className="absolute inset-0 bg-background/80 z-10" />
         <div className="relative z-20 space-y-16 container mx-auto px-4 pt-24 pb-12">
             <div className="text-center">
-                <h1 className="text-4xl md:text-5xl font-bold font-headline text-accent">Simples, Rápido e Seguro</h1>
+                <h1 className="text-4xl md:text-5xl font-bold font-headline text-white">Simples, Rápido e Seguro</h1>
                 <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
                 Nosso processo é desenhado para ser transparente e eficiente. Veja como é fácil.
                 </p>
@@ -77,13 +77,13 @@ export default function HowItWorksPage() {
                 {steps.map((step) => (
                     <div key={step.title} className="relative flex items-start">
                     {/* Dot on the timeline and Icon */}
-                    <div className="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-background border-2 border-accent">
-                        <step.icon className="h-5 w-5 text-accent" />
+                    <div className="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-background border-2 border-primary">
+                        <step.icon className="h-5 w-5 text-primary" />
                     </div>
                     
                     {/* Card content */}
                     <div className="ml-6 flex-1">
-                        <div className="p-6 bg-card/70 border border-border/30 rounded-xl transition-all duration-300 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10">
+                        <div className="p-6 bg-card/70 border border-border/30 rounded-xl transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10">
                         <h3 className="text-xl font-headline text-primary-foreground mb-2">{step.title}</h3>
                         <p className="text-muted-foreground text-sm text-balance">{step.description}</p>
                         </div>
