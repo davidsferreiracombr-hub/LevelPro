@@ -47,7 +47,7 @@ export default function HowItWorksPage() {
   return (
     <div className="relative overflow-hidden">
         <Image
-            src="https://i.imgur.com/CE1pl3a.png"
+            src="https://i.imgur.com/NtGDzvB.png"
             alt="Fundo abstrato"
             fill
             className="hidden md:block object-cover object-center z-0"
