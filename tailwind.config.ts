@@ -97,13 +97,11 @@ export default {
         },
         'pulse-strong': {
           '0%, 100%': {
-            transform: 'scale(1)',
-            boxShadow: '0 0 15px hsl(var(--accent))',
+            boxShadow: '0 0 15px hsl(var(--accent) / 0.6)',
           },
           '50%': {
-            transform: 'scale(1.05)',
             boxShadow:
-              '0 0 25px hsl(var(--accent))',
+              '0 0 25px hsl(var(--accent) / 0.9)',
           },
         },
       },
