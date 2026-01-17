@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center">
       <div className="container mx-auto px-4">
-        <div className="mt-2 md:mt-4 grid h-14 grid-cols-3 items-center rounded-md border border-border/50 bg-background/50 px-4 shadow-lg backdrop-blur-xl">
+        <div className="mt-2 md:mt-4 grid h-14 grid-cols-3 items-center rounded-md border border-border/30 bg-background/30 px-4 shadow-lg backdrop-blur-xl">
           <div className="justify-self-start">
             <nav className="hidden items-center gap-4 md:flex">
               {navLinks.map((link) => (
