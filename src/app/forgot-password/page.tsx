@@ -24,25 +24,25 @@ export default function ForgotPasswordPage() {
         <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={100} height={25} className="object-contain mx-auto" />
 
         <div className="text-center">
-          <h1 className="text-3xl font-bold">Forgot Password?</h1>
-          <p className="text-muted-foreground mt-2">Enter your email and we'll send a code to reset your password.</p>
+          <h1 className="text-3xl font-bold">Esqueceu a senha?</h1>
+          <p className="text-muted-foreground mt-2">Digite seu e-mail e enviaremos um código para redefinir sua senha.</p>
         </div>
 
         <form className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="email">Email address</Label>
-            <Input id="email" type="email" placeholder="example@gmail.com" required className="bg-card/50 border-border/50" />
+            <Label htmlFor="email">Endereço de e-mail</Label>
+            <Input id="email" type="email" placeholder="seu@email.com" required className="bg-card/50 border-border/50" />
           </div>
           
           <Button type="submit" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 h-12 text-base font-semibold">
-            Send Code
+            Enviar Código
           </Button>
         </form>
 
         <p className="text-center text-sm text-muted-foreground">
-          Already have an account?{' '}
+          Já tem uma conta?{' '}
           <Link href="/login" className="font-semibold text-accent hover:underline">
-            Sign In
+            Entrar
           </Link>
         </p>
       </div>
