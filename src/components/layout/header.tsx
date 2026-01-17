@@ -26,7 +26,7 @@ export default function Header() {
             </Link>
             <nav className="hidden md:flex items-center gap-4">
               {navLinks.map((link) => (
-                <Link key={link.href} href={link.href} className="text-sm font-medium text-foreground hover:text-accent transition-colors">
+                <Link key={link.href} href={link.href} className="text-sm font-medium text-foreground hover:text-accent transition-colors uppercase">
                   {link.label}
                 </Link>
               ))}
@@ -57,7 +57,7 @@ export default function Header() {
                     <nav className="flex flex-col gap-4 mt-6">
                        <Link
                           href="/"
-                          className="text-lg font-medium text-foreground hover:text-accent transition-colors"
+                          className="text-lg font-medium text-foreground hover:text-accent transition-colors uppercase"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           Início
@@ -66,7 +66,7 @@ export default function Header() {
                         <Link
                           key={link.href}
                           href={link.href}
-                          className="text-lg font-medium text-foreground hover:text-accent transition-colors"
+                          className="text-lg font-medium text-foreground hover:text-accent transition-colors uppercase"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {link.label}
