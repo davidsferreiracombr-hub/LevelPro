@@ -21,7 +21,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center">
       <div className="container mx-auto px-4">
-        <div className="relative mt-2 md:mt-4 flex h-12 md:h-14 items-center justify-between rounded-full border border-border/50 bg-background/80 px-4 md:px-6 backdrop-blur-sm shadow-lg">
+        <div className="relative mt-2 md:mt-4 flex h-14 md:h-16 items-center justify-between rounded-full border border-border/50 bg-background/50 backdrop-blur-xl shadow-lg px-4 md:px-6">
           <nav className="hidden md:flex items-center gap-6 absolute left-6 top-1/2 -translate-y-1/2">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href} className="text-sm font-medium text-foreground hover:text-accent transition-colors">
