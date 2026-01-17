@@ -78,7 +78,7 @@ function BoosterCarousel({
             key={profileIndex}
             asChild
             size="sm"
-            className="w-full text-xs h-8 bg-black text-white border border-white/20 hover:bg-white/10"
+            className="w-full text-xs h-8 bg-white text-black hover:bg-white/90"
           >
             <Link href={profile.link} target="_blank">
               Contato {profileIndex + 1}
@@ -212,7 +212,7 @@ export default function ContactBoosterPage() {
                     <Button
                       asChild
                       size="sm"
-                      className="w-full text-xs h-8 bg-black text-white border border-white/20 hover:bg-white/10"
+                      className="w-full text-xs h-8 bg-white text-black hover:bg-white/90"
                     >
                       <Link href={contact.profiles[0].link} target="_blank">
                         Entrar em Contato
