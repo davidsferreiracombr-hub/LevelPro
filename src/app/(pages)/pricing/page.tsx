@@ -118,7 +118,7 @@ export default function ContactBoosterPage() {
         {
           name: 'Booster 3',
           imageUrl: 'https://picsum.photos/seed/booster3/100/100',
-          link: 'https://wa.me/5511999998888',
+          link: 'https://wa.me/5512997133906?text=Vim%20da%20LevelPro',
           description:
             'A paixão por carros me levou ao Drive Zone. Fiquei obcecado em tunar cada veículo, extraindo o máximo de performance para dominar as corridas online. Conheço cada atalho e cada ponto de frenagem para transformar carros em lendas do asfalto.',
         },
