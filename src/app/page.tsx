@@ -101,17 +101,16 @@ export default function Home() {
                   <Card
                     key={index}
                     className={cn(
-                      "bg-card border border-border text-left p-6 transition-all duration-300 hover:border-accent hover:-translate-y-1 rounded-xl group",
-                      item.text === 'Qualidade premium' && "border-accent shadow-md shadow-accent/10"
+                      "bg-accent text-accent-foreground text-left p-6 transition-all duration-300 hover:-translate-y-1 rounded-xl group"
                     )}
                   >
                     <div className="space-y-4">
-                        <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-muted text-accent transition-colors duration-300 group-hover:bg-accent group-hover:text-accent-foreground">
+                        <div className="w-12 h-12 rounded-lg flex items-center justify-center bg-black/10 text-accent-foreground transition-colors duration-300 group-hover:bg-black/20">
                             <item.icon className="h-6 w-6" />
                         </div>
                         <div className="space-y-1">
-                            <h3 className="text-lg font-bold text-card-foreground">{item.text}</h3>
-                            <p className="text-sm text-muted-foreground text-balance">{item.description}</p>
+                            <h3 className="text-lg font-bold">{item.text}</h3>
+                            <p className="text-sm opacity-80 text-balance">{item.description}</p>
                         </div>
                     </div>
                   </Card>
