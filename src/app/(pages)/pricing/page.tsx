@@ -136,7 +136,7 @@ export default function ContactBoosterPage() {
       profiles: [
         {
           name: 'Booster Geral',
-          imageUrl: 'https://picsum.photos/seed/booster5/100/100',
+          imageUrl: 'https://i.imgur.com/p3IdzSN.png',
           link: 'https://wa.me/5511999998888',
           description:
             'Minha vida sempre girou em torno de games. De consoles antigos aos mais novos jogos mobile, minha curiosidade me fez dominar dezenas de títulos. Essa versatilidade me permite oferecer um serviço de boosting de alta qualidade em vários jogos, com foco em segurança e no resultado.',
