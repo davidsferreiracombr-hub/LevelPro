@@ -98,7 +98,7 @@ export default function ContactBoosterPage() {
       profiles: [
         {
           name: 'Booster 1',
-          imageUrl: 'https://picsum.photos/seed/booster1/100/100',
+          imageUrl: 'https://i.imgur.com/EQ9My4G.png',
           link: 'https://wa.me/5511999998888',
           description:
             'Minha jornada no Free Fire começou no dia do lançamento. A adrenalina do battle royale e a necessidade de estratégia rápida me cativaram. Acumulei milhares de horas de jogo, me especializei em subida de patente e hoje ajudo outros jogadores a alcançarem o tão sonhado Mestre.',
