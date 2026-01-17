@@ -1,4 +1,3 @@
-import { Card, CardTitle } from '@/components/ui/card';
 import { ShoppingCart, ShieldCheck, Gamepad, Rocket, KeyRound, Camera, CircleDollarSign } from 'lucide-react';
 
 export const metadata = {
@@ -45,7 +44,7 @@ export default function HowItWorksPage() {
   ];
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-16">
       <div className="text-center">
         <h1 className="text-4xl md:text-5xl font-bold font-headline text-accent">Simples, Rápido e Seguro</h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -53,18 +52,28 @@ export default function HowItWorksPage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {steps.map((step) => (
-          <Card key={step.title} className="bg-card/70 border border-border/30 rounded-xl p-6 flex flex-col gap-4 transition-all duration-300 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10">
-              <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center border-2 border-accent/20">
-                  <step.icon className="w-7 h-7 text-accent" />
+      <div className="relative max-w-3xl mx-auto">
+        {/* The vertical timeline line */}
+        <div className="absolute left-5 top-2 h-full w-0.5 -translate-x-1/2 bg-border/30"></div>
+
+        <div className="space-y-12">
+          {steps.map((step) => (
+            <div key={step.title} className="relative flex items-start">
+              {/* Dot on the timeline and Icon */}
+              <div className="z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-background border-2 border-accent">
+                <step.icon className="h-5 w-5 text-accent" />
               </div>
-              <div className="space-y-2">
-                  <CardTitle className="text-xl font-headline text-primary-foreground">{step.title}</CardTitle>
+              
+              {/* Card content */}
+              <div className="ml-6 flex-1">
+                <div className="p-6 bg-card/70 border border-border/30 rounded-xl transition-all duration-300 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10">
+                  <h3 className="text-xl font-headline text-primary-foreground mb-2">{step.title}</h3>
                   <p className="text-muted-foreground text-sm text-balance">{step.description}</p>
+                </div>
               </div>
-          </Card>
-        ))}
+            </div>
+          ))}
+        </div>
       </div>
 
       <div className="text-center pt-8">
