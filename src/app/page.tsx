@@ -6,6 +6,7 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import Link from 'next/link';
 import { Card } from '@/components/ui/card';
+import { cn } from '@/lib/utils';
 
 export default function Home() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-background');
@@ -92,15 +93,38 @@ export default function Home() {
                 </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-              {infoBarItems.map((item, index) => (
-                 <Card key={index} className="bg-card/80 border-border/50 text-center p-4 md:p-6 flex flex-col items-center gap-3 md:gap-4 transition-all duration-300 hover:border-accent hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/10 group">
-                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-black flex items-center justify-center border-2 border-accent/50 group-hover:border-accent transition-colors">
-                        <item.icon className="h-7 w-7 md:h-8 md:w-8 text-accent" />
+              {infoBarItems.map((item, index) => {
+                const isPremium = item.text === 'Qualidade premium';
+                return (
+                  <Card
+                    key={index}
+                    className={cn(
+                      'bg-card/80 border-border/50 text-center p-4 md:p-6 flex flex-col items-center gap-3 md:gap-4 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg group',
+                      isPremium
+                        ? 'hover:border-accent hover:shadow-accent/10'
+                        : 'hover:border-primary hover:shadow-primary/10'
+                    )}
+                  >
+                    <div
+                      className={cn(
+                        'w-14 h-14 md:w-16 md:h-16 rounded-full bg-black flex items-center justify-center border-2 transition-colors',
+                        isPremium
+                          ? 'border-accent/50 group-hover:border-accent'
+                          : 'border-primary/50 group-hover:border-primary'
+                      )}
+                    >
+                      <item.icon
+                        className={cn(
+                          'h-7 w-7 md:h-8 md:w-8',
+                          isPremium ? 'text-accent' : 'text-primary'
+                        )}
+                      />
                     </div>
                     <h3 className="text-lg md:text-xl font-semibold text-card-foreground">{item.text}</h3>
                     <p className="text-sm text-muted-foreground">{item.description}</p>
-                </Card>
-              ))}
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </section>
