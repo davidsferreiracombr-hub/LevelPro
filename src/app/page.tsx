@@ -44,10 +44,18 @@ export default function Home() {
               alt={heroImage.description}
               fill
               priority
-              className="object-cover"
+              className="object-cover hidden md:block"
               data-ai-hint={heroImage.imageHint}
             />
           )}
+          <Image
+            src="https://i.imgur.com/y6I5A1d.png"
+            alt="Mobile background"
+            fill
+            priority
+            className="object-cover md:hidden"
+            data-ai-hint="futuristic character mobile"
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black to-transparent" />
           
