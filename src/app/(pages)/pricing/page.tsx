@@ -54,7 +54,7 @@ export default function ContactBoosterPage() {
   ];
 
   return (
-    <div className="relative overflow-hidden h-screen flex items-center justify-center">
+    <div className="relative overflow-hidden min-h-screen">
       <Image
         src="https://i.imgur.com/CE1pl3a.png"
         alt="Fundo abstrato"
@@ -105,13 +105,13 @@ export default function ContactBoosterPage() {
               <div className="p-4 md:p-6 pt-0 space-y-3">
                 {contact.profiles.length > 1 ? (
                   <>
-                    <Button asChild size="default" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                    <Button asChild size="sm" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
                       <Link href={contact.profiles[0].link} target="_blank">
                         Contato 1
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
-                    <Button asChild size="default" variant="secondary" className="w-full">
+                    <Button asChild size="sm" variant="secondary" className="w-full">
                       <Link href={contact.profiles[1].link} target="_blank">
                         Contato 2
                         <ArrowRight className="ml-2 h-4 w-4" />
@@ -119,7 +119,7 @@ export default function ContactBoosterPage() {
                     </Button>
                   </>
                 ) : (
-                  <Button asChild size="default" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                  <Button asChild size="sm" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
                     <Link href={contact.profiles[0].link} target="_blank">
                       Começar
                       <ArrowRight className="ml-2 h-4 w-4" />
