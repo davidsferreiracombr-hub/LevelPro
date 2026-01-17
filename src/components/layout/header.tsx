@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu } from 'lucide-react';
+import { Menu, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Image from 'next/image';
@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center">
       <div className="container mx-auto px-4">
-        <div className="mt-2 md:mt-4 grid h-14 grid-cols-3 items-center rounded-2xl border border-border/50 bg-background/50 px-4 shadow-lg backdrop-blur-xl">
+        <div className="mt-2 md:mt-4 grid h-14 grid-cols-3 items-center rounded-md border border-border/50 bg-background/50 px-4 shadow-lg backdrop-blur-xl">
           <div className="justify-self-start">
             <nav className="hidden items-center gap-4 md:flex">
               {navLinks.map((link) => (
@@ -35,9 +35,14 @@ export default function Header() {
           </Link>
 
           <div className="flex items-center justify-end gap-2">
-             <div className="hidden md:flex">
+             <div className="hidden md:flex items-center gap-2">
                 <Button asChild className="font-semibold bg-accent text-accent-foreground hover:bg-accent/90 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_20px_hsl(var(--accent))] transition-[background-color,box-shadow] duration-300">
                 <Link href="/login">Entrar</Link>
+                </Button>
+                <Button asChild variant="ghost" size="icon" className="text-muted-foreground hover:text-[#E1306C] transition-colors">
+                    <Link href="https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <Instagram className="h-5 w-5" />
+                    </Link>
                 </Button>
             </div>
             <div className="md:hidden">
@@ -78,6 +83,13 @@ export default function Header() {
                       <Button asChild className="w-full py-5 text-base font-semibold bg-accent text-accent-foreground transition-[background-color,box-shadow] duration-300 hover:bg-accent/90 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_20px_hsl(var(--accent))]">
                         <Link href="/login" onClick={() => setIsMobileMenuOpen(false)}>Entrar</Link>
                       </Button>
+                      <div className="flex justify-center pt-4">
+                        <Button asChild variant="ghost" size="icon" className="h-10 w-10 text-muted-foreground hover:text-[#E1306C] transition-colors">
+                            <Link href="https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" onClick={() => setIsMobileMenuOpen(false)}>
+                                <Instagram className="h-6 w-6" />
+                            </Link>
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </SheetContent>
