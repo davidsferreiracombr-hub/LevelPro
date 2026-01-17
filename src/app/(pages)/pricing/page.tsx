@@ -110,14 +110,14 @@ export default function ContactBoosterPage() {
   return (
     <div className="min-h-screen overflow-y-auto relative md:overflow-hidden">
       <Image
-        src="https://i.imgur.com/J4NRuCh.png"
+        src="https://imgur.com/J4NRuCh"
         alt="Fundo abstrato"
         fill
         className="hidden md:block object-cover object-center z-0"
         data-ai-hint="abstract background"
       />
       <Image
-        src="https://i.imgur.com/Iyqjxgp.png"
+        src="https://imgur.com/Iyqjxgp"
         alt="Fundo abstrato mobile"
         fill
         className="md:hidden object-cover object-center z-0"
@@ -127,7 +127,7 @@ export default function ContactBoosterPage() {
       <div className="relative z-20 space-y-10 md:space-y-16 pt-24 md:pt-32 pb-12 container mx-auto px-4">
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl font-bold font-headline text-white uppercase">
-            Entre em Contato com seu Booster
+            ENTRE EM CONTATO COM A NOSSA EQUIPE
           </h1>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
             Conheça nossos especialistas e escolha o ideal para sua jornada.
@@ -141,22 +141,17 @@ export default function ContactBoosterPage() {
               className="bg-black/50 border border-white w-full md:max-w-sm hover:border-white hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-all duration-300 flex flex-col text-center rounded-xl overflow-hidden group hover:-translate-y-2"
             >
               <CardHeader className="items-center p-6 pb-2">
-                <div className={cn("flex mb-3 transition-transform duration-300 group-hover:scale-105", contact.profiles.length > 1 ? "-space-x-4" : "justify-center")}>
-                  {contact.profiles.map((profile) => (
+                <div className={cn("flex mb-3 transition-transform duration-300 group-hover:scale-105 justify-center")}>
                     <Image
-                      key={profile.name}
-                      src={profile.imageUrl}
-                      alt={`Foto de perfil de ${profile.name}`}
+                      src={'https://i.imgur.com/p3IdzSN.png'}
+                      alt={`Foto de perfil de ${contact.profiles[0].name}`}
                       width={80}
                       height={80}
                       className={cn(
-                        'w-20 h-20 rounded-full border-2 border-black/50 bg-card object-cover',
-                        profile.name === 'Booster 1' && 'object-[0_20%]',
-                        profile.name === 'Booster Geral' && 'object-center'
+                        'w-20 h-20 rounded-full border-2 border-black/50 bg-card object-center'
                       )}
                       data-ai-hint="profile picture"
                     />
-                  ))}
                 </div>
                 <CardTitle className="text-base font-semibold text-primary-foreground">
                   {contact.title}
