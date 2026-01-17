@@ -78,7 +78,7 @@ function BoosterCarousel({
             key={profileIndex}
             asChild
             size="lg"
-            className="w-full bg-black/50 text-foreground hover:bg-black/70 border border-accent/50 transition-all duration-300"
+            className="w-full bg-black/50 text-foreground hover:bg-black/70 border border-white/20 hover:border-accent transition-all duration-300"
           >
             <Link href={profile.link} target="_blank">
               Contato {profileIndex + 1}
@@ -176,7 +176,7 @@ export default function ContactBoosterPage() {
           {contacts.map((contact, index) => (
             <Card
               key={index}
-              className="bg-black/50 border border-white/10 hover:border-accent/50 transition-all duration-300 flex flex-col text-center rounded-xl overflow-hidden"
+              className="bg-black/50 border border-white/20 hover:border-accent/50 transition-all duration-300 flex flex-col text-center rounded-xl overflow-hidden"
             >
               <CardHeader className="items-center p-6 pb-2">
                 <div className="flex -space-x-4 mb-3">
@@ -215,7 +215,7 @@ export default function ContactBoosterPage() {
                     <Button
                       asChild
                       size="lg"
-                      className="w-full bg-black/50 text-foreground hover:bg-black/70 border border-accent/50 transition-all duration-300"
+                      className="w-full bg-black/50 text-foreground hover:bg-black/70 border border-white/20 hover:border-accent transition-all duration-300"
                     >
                       <Link href={contact.profiles[0].link} target="_blank">
                         Entrar em Contato
