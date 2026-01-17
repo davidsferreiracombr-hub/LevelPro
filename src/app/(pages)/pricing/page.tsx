@@ -1,82 +1,126 @@
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Check } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import Image from 'next/image';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Preços | LevelPro Accelerator',
+  title: 'Contato | LevelPro Accelerator',
 };
 
-export default function PricingPage() {
-  const tiers = [
+export default function ContactBoosterPage() {
+  const contacts = [
     {
-      name: 'Boost Rápido',
-      price: 'R$ 49',
-      description: 'Ideal para um empurrão inicial ou para superar um obstáculo.',
-      features: ['+10 Níveis garantidos', 'Entrega em 48h', 'Suporte padrão'],
-      isPopular: false,
+      title: 'Free Fire & Clash Royale',
+      description: 'Contato exclusivo para quem joga Free Fire ou Clash Royale.',
+      avatars: [
+        'https://picsum.photos/seed/booster1/100/100',
+        'https://picsum.photos/seed/booster2/100/100',
+      ],
+      avatarHint: 'pro gamer avatar',
+      avatarLayout: 'side-by-side',
+      borderColor: 'border-yellow-400/30',
+      shadowColor: 'shadow-yellow-500/10',
+      hoverBorderColor: 'hover:border-yellow-400/60',
+      hoverShadowColor: 'hover:shadow-yellow-400/30',
+      avatarRingColor: 'from-yellow-400 to-yellow-600',
+      avatarShadow: 'shadow-yellow-500/30',
     },
     {
-      name: 'Pro Player',
-      price: 'R$ 129',
-      description: 'O pacote mais popular para um avanço significativo.',
-      features: ['+30 Níveis garantidos', 'Entrega prioritária em 24h', 'Suporte VIP', 'Relatórios de progresso'],
-      isPopular: true,
+      title: 'Drive Zone & Brawl Stars',
+      description: 'Contato dedicado para jogadores de Drive Zone e Brawl Stars.',
+      avatars: ['https://picsum.photos/seed/booster3/100/100'],
+      avatarHint: 'pro gamer avatar',
+      avatarLayout: 'single',
+      borderColor: 'border-yellow-400/30',
+      shadowColor: 'shadow-yellow-500/10',
+      hoverBorderColor: 'hover:border-yellow-400/60',
+      hoverShadowColor: 'hover:shadow-yellow-400/30',
+      avatarRingColor: 'from-yellow-400 to-yellow-600',
+      avatarShadow: 'shadow-yellow-500/40',
     },
     {
-      name: 'Lenda',
-      price: 'R$ 299',
-      description: 'Para quem busca o topo e a maestria total no jogo.',
-      features: ['+70 Níveis garantidos', 'Entrega expressa', 'Coaching de 1h com pro player', 'Acesso a guias exclusivos'],
-      isPopular: false,
+      title: 'Contato para jogo único',
+      description: 'Escolha esse contato se você joga apenas um jogo específico.',
+      avatars: ['https://picsum.photos/seed/booster4/120/120'],
+      avatarHint: 'pro gamer avatar',
+      avatarLayout: 'single-large',
+      borderColor: 'border-red-500/30',
+      shadowColor: 'shadow-red-500/10',
+      hoverBorderColor: 'hover:border-red-500/60',
+      hoverShadowColor: 'hover:shadow-red-500/30',
+      avatarRingColor: 'from-red-500 to-yellow-500',
+      avatarShadow: 'shadow-red-500/50',
     },
   ];
 
   return (
     <div className="space-y-12">
       <div className="text-center">
-        <h1 className="text-4xl md:text-5xl font-bold font-headline text-accent">Nossos Planos</h1>
+        <h1 className="text-4xl md:text-5xl font-bold font-headline text-accent uppercase">
+          ENTRE EM CONTATO COM SEU BOOSTER
+        </h1>
         <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-          Escolha o plano que melhor se adapta às suas ambições. Todos os planos são 100% seguros e confidenciais.
+          Escolha o contato de acordo com o jogo que você deseja upar.
         </p>
       </div>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
-        {tiers.map((tier) => (
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+        {contacts.map((contact, index) => (
           <Card
-            key={tier.name}
-            className={`flex flex-col h-full ${tier.isPopular ? 'border-accent shadow-accent/20 shadow-lg' : 'border-border'}`}
+            key={index}
+            className={`bg-black/70 backdrop-blur-sm border rounded-xl transition-all duration-300 hover:-translate-y-2 ${contact.borderColor} ${contact.shadowColor} ${contact.hoverBorderColor} ${contact.hoverShadowColor}`}
           >
-            <CardHeader className="p-4">
-              {tier.isPopular && (
-                <div className="text-center mb-2">
-                  <span className="inline-block bg-accent text-accent-foreground text-xs font-bold uppercase px-3 py-1 rounded-full">
-                    Mais Popular
-                  </span>
-                </div>
-              )}
-              <CardTitle className="text-2xl font-bold text-center">{tier.name}</CardTitle>
-              <CardDescription className="text-center text-sm">{tier.description}</CardDescription>
-            </CardHeader>
-            <CardContent className="flex-grow p-4">
-              <div className="text-center my-2">
-                <span className="text-4xl font-bold">{tier.price}</span>
-                <span className="text-muted-foreground text-sm"> /pedido</span>
+            <CardHeader className="items-center text-center p-6">
+              <div className="flex justify-center items-center h-32 mb-4">
+                {contact.avatarLayout === 'side-by-side' && (
+                  <div className="flex -space-x-8">
+                    {contact.avatars.map((avatar, i) => (
+                       <div key={i} className={`relative w-20 h-20 rounded-full p-1 bg-gradient-to-tr shadow-md ${contact.avatarRingColor} ${contact.avatarShadow}`}>
+                        <Image
+                          src={avatar}
+                          alt="Booster profile picture"
+                          width={80}
+                          height={80}
+                          className="rounded-full object-cover border-2 border-background"
+                          data-ai-hint={contact.avatarHint}
+                        />
+                       </div>
+                    ))}
+                  </div>
+                )}
+                 {contact.avatarLayout === 'single' && (
+                   <div className={`relative w-24 h-24 rounded-full p-1 bg-gradient-to-tr shadow-lg ${contact.avatarRingColor} ${contact.avatarShadow}`}>
+                      <Image
+                        src={contact.avatars[0]}
+                        alt="Booster profile picture"
+                        width={96}
+                        height={96}
+                        className="rounded-full object-cover border-2 border-background"
+                        data-ai-hint={contact.avatarHint}
+                      />
+                   </div>
+                )}
+                {contact.avatarLayout === 'single-large' && (
+                  <div className={`relative w-28 h-28 rounded-full p-1 bg-gradient-to-tr shadow-lg ${contact.avatarRingColor} ${contact.avatarShadow}`}>
+                    <Image
+                      src={contact.avatars[0]}
+                      alt="Booster profile picture"
+                      width={112}
+                      height={112}
+                      className="rounded-full object-cover border-2 border-background"
+                      data-ai-hint={contact.avatarHint}
+                    />
+                  </div>
+                )}
               </div>
-              <ul className="space-y-2 text-sm">
-                {tier.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-accent flex-shrink-0" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-            <CardFooter className="p-4">
-              <Button asChild className={`w-full ${tier.isPopular ? 'bg-accent text-accent-foreground hover:bg-accent/90' : 'bg-primary text-primary-foreground hover:bg-primary/90'}`}>
-                <Link href="/login">Pedir Agora</Link>
+              <CardTitle className="text-2xl font-bold font-headline text-white">{contact.title}</CardTitle>
+              <CardDescription className="text-muted-foreground text-balance pt-2">{contact.description}</CardDescription>
+            </CardHeader>
+            <CardContent className="p-6 pt-0">
+              <Button asChild className="w-full h-12 bg-accent text-accent-foreground font-bold text-base transition-all duration-300 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_25px_hsl(var(--accent))] hover:scale-105">
+                <Link href="https://wa.me/5511999998888" target="_blank">Falar com o contato</Link>
               </Button>
-            </CardFooter>
+            </CardContent>
           </Card>
         ))}
       </div>

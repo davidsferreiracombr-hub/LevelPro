@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 const navLinks = [
   { href: '/games', label: 'JOGOS' },
-  { href: '/pricing', label: 'PREÇOS' },
+  { href: '/pricing', label: 'CONTATO' },
   { href: '/how-it-works', label: 'COMO FUNCIONA' },
 ];
 
