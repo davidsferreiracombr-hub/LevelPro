@@ -77,7 +77,7 @@ export default function Home() {
               </p>
              
               <div className="flex justify-center pt-6">
-                <Button asChild size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300 shadow-[0_0_15px_hsl(var(--accent))] hover:scale-110 hover:shadow-[0_0_30px_hsl(var(--accent))]">
+                <Button asChild size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 transition-colors duration-300 animate-pulse-strong">
                   <Link href="/games">Começar agora</Link>
                 </Button>
               </div>

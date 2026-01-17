@@ -95,10 +95,22 @@ export default {
             height: '0',
           },
         },
+        'pulse-strong': {
+          '0%, 100%': {
+            transform: 'scale(1)',
+            boxShadow: '0 0 15px hsl(var(--accent))',
+          },
+          '50%': {
+            transform: 'scale(1.05)',
+            boxShadow:
+              '0 0 25px hsl(var(--accent)), 0 0 40px hsl(var(--accent))',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'pulse-strong': 'pulse-strong 2.5s infinite ease-in-out',
       },
     },
   },
