@@ -120,25 +120,25 @@ export default function GamesPage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {games.map((game) => (
-          <Card key={game.name} className="bg-card border-border/50 rounded-xl overflow-hidden group transition-all duration-300 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10">
+          <Card key={game.name} className="bg-card/50 border border-transparent rounded-xl overflow-hidden group transition-all duration-300 hover:border-accent/30 hover:shadow-2xl hover:shadow-accent/10">
             <CardContent className="p-0">
-               <div className="overflow-hidden">
+               <div className="overflow-hidden rounded-t-xl">
                 <Image
                   src={game.imageUrl}
                   alt={`Capa do jogo ${game.name}`}
                   width={400}
                   height={225}
-                  className="object-cover w-full aspect-video transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover w-full aspect-video transition-transform duration-500 ease-in-out group-hover:scale-110"
                   data-ai-hint={game.imageHint}
                 />
               </div>
-              <div className="p-4 space-y-2">
+              <div className="p-5 space-y-3">
                 <CardTitle className="text-lg font-bold font-headline">{game.name}</CardTitle>
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="item-1" className="border-b-0">
-                    <AccordionTrigger className="text-sm font-medium text-muted-foreground hover:no-underline hover:text-accent [&[data-state=open]]:text-accent py-1">
+                    <AccordionTrigger className="p-0 text-sm font-medium text-muted-foreground hover:text-accent hover:no-underline [&[data-state=open]]:text-accent">
                       Ver detalhes do serviço
                     </AccordionTrigger>
                     <AccordionContent>
