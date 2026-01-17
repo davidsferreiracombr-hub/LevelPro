@@ -124,7 +124,7 @@ export default function ContactBoosterPage() {
         },
         {
           name: 'Booster 4',
-          imageUrl: 'https://picsum.photos/seed/booster4/100/100',
+          imageUrl: 'https://i.imgur.com/EA1lJdK.png',
           link: 'https://wa.me/5511999998888',
           description:
             'Brawl Stars me conquistou pela variedade de Brawlers e modos de jogo. Mergulhei fundo para dominar as habilidades de cada personagem e as melhores composições para cada mapa. Minha especialidade é a subida de troféus e maestria, garantindo um progresso rápido.',
@@ -189,7 +189,7 @@ export default function ContactBoosterPage() {
                       height={80}
                       className={cn(
                         'w-20 h-20 rounded-full border-2 border-black/50 bg-card object-cover',
-                        profile.name === 'Booster 1' && 'object-center'
+                        profile.name === 'Booster 1' && 'object-[0_30%]'
                       )}
                       data-ai-hint="profile picture"
                     />
