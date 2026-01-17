@@ -35,7 +35,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-black">
+    <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow">
         <section className="relative overflow-hidden h-screen flex items-center justify-center text-center text-white">
@@ -84,7 +84,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-black py-12 sm:py-20">
+        <section className="py-12 sm:py-20">
           <div className="container mx-auto px-4">
              <div className="text-center mb-10 md:mb-12">
                 <h2 className="text-3xl md:text-5xl font-bold font-headline text-card-foreground">Por que nos escolher?</h2>
