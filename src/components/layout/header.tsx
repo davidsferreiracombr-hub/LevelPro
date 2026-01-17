@@ -60,7 +60,8 @@ export default function Header() {
           </div>
 
           <Link href="/" className="flex items-center px-6">
-            <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={120} height={30} className="object-contain" />
+            <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={120} height={30} className="object-contain hidden md:block" />
+            <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={100} height={25} className="object-contain md:hidden" />
           </Link>
 
           <nav className="hidden md:flex items-center gap-6">
