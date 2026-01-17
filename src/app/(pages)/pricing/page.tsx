@@ -125,7 +125,7 @@ export default function ContactBoosterPage() {
         {
           name: 'Booster 4',
           imageUrl: 'https://i.imgur.com/EA1lJdK.png',
-          link: 'https://wa.me/5511999998888',
+          link: 'https://wa.me/5512991082853?text=Vim%20da%20LevelPro',
           description:
             'Me chamo David, Conheci o Braw através de um amigo meu que jogava na sala de aula, gostei do jogo e procurei aprender mais, gostei bastante de conhecer o lipe e o Vtzinn na epóca, conheci métodos e consegui me aprimorar no jogo chegando a 90K de troféus em 2 anos, e hoje estou a serviço da LevelPro',
         },
