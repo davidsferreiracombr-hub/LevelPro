@@ -188,8 +188,7 @@ export default function ContactBoosterPage() {
                       width={80}
                       height={80}
                       className={cn(
-                        'w-20 h-20 rounded-full border-2 border-black/50 bg-card object-cover',
-                        profile.name === 'Booster 1' && 'object-bottom'
+                        'w-20 h-20 rounded-full border-2 border-black/50 bg-card object-cover'
                       )}
                       data-ai-hint="profile picture"
                     />
