@@ -114,7 +114,7 @@ export default function GamesPage() {
   return (
     <div className="space-y-8">
       <div className="text-center">
-        <h1 className="text-4xl md:text-5xl font-bold font-headline text-accent">Jogos Suportados</h1>
+        <h1 className="text-4xl md:text-5xl font-bold font-headline text-white">Jogos Suportados</h1>
         <p className="mt-4 text-lg text-muted-foreground">
           Apoiamos uma vasta gama de jogos populares. Veja os detalhes de cada serviço.
         </p>
