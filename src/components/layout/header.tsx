@@ -11,7 +11,6 @@ const navLinks = [
   { href: '/games', label: 'Jogos' },
   { href: '/pricing', label: 'Preços' },
   { href: '/how-it-works', label: 'Como funciona' },
-  { href: '/contact', label: 'Contato' },
 ];
 
 export default function Header() {
