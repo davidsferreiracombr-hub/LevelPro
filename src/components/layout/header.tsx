@@ -21,7 +21,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center">
       <div className="container mx-auto px-4">
-        <div className="relative mt-2 md:mt-4 flex h-12 md:h-14 items-center justify-center rounded-full border border-border/50 bg-background/80 px-4 md:px-6 backdrop-blur-sm shadow-lg">
+        <div className="relative mt-2 md:mt-4 flex h-12 md:h-14 items-center justify-between rounded-full border border-border/50 bg-background/80 px-4 md:px-6 backdrop-blur-sm shadow-lg">
           <nav className="hidden md:flex items-center gap-6 absolute left-6 top-1/2 -translate-y-1/2">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href} className="text-sm font-medium text-foreground hover:text-accent transition-colors">
@@ -30,10 +30,12 @@ export default function Header() {
             ))}
           </nav>
           
-          <Link href="/" className="flex items-center">
-            <Image src="https://i.imgur.com/393nLfg.png" alt="LevelUp Logo" width={80} height={20} className="object-contain hidden md:block" />
-            <Image src="https://i.imgur.com/uG2GZ2c.png" alt="LevelUp Logo" width={60} height={15} className="object-contain md:hidden" />
-          </Link>
+          <div className="flex-1 flex justify-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2">
+            <Link href="/" className="flex items-center">
+              <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={80} height={20} className="object-contain hidden md:block" />
+              <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={80} height={20} className="object-contain md:hidden" />
+            </Link>
+          </div>
 
           <div className="absolute right-4 top-1/2 -translate-y-1/2">
             <div className="md:hidden">
@@ -48,7 +50,7 @@ export default function Header() {
                   <div className="flex flex-col h-full">
                     <div className="flex justify-center items-center border-b pb-4">
                       <Link href="/" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
-                        <Image src="https://i.imgur.com/uG2GZ2c.png" alt="LevelUp Logo" width={60} height={15} className="object-contain" />
+                        <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={80} height={20} className="object-contain" />
                       </Link>
                     </div>
                     <nav className="flex flex-col gap-4 mt-6">
