@@ -63,7 +63,7 @@ export default function ContactBoosterPage() {
         data-ai-hint="abstract background"
       />
       <div className="absolute inset-0 bg-background/70 z-10" />
-      <div className="relative z-20 space-y-16 py-8 container mx-auto px-4">
+      <div className="relative z-20 space-y-16 py-8 pt-24 container mx-auto px-4">
         <div className="text-center">
           <h1 className="text-4xl md:text-5xl font-bold font-headline text-white uppercase">
             Entre em Contato com seu Booster
