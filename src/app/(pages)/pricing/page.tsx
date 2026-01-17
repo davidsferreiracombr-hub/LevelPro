@@ -68,7 +68,7 @@ export default function ContactBoosterPage() {
         {contacts.map((contact, index) => (
           <Card
             key={index}
-            className={`bg-black/70 backdrop-blur-sm border rounded-xl transition-all duration-300 hover:-translate-y-2 ${contact.borderColor} ${contact.shadowColor} ${contact.hoverBorderColor} ${contact.hoverShadowColor}`}
+            className={`bg-card border rounded-xl transition-all duration-300 hover:-translate-y-1 ${contact.borderColor} ${contact.shadowColor} ${contact.hoverBorderColor} ${contact.hoverShadowColor}`}
           >
             <CardHeader className="items-center text-center p-6">
               <div className="flex justify-center items-center h-40 mb-4">
@@ -120,9 +120,20 @@ export default function ContactBoosterPage() {
               <CardDescription className="text-muted-foreground text-balance pt-2">{contact.description}</CardDescription>
             </CardHeader>
             <CardContent className="p-6 pt-0">
-              <Button asChild className="w-full h-12 bg-accent text-accent-foreground font-bold text-base transition-all duration-300 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_25px_hsl(var(--accent))] hover:scale-105">
-                <Link href="https://wa.me/5511999998888" target="_blank">Falar com o contato</Link>
-              </Button>
+              {contact.avatarLayout === 'side-by-side' ? (
+                <div className="grid grid-cols-2 gap-2">
+                  <Button asChild className="w-full h-12 bg-accent text-accent-foreground font-bold text-sm transition-all duration-300 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_25px_hsl(var(--accent))] hover:scale-105">
+                    <Link href="https://wa.me/5511999998888" target="_blank">Contato 1</Link>
+                  </Button>
+                  <Button asChild className="w-full h-12 bg-accent text-accent-foreground font-bold text-sm transition-all duration-300 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_25px_hsl(var(--accent))] hover:scale-105">
+                    <Link href="https://wa.me/5511999998888" target="_blank">Contato 2</Link>
+                  </Button>
+                </div>
+              ) : (
+                <Button asChild className="w-full h-12 bg-accent text-accent-foreground font-bold text-base transition-all duration-300 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_25px_hsl(var(--accent))] hover:scale-105">
+                  <Link href="https://wa.me/5511999998888" target="_blank">Falar com o contato</Link>
+                </Button>
+              )}
             </CardContent>
           </Card>
         ))}
