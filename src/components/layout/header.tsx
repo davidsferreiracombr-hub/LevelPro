@@ -6,8 +6,6 @@ import { Menu, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Image from 'next/image';
-import { useUser } from '@/firebase';
-import { Skeleton } from '../ui/skeleton';
 
 const navLinks = [
   { href: '/games', label: 'JOGOS' },
@@ -17,37 +15,6 @@ const navLinks = [
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { user, loading } = useUser();
-
-  const AuthButton = () => {
-    if (loading) {
-      return <Skeleton className="h-10 w-24" />;
-    }
-    return user ? (
-       <Button asChild className="font-semibold bg-accent text-accent-foreground hover:bg-accent/90 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_20px_hsl(var(--accent))] transition-[background-color,box-shadow] duration-300">
-        <Link href="/dashboard">Dashboard</Link>
-      </Button>
-    ) : (
-       <Button asChild className="font-semibold bg-accent text-accent-foreground hover:bg-accent/90 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_20px_hsl(var(--accent))] transition-[background-color,box-shadow] duration-300">
-        <Link href="/login">Entrar</Link>
-      </Button>
-    );
-  };
-  
-  const AuthButtonMobile = () => {
-    if (loading) {
-      return <Skeleton className="h-12 w-full" />;
-    }
-    return user ? (
-      <Button asChild className="w-full py-5 text-base font-semibold bg-accent text-accent-foreground transition-[background-color,box-shadow] duration-300 hover:bg-accent/90 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_20px_hsl(var(--accent))]">
-        <Link href="/dashboard" onClick={() => setIsMobileMenuOpen(false)}>Dashboard</Link>
-      </Button>
-    ) : (
-      <Button asChild className="w-full py-5 text-base font-semibold bg-accent text-accent-foreground transition-[background-color,box-shadow] duration-300 hover:bg-accent/90 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_20px_hsl(var(--accent))]">
-        <Link href="/login" onClick={() => setIsMobileMenuOpen(false)}>Entrar</Link>
-      </Button>
-    );
-  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center">
@@ -69,7 +36,9 @@ export default function Header() {
 
           <div className="flex items-center justify-end gap-2">
              <div className="hidden md:flex items-center gap-2">
-                <AuthButton />
+                <Button asChild className="font-semibold bg-accent text-accent-foreground hover:bg-accent/90 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_20px_hsl(var(--accent))] transition-[background-color,box-shadow] duration-300">
+                  <Link href="/pricing">Começar agora</Link>
+                </Button>
                 <Button asChild variant="ghost" size="icon" className="text-muted-foreground hover:text-[#E1306C] transition-colors">
                     <Link href="https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <Instagram className="h-5 w-5" />
@@ -111,7 +80,9 @@ export default function Header() {
                       ))}
                     </nav>
                     <div className="mt-auto pt-8">
-                      <AuthButtonMobile />
+                      <Button asChild className="w-full py-5 text-base font-semibold bg-accent text-accent-foreground transition-[background-color,box-shadow] duration-300 hover:bg-accent/90 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_20px_hsl(var(--accent))]">
+                        <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)}>Começar agora</Link>
+                      </Button>
                       <div className="flex justify-center pt-4">
                         <Button asChild variant="ghost" size="icon" className="h-10 w-10 text-muted-foreground hover:text-[#E1306C] transition-colors">
                             <Link href="https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" onClick={() => setIsMobileMenuOpen(false)}>

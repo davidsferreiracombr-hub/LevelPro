@@ -1,32 +1,11 @@
 'use client';
 
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useUser } from '@/firebase';
-import { Loader2 } from 'lucide-react';
 
 export default function ContactBoosterPage() {
-  const { user, loading } = useUser();
-  const router = useRouter();
-
-  useEffect(() => {
-    if (!loading && !user) {
-      router.push('/login');
-    }
-  }, [user, loading, router]);
-
-  if (loading || !user) {
-    return (
-      <div className="flex justify-center items-center min-h-[60vh]">
-        <Loader2 className="h-12 w-12 animate-spin text-accent" />
-      </div>
-    );
-  }
-  
   const contacts = [
     {
       title: 'Free Fire & Clash Royale',
@@ -87,7 +66,7 @@ export default function ContactBoosterPage() {
         {contacts.map((contact, index) => (
           <Card
             key={index}
-            className={`bg-card border rounded-xl transition-all duration-300 hover:-translate-y-1 ${contact.borderColor} ${contact.shadowColor} ${contact.hoverBorderColor} ${contact.hoverShadowColor}`}
+            className={`bg-card/50 border rounded-xl transition-all duration-300 hover:-translate-y-1 ${contact.borderColor} ${contact.shadowColor} ${contact.hoverBorderColor} ${contact.hoverShadowColor}`}
           >
             <CardHeader className="items-center text-center p-4 pt-6">
               <div className="flex justify-center items-center h-24 mb-2">

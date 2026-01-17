@@ -1,13 +1,11 @@
 'use client';
 import { type FirebaseApp } from 'firebase/app';
-import { type Auth } from 'firebase/auth';
 import { type Firestore } from 'firebase/firestore';
 import { createContext, useContext, type ReactNode } from 'react';
 
 type FirebaseContextValue = {
   firebaseApp: FirebaseApp;
   firestore: Firestore;
-  auth: Auth;
 };
 
 const FirebaseContext = createContext<FirebaseContextValue | null>(null);
@@ -31,7 +29,4 @@ export function useFirebaseApp() {
 }
 export function useFirestore() {
   return useFirebase().firestore;
-}
-export function useAuth() {
-  return useFirebase().auth;
 }
