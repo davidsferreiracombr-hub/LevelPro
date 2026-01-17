@@ -1,5 +1,5 @@
 'use client';
-
+import * as React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
@@ -9,7 +9,87 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  type CarouselApi,
 } from '@/components/ui/carousel';
+import { cn } from '@/lib/utils';
+
+// This component will handle the carousel with indicators
+function BoosterCarousel({
+  profiles,
+}: {
+  profiles: Array<{ name: string; description: string; link: string }>;
+}) {
+  const [api, setApi] = React.useState<CarouselApi>();
+  const [current, setCurrent] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCurrent(api.selectedScrollSnap());
+    api.on('select', () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
+  return (
+    <>
+      <Carousel
+        setApi={setApi}
+        opts={{ loop: true }}
+        className="w-full max-w-xs mx-auto"
+      >
+        <CarouselContent>
+          {profiles.map((profile, profileIndex) => (
+            <CarouselItem key={profileIndex}>
+              <div className="flex flex-col items-center justify-between h-full space-y-2 py-1">
+                <div className="text-center space-y-2 min-h-[12rem] flex flex-col justify-center">
+                  <p className="font-bold text-sm text-foreground">
+                    Contato {profileIndex + 1}
+                  </p>
+                  <p className="text-muted-foreground text-xs text-balance">
+                    {profile.description}
+                  </p>
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+      <div className="flex items-center justify-center gap-2 mt-2">
+        {profiles.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => api?.scrollTo(i)}
+            className={cn(
+              'h-2 w-2 rounded-full transition-all',
+              i === current
+                ? 'w-4 bg-accent'
+                : 'bg-muted hover:bg-muted-foreground/50'
+            )}
+            aria-label={`Go to slide ${i + 1}`}
+          />
+        ))}
+      </div>
+      <div className="space-y-2 mt-4">
+        {profiles.map((profile, profileIndex) => (
+          <Button
+            key={profileIndex}
+            asChild
+            size="sm"
+            className="w-full text-xs h-8 bg-accent text-accent-foreground hover:bg-accent/90"
+          >
+            <Link href={profile.link} target="_blank">
+              Contato {profileIndex + 1}
+              <ArrowRight className="ml-2 h-3 w-3" />
+            </Link>
+          </Button>
+        ))}
+      </div>
+    </>
+  );
+}
 
 export default function ContactBoosterPage() {
   const contacts = [
@@ -105,9 +185,9 @@ export default function ContactBoosterPage() {
                       key={profile.name}
                       src={profile.imageUrl}
                       alt={`Foto de perfil de ${profile.name}`}
-                      width={64}
-                      height={64}
-                      className="w-16 h-16 rounded-full border-2 border-black/50 bg-card"
+                      width={80}
+                      height={80}
+                      className="w-20 h-20 rounded-full border-2 border-black/50 bg-card"
                       data-ai-hint="profile picture"
                     />
                   ))}
@@ -118,44 +198,7 @@ export default function ContactBoosterPage() {
               </CardHeader>
               <CardContent className="flex-grow flex flex-col justify-between px-4 md:px-5 pb-4 md:pb-5 pt-0">
                 {contact.profiles.length > 1 ? (
-                  <>
-                    <Carousel
-                      opts={{ loop: true }}
-                      className="w-full max-w-xs mx-auto"
-                    >
-                      <CarouselContent>
-                        {contact.profiles.map((profile, profileIndex) => (
-                          <CarouselItem key={profileIndex}>
-                            <div className="flex flex-col items-center justify-between h-full space-y-2 py-1">
-                              <div className="text-center space-y-2 min-h-[12rem] flex flex-col justify-center">
-                                <p className="font-bold text-sm text-foreground">
-                                  Contato {profileIndex + 1}
-                                </p>
-                                <p className="text-muted-foreground text-xs text-balance">
-                                  {profile.description}
-                                </p>
-                              </div>
-                            </div>
-                          </CarouselItem>
-                        ))}
-                      </CarouselContent>
-                    </Carousel>
-                    <div className="space-y-2 mt-4">
-                      {contact.profiles.map((profile, profileIndex) => (
-                        <Button
-                          key={profileIndex}
-                          asChild
-                          size="sm"
-                          className="w-full text-xs h-8 bg-accent text-accent-foreground hover:bg-accent/90"
-                        >
-                          <Link href={profile.link} target="_blank">
-                            Contato {profileIndex + 1}
-                            <ArrowRight className="ml-2 h-3 w-3" />
-                          </Link>
-                        </Button>
-                      ))}
-                    </div>
-                  </>
+                  <BoosterCarousel profiles={contact.profiles} />
                 ) : (
                   <div className="flex flex-col items-center justify-between h-full space-y-4 py-1">
                     <div className="text-center space-y-2 min-h-[12rem] flex flex-col justify-center">
