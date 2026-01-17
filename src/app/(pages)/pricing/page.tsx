@@ -94,44 +94,6 @@ function BoosterCarousel({
 export default function ContactBoosterPage() {
   const contacts = [
     {
-      title: 'Free Fire & Clash Royale',
-      profiles: [
-        {
-          name: 'Booster 1',
-          imageUrl: 'https://i.imgur.com/EQ9My4G.png',
-          link: 'https://wa.me/5512981034356?text=Vim%20da%20LevelPro',
-          description:
-            'Minha jornada no Free Fire começou no dia do lançamento. A adrenalina do battle royale e a necessidade de estratégia rápida me cativaram. Acumulei milhares de horas de jogo, me especializei em subida de patente e hoje ajudo outros jogadores a alcançarem o tão sonhado Mestre.',
-        },
-        {
-          name: 'Booster 2',
-          imageUrl: 'https://picsum.photos/seed/booster2/100/100',
-          link: 'https://wa.me/5512992295142?text=Vim%20da%20LevelPro',
-          description:
-            'O Clash Royale me fisgou pela complexidade em partidas curtas e intensas. O que começou como hobby virou paixão por montar decks perfeitos e prever cada movimento do adversário. Hoje, meu foco é acelerar a evolução de contas e levar meus clientes às Ligas mais altas.',
-        },
-      ],
-    },
-    {
-      title: 'Drive Zone & Brawl Stars',
-      profiles: [
-        {
-          name: 'Booster 3',
-          imageUrl: 'https://picsum.photos/seed/booster3/100/100',
-          link: 'https://wa.me/5512997133906?text=Vim%20da%20LevelPro',
-          description:
-            'A paixão por carros me levou ao Drive Zone. Fiquei obcecado em tunar cada veículo, extraindo o máximo de performance para dominar as corridas online. Conheço cada atalho e cada ponto de frenagem para transformar carros em lendas do asfalto.',
-        },
-        {
-          name: 'Booster 4',
-          imageUrl: 'https://i.imgur.com/EA1lJdK.png',
-          link: 'https://wa.me/5512991082853?text=Vim%20da%20LevelPro',
-          description:
-            'Me chamo David, Conheci o Braw através de um amigo meu que jogava na sala de aula, gostei do jogo e procurei aprender mais, gostei bastante de conhecer o lipe e o Vtzinn na epóca, conheci métodos e consegui me aprimorar no jogo chegando a 90K de troféus em 2 anos, e hoje estou a serviço da LevelPro',
-        },
-      ],
-    },
-    {
       title: 'Contato Geral',
       profiles: [
         {
@@ -172,11 +134,11 @@ export default function ContactBoosterPage() {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="max-w-5xl mx-auto flex justify-center gap-6 md:gap-8">
           {contacts.map((contact, index) => (
             <Card
               key={index}
-              className="bg-black/50 border border-white hover:border-white hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-all duration-300 flex flex-col text-center rounded-xl overflow-hidden group hover:-translate-y-2"
+              className="bg-black/50 border border-white w-full md:max-w-sm hover:border-white hover:shadow-[0_0_20px_rgba(255,255,255,0.4)] transition-all duration-300 flex flex-col text-center rounded-xl overflow-hidden group hover:-translate-y-2"
             >
               <CardHeader className="items-center p-6 pb-2">
                 <div className={cn("flex mb-3 transition-transform duration-300 group-hover:scale-105", contact.profiles.length > 1 ? "-space-x-4" : "justify-center")}>
