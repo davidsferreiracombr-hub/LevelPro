@@ -38,7 +38,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen bg-background">
       <Header />
       <main className="flex-grow">
-        <section className="relative overflow-hidden h-screen flex items-center justify-center text-center text-white">
+        <section className="relative overflow-hidden h-screen flex items-center justify-center text-center text-white pt-24">
           <div className="absolute inset-0 hero-gradient" />
           {heroImage && (
             <Image
@@ -52,7 +52,7 @@ export default function Home() {
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
           
-          <div className="container mx-auto px-4 relative z-10 -mt-20">
+          <div className="container mx-auto px-4 relative z-10">
             <div className="flex flex-col gap-4 md:gap-6 items-center max-w-4xl mx-auto">
               <h1 className="font-headline text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold uppercase tracking-wider text-balance [text-shadow:0_0_25px_hsl(var(--accent))]">
                 Eleve seu Jogo
