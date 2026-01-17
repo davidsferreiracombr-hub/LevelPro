@@ -9,8 +9,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselPrevious,
-  CarouselNext,
 } from '@/components/ui/carousel';
 
 export default function ContactBoosterPage() {
@@ -23,14 +21,14 @@ export default function ContactBoosterPage() {
           imageUrl: 'https://picsum.photos/seed/booster1/100/100',
           link: 'https://wa.me/5511999998888',
           description:
-            'Desde o beta, eu já sabia que Free Fire mudaria o cenário mobile. Me apaixonei pela jogabilidade rápida e estratégica, e nunca mais parei. Minha especialidade é a ranqueada.',
+            'Minha jornada no Free Fire começou no dia do lançamento. A adrenalina do battle royale e a necessidade de estratégia rápida me cativaram. Acumulei milhares de horas de jogo, me especializei em subida de patente e hoje ajudo outros jogadores a alcançarem o tão sonhado Mestre.',
         },
         {
           name: 'Booster 2',
           imageUrl: 'https://picsum.photos/seed/booster2/100/100',
           link: 'https://wa.me/5511999998888',
           description:
-            'Comecei no Clash Royale por diversão, mas a competição me fisgou. Hoje, cada partida é uma nova chance de superar meus limites e evoluir contas com agilidade.',
+            'O Clash Royale me fisgou pela complexidade em partidas curtas e intensas. O que começou como hobby virou paixão por montar decks perfeitos e prever cada movimento do adversário. Hoje, meu foco é acelerar a evolução de contas e levar meus clientes às Ligas mais altas.',
         },
       ],
     },
@@ -42,14 +40,14 @@ export default function ContactBoosterPage() {
           imageUrl: 'https://picsum.photos/seed/booster3/100/100',
           link: 'https://wa.me/5511999998888',
           description:
-            'A velocidade sempre foi minha paixão. No Drive Zone, transformo carros em verdadeiras máquinas de corrida, otimizando cada detalhe para garantir a vitória.',
+            'A paixão por carros me levou ao Drive Zone. Fiquei obcecado em tunar cada veículo, extraindo o máximo de performance para dominar as corridas online. Conheço cada atalho e cada ponto de frenagem para transformar carros em lendas do asfalto.',
         },
         {
           name: 'Booster 4',
           imageUrl: 'https://picsum.photos/seed/booster4/100/100',
           link: 'https://wa.me/5511999998888',
           description:
-            'No Brawl Stars, a estratégia é tudo. Conheci o jogo no lançamento e desde então venho aprimorando táticas para subir troféus de forma rápida e consistente.',
+            'Brawl Stars me conquistou pela variedade de Brawlers e modos de jogo. Mergulhei fundo para dominar as habilidades de cada personagem e as melhores composições para cada mapa. Minha especialidade é a subida de troféus e maestria, garantindo um progresso rápido.',
         },
       ],
     },
@@ -57,18 +55,18 @@ export default function ContactBoosterPage() {
       title: 'Contato Geral',
       profiles: [
         {
-          name: 'General Booster',
+          name: 'Booster Geral',
           imageUrl: 'https://picsum.photos/seed/booster5/100/100',
           link: 'https://wa.me/5511999998888',
           description:
-            'Sou um apaixonado por games desde criança. Minha jornada me tornou um especialista em diversos jogos, sempre pronto para encarar novos desafios e garantir o melhor resultado para sua conta.',
+            'Minha vida sempre girou em torno de games. De consoles antigos aos mais novos jogos mobile, minha curiosidade me fez dominar dezenas de títulos. Essa versatilidade me permite oferecer um serviço de boosting de alta qualidade em vários jogos, com foco em segurança e no resultado.',
         },
       ],
     },
   ];
 
   return (
-    <div className="min-h-screen relative overflow-auto md:overflow-hidden">
+    <div className="min-h-screen overflow-y-auto relative md:overflow-hidden">
       <Image
         src="https://i.imgur.com/CE1pl3a.png"
         alt="Fundo abstrato"
@@ -90,7 +88,7 @@ export default function ContactBoosterPage() {
             Entre em Contato com seu Booster
           </h1>
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Escolha o contato de acordo com o jogo que você deseja upar.
+            Conheça nossos especialistas e escolha o ideal para sua jornada.
           </p>
         </div>
 
@@ -101,15 +99,15 @@ export default function ContactBoosterPage() {
               className="bg-black/50 border border-white/10 hover:border-accent/50 transition-all duration-300 flex flex-col text-center rounded-xl overflow-hidden"
             >
               <CardHeader className="items-center p-4 pt-6 md:p-5">
-                <div className="flex -space-x-4 mb-4">
+                <div className="flex -space-x-2 mb-4">
                   {contact.profiles.map((profile) => (
                     <Image
                       key={profile.name}
                       src={profile.imageUrl}
                       alt={`Foto de perfil de ${profile.name}`}
-                      width={40}
-                      height={40}
-                      className="w-10 h-10 rounded-full border-2 border-black/50 bg-card"
+                      width={32}
+                      height={32}
+                      className="w-8 h-8 rounded-full border-2 border-black/50 bg-card"
                       data-ai-hint="profile picture"
                     />
                   ))}
@@ -118,65 +116,36 @@ export default function ContactBoosterPage() {
                   {contact.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex-grow flex flex-col justify-between px-4 md:px-5 pb-4 md:pb-5 pt-0 space-y-4">
-                <Carousel className="w-full max-w-xs mx-auto">
+              <CardContent className="flex-grow flex flex-col justify-between px-4 md:px-5 pb-4 md:pb-5 pt-0">
+                <Carousel
+                  opts={{ loop: contact.profiles.length > 1 }}
+                  className="w-full max-w-xs mx-auto"
+                >
                   <CarouselContent>
                     {contact.profiles.map((profile, profileIndex) => (
                       <CarouselItem key={profileIndex}>
-                        <div className="p-1 h-32 flex items-center">
-                          <p className="text-muted-foreground text-xs text-balance">
-                            {profile.description}
-                          </p>
+                        <div className="flex flex-col items-center justify-between h-full space-y-4 py-1">
+                           <div className="text-center space-y-2 h-48 flex flex-col justify-center">
+                             <p className="font-bold text-sm text-foreground">{profile.name}</p>
+                            <p className="text-muted-foreground text-xs text-balance">
+                              {profile.description}
+                            </p>
+                          </div>
+                          <Button
+                            asChild
+                            size="sm"
+                            className="w-full text-xs h-8 bg-accent text-accent-foreground hover:bg-accent/90"
+                          >
+                            <Link href={profile.link} target="_blank">
+                              Entrar em Contato
+                              <ArrowRight className="ml-2 h-3 w-3" />
+                            </Link>
+                          </Button>
                         </div>
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-                  {contact.profiles.length > 1 && (
-                    <>
-                      <CarouselPrevious className="absolute -left-2 top-1/2 -translate-y-1/2 h-6 w-6" />
-                      <CarouselNext className="absolute -right-2 top-1/2 -translate-y-1/2 h-6 w-6" />
-                    </>
-                  )}
                 </Carousel>
-
-                <div className="space-y-2">
-                  {contact.profiles.length > 1 ? (
-                    <>
-                      <Button
-                        asChild
-                        size="sm"
-                        className="w-full text-xs h-8 bg-accent text-accent-foreground hover:bg-accent/90"
-                      >
-                        <Link href={contact.profiles[0].link} target="_blank">
-                          Contato 1
-                          <ArrowRight className="ml-2 h-3 w-3" />
-                        </Link>
-                      </Button>
-                      <Button
-                        asChild
-                        size="sm"
-                        variant="secondary"
-                        className="w-full text-xs h-8"
-                      >
-                        <Link href={contact.profiles[1].link} target="_blank">
-                          Contato 2
-                          <ArrowRight className="ml-2 h-3 w-3" />
-                        </Link>
-                      </Button>
-                    </>
-                  ) : (
-                    <Button
-                      asChild
-                      size="sm"
-                      className="w-full text-xs h-8 bg-accent text-accent-foreground hover:bg-accent/90"
-                    >
-                      <Link href={contact.profiles[0].link} target="_blank">
-                        Começar
-                        <ArrowRight className="ml-2 h-3 w-3" />
-                      </Link>
-                    </Button>
-                  )}
-                </div>
               </CardContent>
             </Card>
           ))}
