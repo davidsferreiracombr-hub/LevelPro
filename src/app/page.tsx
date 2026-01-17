@@ -61,7 +61,7 @@ export default function Home() {
               data-ai-hint={heroCharacter.imageHint}
             />
           )}
-          <div className="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-t from-background to-transparent" />
+          <div className="absolute bottom-0 inset-x-0 h-96 bg-gradient-to-t from-background to-transparent" />
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex flex-col gap-4 items-center max-w-3xl mx-auto">
