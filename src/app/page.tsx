@@ -62,11 +62,11 @@ export default function Home() {
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex flex-col gap-4 md:gap-6 items-center md:items-start max-w-2xl text-left">
-              <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-wider text-balance">
-                Up Your Game
+              <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-wider text-balance [text-shadow:0_0_15px_hsl(var(--accent))]">
+                Eleve seu Jogo
               </h1>
               <h2 className="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold uppercase tracking-wider text-balance">
-                <span className="text-primary">Level</span> Like a <span className="text-accent">Pro</span>
+                <span className="text-primary [text-shadow:0_0_15px_hsl(var(--primary))]">Suba de Nível</span> como um <span className="text-accent [text-shadow:0_0_15px_hsl(var(--accent))]">Pro</span>
               </h2>
               <p className="max-w-lg text-base md:text-lg text-foreground/80 leading-relaxed text-balance">
                 Serviço profissional para upar contas de jogos mobile com rapidez, segurança e total sigilo.
