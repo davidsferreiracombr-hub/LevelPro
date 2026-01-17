@@ -46,6 +46,7 @@ export default function Home() {
               src={heroBackground.imageUrl}
               alt={heroBackground.description}
               fill
+              priority
               className="hidden md:block object-cover object-center"
               data-ai-hint={heroBackground.imageHint}
             />
@@ -64,22 +65,22 @@ export default function Home() {
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex flex-col gap-4 items-center max-w-3xl mx-auto">
-              <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl font-extrabold uppercase tracking-wider text-balance text-white">
+              <h1 className="font-headline text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-wider text-balance text-white">
                 Eleve seu Jogo
               </h1>
               <h2 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold uppercase tracking-wider text-balance text-center">
                 <span className="text-primary [text-shadow:0_0_15px_hsl(var(--primary))]">Suba de Nível</span> como um
-                <span className="block font-extrabold text-4xl sm:text-5xl md:text-6xl text-accent [text-shadow:0_0_15px_hsl(var(--accent))]">Pro</span>
+                <span className="block font-extrabold text-5xl sm:text-6xl md:text-7xl text-accent [text-shadow:0_0_15px_hsl(var(--accent))]">Pro</span>
               </h2>
               <p className="max-w-lg text-sm md:text-base text-foreground/80 leading-relaxed text-balance">
                 Serviço profissional para upar contas de jogos mobile com rapidez, segurança e total sigilo.
               </p>
              
               <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
-                <Button asChild className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 transition-colors duration-300 shadow-[0_0_15px_hsl(var(--accent))]">
+                <Button asChild size="sm" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 transition-shadow duration-300 shadow-[0_0_15px_hsl(var(--accent))]">
                   <Link href="/pricing">Começar agora</Link>
                 </Button>
-                <Button asChild variant="outline" className="w-full sm:w-auto bg-transparent border-primary text-primary hover:bg-primary/10 hover:shadow-[0_0_20px_hsl(var(--primary))] transition-[background-color,box-shadow] duration-300">
+                <Button asChild size="sm" variant="outline" className="w-full sm:w-auto bg-transparent border-primary text-primary hover:bg-primary/10 transition-shadow duration-300 hover:shadow-[0_0_20px_hsl(var(--primary))]">
                   <Link href="/games">Ver jogos</Link>
                 </Button>
               </div>
@@ -100,7 +101,7 @@ export default function Home() {
                   <Card
                     key={index}
                     className={cn(
-                      "bg-card/50 backdrop-blur-sm border border-white/10 text-left p-6 transition-[border-color,box-shadow] duration-300 hover:border-accent/80 hover:shadow-accent/10 hover:shadow-2xl rounded-xl group",
+                      "bg-card/50 border border-white/10 text-left p-6 transition-colors duration-300 hover:border-accent/80 rounded-xl group md:backdrop-blur-sm",
                       item.text === 'Qualidade premium' && "border-accent shadow-lg shadow-accent/20"
                     )}
                   >
