@@ -94,10 +94,10 @@ function BoosterCarousel({
 export default function ContactBoosterPage() {
   const contacts = [
     {
-      title: 'Contato Geral',
+      title: 'Nossa Equipe',
       profiles: [
         {
-          name: 'Booster Geral',
+          name: 'Sobre Nós',
           imageUrl: 'https://i.imgur.com/36RI4H5.png',
           link: 'https://chat.whatsapp.com/BlKFlq712KuKCreqnioSMf',
           description:
@@ -110,14 +110,14 @@ export default function ContactBoosterPage() {
   return (
     <div className="min-h-screen overflow-y-auto relative md:overflow-hidden">
       <Image
-        src="https://i.imgur.com/J4NRuCh.png"
+        src="https://imgur.com/J4NRuCh.png"
         alt="Fundo abstrato"
         fill
         className="hidden md:block object-cover object-center z-0"
         data-ai-hint="abstract background"
       />
       <Image
-        src="https://i.imgur.com/Iyqjxgp.png"
+        src="https://imgur.com/Iyqjxgp.png"
         alt="Fundo abstrato mobile"
         fill
         className="md:hidden object-cover object-center z-0"
