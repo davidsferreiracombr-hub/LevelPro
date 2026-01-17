@@ -137,7 +137,7 @@ export default function ContactBoosterPage() {
         {
           name: 'Booster Geral',
           imageUrl: 'https://i.imgur.com/p3IdzSN.png',
-          link: 'https://wa.me/5511999998888',
+          link: 'https://chat.whatsapp.com/BlKFlq712KuKCreqnioSMf',
           description:
             'Minha vida sempre girou em torno de games. De consoles antigos aos mais novos jogos mobile, minha curiosidade me fez dominar dezenas de títulos. Essa versatilidade me permite oferecer um serviço de boosting de alta qualidade em vários jogos, com foco em segurança e no resultado.',
         },
@@ -189,7 +189,7 @@ export default function ContactBoosterPage() {
                       height={80}
                       className={cn(
                         'w-20 h-20 rounded-full border-2 border-black/50 bg-card object-cover',
-                        profile.name === 'Booster 1' && 'object-[0_30%]'
+                        profile.name === 'Booster 1' && 'object-[0_20%]'
                       )}
                       data-ai-hint="profile picture"
                     />
