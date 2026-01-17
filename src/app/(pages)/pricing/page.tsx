@@ -127,7 +127,7 @@ export default function ContactBoosterPage() {
           imageUrl: 'https://i.imgur.com/EA1lJdK.png',
           link: 'https://wa.me/5511999998888',
           description:
-            'Brawl Stars me conquistou pela variedade de Brawlers e modos de jogo. Mergulhei fundo para dominar as habilidades de cada personagem e as melhores composições para cada mapa. Minha especialidade é a subida de troféus e maestria, garantindo um progresso rápido.',
+            'Me chamo David, Conheci o Braw através de um amigo meu que jogava na sala de aula, gostei do jogo e procurei aprender mais, gostei bastante de conhecer o lipe e o Vtzinn na epóca, conheci métodos e consegui me aprimorar no jogo chegando a 90K de troféus em 2 anos, e hoje estou a serviço da LevelPro',
         },
       ],
     },
