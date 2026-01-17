@@ -110,14 +110,14 @@ export default function ContactBoosterPage() {
   return (
     <div className="min-h-screen overflow-y-auto relative md:overflow-hidden">
       <Image
-        src="https://imgur.com/J4NRuCh"
+        src="https://i.imgur.com/J4NRuCh.png"
         alt="Fundo abstrato"
         fill
         className="hidden md:block object-cover object-center z-0"
         data-ai-hint="abstract background"
       />
       <Image
-        src="https://imgur.com/Iyqjxgp"
+        src="https://i.imgur.com/Iyqjxgp.png"
         alt="Fundo abstrato mobile"
         fill
         className="md:hidden object-cover object-center z-0"
