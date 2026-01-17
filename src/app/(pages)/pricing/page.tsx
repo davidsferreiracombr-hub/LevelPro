@@ -54,7 +54,7 @@ export default function ContactBoosterPage() {
   ];
 
   return (
-    <div className="relative overflow-hidden rounded-xl">
+    <div className="relative overflow-hidden min-h-[calc(100vh-15rem)] flex items-center justify-center rounded-xl">
       <Image
         src="https://i.imgur.com/CE1pl3a.png"
         alt="Fundo abstrato"
