@@ -98,7 +98,7 @@ export default function ContactBoosterPage() {
       profiles: [
         {
           name: 'Booster Geral',
-          imageUrl: 'https://i.imgur.com/p3IdzSN.png',
+          imageUrl: 'https://i.imgur.com/36RI4H5.png',
           link: 'https://chat.whatsapp.com/BlKFlq712KuKCreqnioSMf',
           description:
             'Aqui no contato Geral, você encontra pessoas que estão disponiveis para te atender a qualquer momento em qualquer jogo, basta clicar no botão e sera atendido sem complicação e de imediato pela equipe',
@@ -143,12 +143,12 @@ export default function ContactBoosterPage() {
               <CardHeader className="items-center p-6 pb-2">
                 <div className={cn("flex mb-3 transition-transform duration-300 group-hover:scale-105 justify-center")}>
                     <Image
-                      src={'https://i.imgur.com/p3IdzSN.png'}
+                      src={contact.profiles[0].imageUrl}
                       alt={`Foto de perfil de ${contact.profiles[0].name}`}
                       width={80}
                       height={80}
                       className={cn(
-                        'w-20 h-20 rounded-full border-2 border-black/50 bg-card object-center'
+                        'w-20 h-20 rounded-full border-2 border-black/50 bg-card object-cover object-center'
                       )}
                       data-ai-hint="profile picture"
                     />
