@@ -11,12 +11,12 @@ export default function Footer() {
 
   return (
     <footer className="bg-card/50 border-t border-border/50">
-      <div className="container mx-auto px-4 py-8">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+      <div className="container mx-auto px-4 py-6">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6">
           <Link href="/" className="flex items-center">
-            <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={100} height={25} className="object-contain" />
+            <Image src="https://i.imgur.com/393nLfg.png" alt="LevelUp Logo" width={80} height={20} className="object-contain" />
           </Link>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-xs text-center md:text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} LevelPro Accelerator. Todos os direitos reservados.
           </p>
           <div className="flex items-center gap-4">
