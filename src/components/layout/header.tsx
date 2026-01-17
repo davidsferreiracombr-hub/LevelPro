@@ -8,9 +8,9 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Image from 'next/image';
 
 const navLinks = [
-  { href: '/games', label: 'Jogos' },
-  { href: '/pricing', label: 'Preços' },
-  { href: '/how-it-works', label: 'Como funciona' },
+  { href: '/games', label: 'JOGOS' },
+  { href: '/pricing', label: 'PREÇOS' },
+  { href: '/how-it-works', label: 'COMO FUNCIONA' },
 ];
 
 export default function Header() {
@@ -19,21 +19,22 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center">
       <div className="container mx-auto px-4">
-        <div className="mt-2 md:mt-4 flex h-14 items-center justify-between rounded-full border border-border/50 bg-background/50 backdrop-blur-xl shadow-lg px-4">
-          <div className="flex items-center gap-6">
-            <Link href="/" className="flex items-center">
-              <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={80} height={20} className="object-contain" />
-            </Link>
-            <nav className="hidden md:flex items-center gap-4">
+        <div className="mt-2 md:mt-4 grid h-14 grid-cols-3 items-center rounded-full border border-border/50 bg-background/50 px-4 shadow-lg backdrop-blur-xl">
+          <div className="justify-self-start">
+            <nav className="hidden items-center gap-4 md:flex">
               {navLinks.map((link) => (
-                <Link key={link.href} href={link.href} className="text-sm font-medium text-foreground hover:text-accent transition-colors uppercase">
+                <Link key={link.href} href={link.href} className="text-sm font-medium uppercase text-foreground transition-colors hover:text-accent">
                   {link.label}
                 </Link>
               ))}
             </nav>
           </div>
 
-          <div className="flex items-center gap-2">
+          <Link href="/" className="justify-self-center">
+            <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={80} height={20} className="object-contain" />
+          </Link>
+
+          <div className="flex items-center justify-end gap-2">
              <div className="hidden md:flex">
                 <Button asChild className="font-semibold bg-accent text-accent-foreground hover:bg-accent/90 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_20px_hsl(var(--accent))] transition-all duration-300">
                 <Link href="/login">Entrar</Link>
@@ -47,17 +48,17 @@ export default function Header() {
                     <span className="sr-only">Abrir menu</span>
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="right" className="bg-background/95 w-[80%]">
-                  <div className="flex flex-col h-full">
-                    <div className="flex justify-center items-center border-b pb-4">
+                <SheetContent side="right" className="w-[80%] bg-background/95">
+                  <div className="flex h-full flex-col">
+                    <div className="flex items-center justify-center border-b pb-4">
                       <Link href="/" className="flex items-center" onClick={() => setIsMobileMenuOpen(false)}>
                         <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={80} height={20} className="object-contain" />
                       </Link>
                     </div>
-                    <nav className="flex flex-col gap-4 mt-6">
+                    <nav className="mt-6 flex flex-col gap-4">
                        <Link
                           href="/"
-                          className="text-lg font-medium text-foreground hover:text-accent transition-colors uppercase"
+                          className="text-lg font-medium uppercase text-foreground transition-colors hover:text-accent"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           Início
@@ -66,7 +67,7 @@ export default function Header() {
                         <Link
                           key={link.href}
                           href={link.href}
-                          className="text-lg font-medium text-foreground hover:text-accent transition-colors uppercase"
+                          className="text-lg font-medium uppercase text-foreground transition-colors hover:text-accent"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           {link.label}
@@ -74,7 +75,7 @@ export default function Header() {
                       ))}
                     </nav>
                     <div className="mt-auto pt-8">
-                      <Button asChild className="w-full font-semibold bg-accent text-accent-foreground hover:bg-accent/90 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_20px_hsl(var(--accent))] transition-all duration-300 text-base py-5">
+                      <Button asChild className="w-full py-5 text-base font-semibold bg-accent text-accent-foreground transition-all duration-300 hover:bg-accent/90 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_20px_hsl(var(--accent))]">
                         <Link href="/login" onClick={() => setIsMobileMenuOpen(false)}>Entrar</Link>
                       </Button>
                     </div>
