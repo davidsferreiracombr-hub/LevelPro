@@ -21,7 +21,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center">
       <div className="container mx-auto px-4">
-        <div className="relative mt-4 flex h-14 items-center justify-between rounded-full border border-border/50 bg-background/80 px-6 backdrop-blur-sm shadow-lg">
+        <div className="relative mt-4 flex h-14 items-center justify-center md:justify-between rounded-full border border-border/50 bg-background/80 px-6 backdrop-blur-sm shadow-lg">
           <div className="absolute right-6 top-1/2 -translate-y-1/2 md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
