@@ -44,7 +44,7 @@ function BoosterCarousel({
           {profiles.map((profile, profileIndex) => (
             <CarouselItem key={profileIndex}>
               <div className="flex flex-col items-center justify-between h-full space-y-2 py-1">
-                <div className="text-center space-y-2 min-h-[12rem] flex flex-col justify-center">
+                <div className="text-center space-y-1 min-h-[12rem] flex flex-col justify-center">
                   <p className="font-bold text-sm text-foreground">
                     Contato {profileIndex + 1}
                   </p>
@@ -72,7 +72,7 @@ function BoosterCarousel({
           />
         ))}
       </div>
-      <div className="space-y-2 mt-4">
+      <div className="space-y-2 mt-3">
         {profiles.map((profile, profileIndex) => (
           <Button
             key={profileIndex}
@@ -178,8 +178,8 @@ export default function ContactBoosterPage() {
               key={index}
               className="bg-black/50 border border-white/10 hover:border-accent/50 transition-all duration-300 flex flex-col text-center rounded-xl overflow-hidden"
             >
-              <CardHeader className="items-center p-4 pt-6 md:p-5">
-                <div className="flex -space-x-4 mb-4">
+              <CardHeader className="items-center p-6 pb-2">
+                <div className="flex -space-x-4 mb-3">
                   {contact.profiles.map((profile) => (
                     <Image
                       key={profile.name}
@@ -196,12 +196,12 @@ export default function ContactBoosterPage() {
                   {contact.title}
                 </CardTitle>
               </CardHeader>
-              <CardContent className="flex-grow flex flex-col justify-between px-4 md:px-5 pb-4 md:pb-5 pt-0">
+              <CardContent className="flex-grow flex flex-col justify-between px-6 pb-6 pt-2">
                 {contact.profiles.length > 1 ? (
                   <BoosterCarousel profiles={contact.profiles} />
                 ) : (
-                  <div className="flex flex-col items-center justify-between h-full space-y-4 py-1">
-                    <div className="text-center space-y-2 min-h-[12rem] flex flex-col justify-center">
+                  <div className="flex flex-col items-center justify-between h-full space-y-2 py-1">
+                    <div className="text-center space-y-1 min-h-[12rem] flex flex-col justify-center">
                       <p className="font-bold text-sm text-foreground">
                         {contact.profiles[0].name}
                       </p>
