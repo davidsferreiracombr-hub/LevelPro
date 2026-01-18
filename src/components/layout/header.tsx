@@ -13,7 +13,11 @@ const navLinks = [
   { href: '/how-it-works', label: 'COMO FUNCIONA' },
 ];
 
-const socialLink = "https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==";
+const socialLinks = [
+    { text: 'T', href: 'https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==', name: 'TikTok', colorClass: 'hover:text-white' },
+    { text: 'I', href: 'https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==', name: 'Instagram', colorClass: 'hover:text-[#E1306C]' },
+    { text: 'Y', href: 'https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==', name: 'YouTube', colorClass: 'hover:text-[#FF0000]' },
+];
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -41,16 +45,13 @@ export default function Header() {
                 <Button asChild className="font-semibold bg-accent text-accent-foreground hover:bg-accent/90 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_20px_hsl(var(--accent))] transition-[background-color,box-shadow] duration-300">
                   <Link href="/pricing">Começar agora</Link>
                 </Button>
-                <Button asChild variant="ghost" size="icon" className="text-muted-foreground hover:text-white transition-colors">
-                    <Link href={socialLink} target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                        <span className="font-bold">T</span>
-                    </Link>
-                </Button>
-                <Button asChild variant="ghost" size="icon" className="text-muted-foreground hover:text-[#E1306C] transition-colors">
-                    <Link href={socialLink} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <span className="font-bold">I</span>
-                    </Link>
-                </Button>
+                {socialLinks.map((link) => (
+                    <Button asChild variant="ghost" size="icon" className={`text-muted-foreground transition-colors ${link.colorClass}`} key={link.name}>
+                        <Link href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.name}>
+                            <span className="font-bold">{link.text}</span>
+                        </Link>
+                    </Button>
+                ))}
             </div>
             <div className="md:hidden">
               <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
@@ -91,16 +92,13 @@ export default function Header() {
                         <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)}>Começar agora</Link>
                       </Button>
                       <div className="flex justify-center items-center pt-4 gap-2">
-                        <Button asChild variant="ghost" size="icon" className="h-10 w-10 text-muted-foreground hover:text-white transition-colors">
-                            <Link href={socialLink} target="_blank" rel="noopener noreferrer" aria-label="TikTok" onClick={() => setIsMobileMenuOpen(false)}>
-                                <span className="font-bold text-xl">T</span>
-                            </Link>
-                        </Button>
-                        <Button asChild variant="ghost" size="icon" className="h-10 w-10 text-muted-foreground hover:text-[#E1306C] transition-colors">
-                            <Link href={socialLink} target="_blank" rel="noopener noreferrer" aria-label="Instagram" onClick={() => setIsMobileMenuOpen(false)}>
-                                <span className="font-bold text-xl">I</span>
-                            </Link>
-                        </Button>
+                        {socialLinks.map((link) => (
+                            <Button asChild variant="ghost" size="icon" className={`h-10 w-10 text-muted-foreground transition-colors ${link.colorClass}`} key={link.name}>
+                                <Link href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.name} onClick={() => setIsMobileMenuOpen(false)}>
+                                    <span className="font-bold text-xl">{link.text}</span>
+                                </Link>
+                            </Button>
+                        ))}
                       </div>
                     </div>
                   </div>
