@@ -47,6 +47,7 @@ export default function Home() {
               alt={heroBackground.description}
               fill
               priority
+              sizes="100vw"
               className="hidden md:block object-cover object-center"
               data-ai-hint={heroBackground.imageHint}
             />
@@ -57,6 +58,7 @@ export default function Home() {
               alt={heroCharacter.description}
               fill
               priority
+              sizes="100vw"
               className="md:hidden object-cover object-center"
               data-ai-hint={heroCharacter.imageHint}
             />
@@ -65,10 +67,10 @@ export default function Home() {
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex flex-col gap-4 items-center max-w-3xl mx-auto">
-              <h1 className="font-headline text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-wider text-balance text-white animate-title-float">
+              <h1 className="font-headline text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-wider text-balance text-white animate-title-float select-none [will-change:transform]">
                 Eleve seu Jogo
               </h1>
-              <h2 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold uppercase tracking-wider text-balance text-center animate-title-float [animation-delay:500ms]">
+              <h2 className="font-headline text-xl sm:text-2xl md:text-3xl font-bold uppercase tracking-wider text-balance text-center animate-title-float [animation-delay:500ms] select-none [will-change:transform]">
                 <span className="text-primary [text-shadow:0_0_15px_hsl(var(--primary))]">Suba de Nível</span> como um
                 <span className="block font-extrabold text-5xl sm:text-6xl md:text-7xl text-accent [text-shadow:0_0_15px_hsl(var(--accent))]">Pro</span>
               </h2>
