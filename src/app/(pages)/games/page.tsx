@@ -10,9 +10,9 @@ export const metadata = {
 export default function GamesPage() {
   const games = [
     {
-      name: 'Free Fire',
-      imageUrl: 'https://i.imgur.com/9WbMrpf.png',
-      imageHint: 'soldier battle',
+      name: '8 Ball Pool',
+      imageUrl: 'https://i.imgur.com/y1v2Y0c.png',
+      imageHint: 'pool table billiards',
       summary: 'O valor varia com o tempo, dificuldade e dedicação exigida.',
       price: '20,00',
     },
