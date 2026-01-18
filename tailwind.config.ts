@@ -101,14 +101,19 @@ export default {
           },
           '50%': {
             boxShadow:
-              '0 0 25px hsl(var(--accent) / 0.9)',
+              '0 0 20px hsl(var(--accent) / 0.8)',
           },
+        },
+        'title-float': {
+            '0%, 100%': { transform: 'translateY(0px)' },
+            '50%': { transform: 'translateY(-10px)' },
         },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'pulse-strong': 'pulse-strong 3s infinite ease-in-out',
+        'pulse-strong': 'pulse-strong 2.5s infinite ease-in-out',
+        'title-float': 'title-float 4s ease-in-out infinite',
       },
     },
   },
