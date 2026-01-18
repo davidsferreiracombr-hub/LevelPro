@@ -16,7 +16,7 @@ const navLinks = [
 const socialLinks = [
     { text: 'T', href: 'https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==', name: 'TikTok', colorClass: 'hover:text-white' },
     { text: 'I', href: 'https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==', name: 'Instagram', colorClass: 'hover:text-[#E1306C]' },
-    { text: 'Y', href: 'https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==', name: 'YouTube', colorClass: 'hover:text-[#FF0000]' },
+    { text: 'Y', href: 'https://www.youtube.com/@LEVELPRO_GAME', name: 'YouTube', colorClass: 'hover:text-[#FF0000]' },
 ];
 
 export default function Header() {
