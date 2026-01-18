@@ -14,7 +14,7 @@ export default function GamesPage() {
       imageUrl: 'https://i.imgur.com/y1v2Y0c.png',
       imageHint: 'pool table billiards',
       summary: 'O valor varia com o tempo, dificuldade e dedicação exigida.',
-      price: '20,00',
+      price: '15,00',
     },
     {
       name: '⭐ Brawl Stars',
