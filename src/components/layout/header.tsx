@@ -2,11 +2,10 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, Instagram } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Image from 'next/image';
-import { TiktokIcon } from '../icons/tiktok';
 
 const navLinks = [
   { href: '/games', label: 'JOGOS' },
@@ -44,12 +43,12 @@ export default function Header() {
                 </Button>
                 <Button asChild variant="ghost" size="icon" className="text-muted-foreground hover:text-white transition-colors">
                     <Link href={socialLink} target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                        <TiktokIcon />
+                        <span className="font-bold">T</span>
                     </Link>
                 </Button>
                 <Button asChild variant="ghost" size="icon" className="text-muted-foreground hover:text-[#E1306C] transition-colors">
                     <Link href={socialLink} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <Instagram className="h-5 w-5" />
+                        <span className="font-bold">I</span>
                     </Link>
                 </Button>
             </div>
@@ -94,12 +93,12 @@ export default function Header() {
                       <div className="flex justify-center items-center pt-4 gap-2">
                         <Button asChild variant="ghost" size="icon" className="h-10 w-10 text-muted-foreground hover:text-white transition-colors">
                             <Link href={socialLink} target="_blank" rel="noopener noreferrer" aria-label="TikTok" onClick={() => setIsMobileMenuOpen(false)}>
-                                <TiktokIcon className="h-6 w-6" />
+                                <span className="font-bold text-xl">T</span>
                             </Link>
                         </Button>
                         <Button asChild variant="ghost" size="icon" className="h-10 w-10 text-muted-foreground hover:text-[#E1306C] transition-colors">
                             <Link href={socialLink} target="_blank" rel="noopener noreferrer" aria-label="Instagram" onClick={() => setIsMobileMenuOpen(false)}>
-                                <Instagram className="h-6 w-6" />
+                                <span className="font-bold text-xl">I</span>
                             </Link>
                         </Button>
                       </div>

@@ -1,13 +1,11 @@
 import Link from 'next/link';
-import { Instagram } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import { TiktokIcon } from '../icons/tiktok';
 
 export default function Footer() {
   const socialLinks = [
-    { icon: TiktokIcon, href: 'https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==', name: 'TikTok', colorClass: 'hover:text-white' },
-    { icon: Instagram, href: 'https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==', name: 'Instagram', colorClass: 'hover:text-[#E1306C]' },
+    { text: 'T', href: 'https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==', name: 'TikTok', colorClass: 'hover:text-white' },
+    { text: 'I', href: 'https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==', name: 'Instagram', colorClass: 'hover:text-[#E1306C]' },
   ];
 
   return (
@@ -28,9 +26,9 @@ export default function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 aria-label={social.name} 
-                className={cn("text-muted-foreground transition-colors", social.colorClass)}
+                className={cn("text-muted-foreground transition-colors w-5 h-5 flex items-center justify-center", social.colorClass)}
               >
-                <social.icon className="h-5 w-5" />
+                <span className="font-bold text-lg">{social.text}</span>
               </Link>
             ))}
           </div>
