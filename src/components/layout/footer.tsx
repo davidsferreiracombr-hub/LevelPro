@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function Footer() {
   const socialLinks = [
-    { text: 'T', href: 'https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==', name: 'TikTok', colorClass: 'hover:text-white' },
+    { text: 'T', href: 'https://tiktok.com/@levelpro_game', name: 'TikTok', colorClass: 'hover:text-white' },
     { text: 'I', href: 'https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==', name: 'Instagram', colorClass: 'hover:text-[#E1306C]' },
     { text: 'Y', href: 'https://www.youtube.com/@LEVELPRO_GAME', name: 'YouTube', colorClass: 'hover:text-[#FF0000]' },
   ];
