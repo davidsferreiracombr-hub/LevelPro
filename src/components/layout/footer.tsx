@@ -1,12 +1,13 @@
 import Link from 'next/link';
-import { Instagram, Facebook } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import { TiktokIcon } from '../icons/tiktok';
 
 export default function Footer() {
   const socialLinks = [
+    { icon: TiktokIcon, href: 'https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==', name: 'TikTok', colorClass: 'hover:text-white' },
     { icon: Instagram, href: 'https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==', name: 'Instagram', colorClass: 'hover:text-[#E1306C]' },
-    { icon: Facebook, href: '#', name: 'Facebook', colorClass: 'hover:text-[#1877F2]' },
   ];
 
   return (

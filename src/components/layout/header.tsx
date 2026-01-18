@@ -6,12 +6,15 @@ import { Menu, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Image from 'next/image';
+import { TiktokIcon } from '../icons/tiktok';
 
 const navLinks = [
   { href: '/games', label: 'JOGOS' },
   { href: '/pricing', label: 'CONTATO' },
   { href: '/how-it-works', label: 'COMO FUNCIONA' },
 ];
+
+const socialLink = "https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -31,16 +34,21 @@ export default function Header() {
           </div>
 
           <Link href="/" className="justify-self-center">
-            <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={80} height={20} className="object-contain h-auto w-[70px] md:w-[80px]" />
+            <Image src="https://i.imgur.com/U8Qm9wx.png" alt="LevelUp Logo" width={70} height={20} className="object-contain h-auto w-[70px]" />
           </Link>
 
           <div className="flex items-center justify-end gap-2">
-             <div className="hidden md:flex items-center gap-2">
+             <div className="hidden md:flex items-center gap-1">
                 <Button asChild className="font-semibold bg-accent text-accent-foreground hover:bg-accent/90 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_20px_hsl(var(--accent))] transition-[background-color,box-shadow] duration-300">
                   <Link href="/pricing">Começar agora</Link>
                 </Button>
+                <Button asChild variant="ghost" size="icon" className="text-muted-foreground hover:text-white transition-colors">
+                    <Link href={socialLink} target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                        <TiktokIcon />
+                    </Link>
+                </Button>
                 <Button asChild variant="ghost" size="icon" className="text-muted-foreground hover:text-[#E1306C] transition-colors">
-                    <Link href="https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <Link href={socialLink} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <Instagram className="h-5 w-5" />
                     </Link>
                 </Button>
@@ -83,9 +91,14 @@ export default function Header() {
                       <Button asChild className="w-full py-5 text-base font-semibold bg-accent text-accent-foreground transition-[background-color,box-shadow] duration-300 hover:bg-accent/90 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_20px_hsl(var(--accent))]">
                         <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)}>Começar agora</Link>
                       </Button>
-                      <div className="flex justify-center pt-4">
+                      <div className="flex justify-center items-center pt-4 gap-2">
+                        <Button asChild variant="ghost" size="icon" className="h-10 w-10 text-muted-foreground hover:text-white transition-colors">
+                            <Link href={socialLink} target="_blank" rel="noopener noreferrer" aria-label="TikTok" onClick={() => setIsMobileMenuOpen(false)}>
+                                <TiktokIcon className="h-6 w-6" />
+                            </Link>
+                        </Button>
                         <Button asChild variant="ghost" size="icon" className="h-10 w-10 text-muted-foreground hover:text-[#E1306C] transition-colors">
-                            <Link href="https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" onClick={() => setIsMobileMenuOpen(false)}>
+                            <Link href={socialLink} target="_blank" rel="noopener noreferrer" aria-label="Instagram" onClick={() => setIsMobileMenuOpen(false)}>
                                 <Instagram className="h-6 w-6" />
                             </Link>
                         </Button>
