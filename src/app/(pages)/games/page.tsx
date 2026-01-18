@@ -11,7 +11,7 @@ export default function GamesPage() {
   const games = [
     {
       name: '8 Ball Pool',
-      imageUrl: 'https://i.imgur.com/y1v2Y0c.png',
+      imageUrl: 'https://i.imgur.com/wTIWUFh.png',
       imageHint: 'pool table billiards',
       summary: 'O valor varia com o tempo, dificuldade e dedicação exigida.',
       price: '15,00',
