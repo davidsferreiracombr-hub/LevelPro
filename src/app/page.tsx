@@ -87,9 +87,15 @@ export default function Home() {
              
               <div className="flex flex-col items-center gap-4 pt-6">
                 <div className="flex items-center gap-4 mb-2">
-                  {socialLinks.map((link) => (
-                      <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.name} 
-                          className={`p-2 rounded-full text-white/80 transition-all duration-300 hover:scale-125 ${link.colorClass}`}>
+                  {socialLinks.map((link, index) => (
+                      <a 
+                          key={link.name} 
+                          href={link.href} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          aria-label={link.name} 
+                          style={{ animationDelay: `${index * 300}ms` }}
+                          className={`p-2 rounded-full text-white/80 transition-all duration-300 hover:scale-125 animate-icon-glow ${link.colorClass}`}>
                           {link.icon ? <link.icon className="h-6 w-6" /> : <span className="font-bold text-lg w-6 h-6 flex items-center justify-center">{link.text}</span>}
                       </a>
                   ))}
