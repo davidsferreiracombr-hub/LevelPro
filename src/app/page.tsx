@@ -89,7 +89,7 @@ export default function Home() {
                 <div className="flex items-center gap-4 mb-2">
                   {socialLinks.map((link) => (
                       <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.name} 
-                          className={`p-2 rounded-full text-white/80 transition-colors ${link.colorClass}`}>
+                          className={`p-2 rounded-full text-white/80 transition-all duration-300 hover:scale-125 ${link.colorClass}`}>
                           {link.icon ? <link.icon className="h-6 w-6" /> : <span className="font-bold text-lg w-6 h-6 flex items-center justify-center">{link.text}</span>}
                       </a>
                   ))}
