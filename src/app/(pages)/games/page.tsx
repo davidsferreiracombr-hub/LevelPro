@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 const games = [
-    { name: 'League of Legends', imageUrl: 'https://i.imgur.com/sBLo2iQ.jpg', href: '/pricing', imageHint: 'fantasy character' },
+    { name: 'League of Legends', imageUrl: 'https://imgur.com/sGXIn2R', href: '/pricing', imageHint: 'fantasy character' },
     { name: 'Call of Duty: Warzone', imageUrl: 'https://i.imgur.com/7iV4o2j.jpg', href: '/pricing', imageHint: 'soldier war' },
     { name: 'Genshin Impact', imageUrl: 'https://i.imgur.com/YVb4jPo.jpg', href: '/pricing', imageHint: 'anime character' },
     { name: 'Free Fire', imageUrl: 'https://i.imgur.com/bE3B3yq.jpg', href: '/pricing', imageHint: 'action character shooting' },
