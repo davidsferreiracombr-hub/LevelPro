@@ -16,23 +16,23 @@ export default function Home() {
   const infoBarItems = [
     { 
       icon: Rocket, 
-      text: 'Boost rápido',
-      description: 'Nossos pro-players garantem uma subida de nível veloz e eficiente.' 
+      text: 'Boost Rápido',
+      description: 'Nossa equipe experiente garante uma progressão rápida e eficiente.' 
     },
     { 
       icon: Gamepad2, 
-      text: 'Mobile games',
-      description: 'Somos especialistas nos maiores jogos mobile do mercado.'
+      text: 'Jogos Mobile',
+      description: 'Focados nos maiores jogos mobile do mercado, oferecemos um serviço especializado.'
     },
     { 
       icon: KeyRound, 
-      text: 'Seguro e discreto',
-      description: 'Sua conta é tratada com total confidencialidade e segurança.'
+      text: 'Seguro e Discreto',
+      description: 'Sua conta é tratada com máxima confidencialidade e segurança.'
     },
     { 
       icon: Star, 
-      text: 'Qualidade premium',
-      description: 'Serviço de alta performance para os jogadores mais exigentes.'
+      text: 'Qualidade Premium',
+      description: 'Serviço de alta performance para jogadores que buscam excelência.'
     },
   ];
 
@@ -119,7 +119,7 @@ export default function Home() {
                     Garantimos uma experiência de alto nível do início ao fim.
                 </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
               {infoBarItems.map((item, index) => (
                 <Card
                   key={index}
