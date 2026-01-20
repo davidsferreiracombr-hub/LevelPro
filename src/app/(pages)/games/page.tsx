@@ -17,9 +17,9 @@ export default function GamesPage() {
   return (
     <div className="container mx-auto px-4 pt-24 pb-12">
       <h1 className="text-3xl font-bold mb-8 text-foreground">Categorias Populares</h1>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto">
         {games.map((game) => (
-          <Link href={game.href} key={game.name} className="group block">
+          <Link href={game.href} key={game.name} className="group block w-36 sm:w-40">
             <div className="overflow-hidden rounded-lg border-2 border-transparent transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-accent">
               <Image
                 src={game.imageUrl}
