@@ -113,7 +113,7 @@ export default function Home() {
 
         <section className="py-12 sm:py-20">
           <div className="container mx-auto px-4">
-             <div className="text-center mb-10 md:mb-12">
+             <div className="text-center mb-10 md:mb-16">
                 <h2 className="text-3xl md:text-5xl font-bold font-headline text-white">Por que nos escolher?</h2>
                 <p className="mt-3 md:mt-4 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
                     Garantimos uma experiência de alto nível do início ao fim.
@@ -121,30 +121,19 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               {infoBarItems.map((item, index) => (
-                  <Card
-                    key={index}
-                    className={cn(
-                      "text-left p-6 rounded-xl group transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl",
-                      index === infoBarItems.length - 1
-                        ? "bg-accent text-accent-foreground shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_25px_hsl(var(--accent))]"
-                        : "bg-card text-foreground border border-border hover:border-accent hover:shadow-accent/10"
-                    )}
-                  >
-                    <div className="space-y-4">
-                        <div className={cn(
-                          "w-12 h-12 rounded-lg flex items-center justify-center bg-black/10 transition-colors duration-300 group-hover:bg-black/20",
-                           index === infoBarItems.length - 1
-                            ? ""
-                            : "text-accent"
-                        )}>
-                            <item.icon className="h-6 w-6" />
+                <Card
+                  key={index}
+                  className="rounded-2xl bg-card border border-border/10 overflow-hidden group transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10"
+                >
+                    <div className="h-20 bg-gradient-to-br from-primary/10 to-accent/10" />
+                    <div className="flex flex-col items-center px-4 pb-6 -mt-12 text-center">
+                        <div className="w-20 h-20 rounded-full bg-background border-4 border-background flex items-center justify-center text-primary mb-4 ring-1 ring-border/20 transition-transform duration-300 group-hover:scale-110 group-hover:ring-primary/50">
+                            <item.icon className="h-10 w-10" />
                         </div>
-                        <div className="space-y-1">
-                            <h3 className="text-lg font-bold">{item.text}</h3>
-                            <p className="text-sm opacity-80 text-balance">{item.description}</p>
-                        </div>
+                        <h3 className="text-lg font-bold text-foreground">{item.text}</h3>
+                        <p className="mt-1 text-sm text-muted-foreground text-balance">{item.description}</p>
                     </div>
-                  </Card>
+                </Card>
               ))}
             </div>
           </div>
