@@ -1,99 +1,49 @@
-import { Card, CardContent, CardTitle } from '@/components/ui/card';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
 export const metadata = {
   title: 'Jogos | LevelPro Accelerator',
 };
 
+const games = [
+    { name: 'League of Legends', imageUrl: 'https://i.imgur.com/sBLo2iQ.jpg', href: '/pricing', imageHint: 'fantasy character' },
+    { name: 'Call of Duty: Warzone', imageUrl: 'https://i.imgur.com/7iV4o2j.jpg', href: '/pricing', imageHint: 'soldier war' },
+    { name: 'Genshin Impact', imageUrl: 'https://i.imgur.com/YVb4jPo.jpg', href: '/pricing', imageHint: 'anime character' },
+    { name: 'Free Fire', imageUrl: 'https://i.imgur.com/bE3B3yq.jpg', href: '/pricing', imageHint: 'action character shooting' },
+    { name: 'Fortnite', imageUrl: 'https://i.imgur.com/8f1Zf7B.jpg', href: '/pricing', imageHint: 'cartoon characters' },
+    { name: 'Minecraft', imageUrl: 'https://i.imgur.com/qLg3YyT.jpg', href: '/pricing', imageHint: 'block world' },
+    { name: 'Valorant', imageUrl: 'https://i.imgur.com/sVv2vKy.jpg', href: '/pricing', imageHint: 'cypher character' },
+    { name: 'Roblox', imageUrl: 'https://i.imgur.com/2s4YgL6.jpg', href: '/pricing', imageHint: 'block character' },
+];
+
 export default function GamesPage() {
-  const games = [
-    {
-      name: '8 Ball Pool',
-      imageUrl: 'https://i.imgur.com/wTIWUFh.png',
-      imageHint: 'pool table billiards',
-      summary: 'O valor varia com o tempo, dificuldade e dedicação exigida.',
-      price: '15,00',
-    },
-    {
-      name: '⭐ Brawl Stars',
-      imageUrl: 'https://i.imgur.com/eqAsbOD.png',
-      imageHint: 'cartoon fight',
-      summary: 'Serviços que exigem mais tempo, habilidade e dedicação custam mais.',
-      price: '15,00',
-    },
-    {
-      name: '👑 Clash Royale',
-      imageUrl: 'https://i.imgur.com/SjS2DnD.png',
-      imageHint: 'castle fantasy',
-      summary: 'Progresso rápido e menor complexidade resultam em um valor mais justo.',
-      price: '15,00',
-    },
-    {
-      name: '🚗 Drive Zone',
-      imageUrl: 'https://i.imgur.com/sjmlTL6.png',
-      imageHint: 'racing car',
-      summary: 'Serviços mais completos e trabalhosos têm um valor maior.',
-      price: '20,00',
-    },
-  ];
-
   return (
-    <div className="relative overflow-hidden">
-        <Image
-            src="https://i.imgur.com/J4NRuCh.png"
-            alt="Fundo abstrato"
-            fill
-            className="hidden md:block object-cover object-center z-0"
-            data-ai-hint="abstract background"
-        />
-        <Image
-            src="https://i.imgur.com/Iyqjxgp.png"
-            alt="Fundo abstrato mobile"
-            fill
-            className="md:hidden object-cover object-center z-0"
-            data-ai-hint="abstract background"
-        />
-        <div className="absolute inset-0 bg-background/80 z-10" />
-        <div className="relative z-20 space-y-12 container mx-auto px-4 pt-24 pb-12">
-            <div className="text-center">
-                <h1 className="text-4xl md:text-5xl font-bold font-headline text-white">Games Populares</h1>
-                <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-                Apoiamos uma vasta gama de jogos populares. Veja os detalhes de cada serviço.
-                </p>
+    <div className="container mx-auto px-4 pt-24 pb-12">
+      <h1 className="text-3xl font-bold mb-8 text-foreground">Categorias Populares</h1>
+      <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-7 xl:grid-cols-8 gap-4 md:gap-6">
+        {games.map((game) => (
+          <Link href={game.href} key={game.name} className="group block">
+            <div className="overflow-hidden rounded-lg border-2 border-transparent transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-accent">
+              <Image
+                src={game.imageUrl}
+                alt={game.name}
+                width={200}
+                height={280}
+                className="w-full object-cover aspect-[5/7] rounded-md"
+                data-ai-hint={game.imageHint}
+              />
             </div>
-
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                {games.map((game) => (
-                <Card key={game.name} className="bg-card/50 border border-transparent rounded-xl overflow-hidden group transition-all duration-300 hover:border-accent/30 hover:shadow-2xl hover:shadow-accent/10 flex flex-col hover:-translate-y-2">
-                    <CardContent className="p-0 flex flex-col flex-grow">
-                        <div className="overflow-hidden rounded-t-xl">
-                            <Image
-                            src={game.imageUrl}
-                            alt={`Capa do jogo ${game.name}`}
-                            width={400}
-                            height={225}
-                            className="object-cover w-full aspect-video transition-transform duration-500 ease-in-out group-hover:scale-105"
-                            data-ai-hint={game.imageHint}
-                            />
-                        </div>
-                        <div className="p-4 space-y-3 flex flex-col flex-grow">
-                            <CardTitle className="text-base font-bold font-headline">{game.name}</CardTitle>
-                            <p className="text-xs text-muted-foreground flex-grow text-balance">{game.summary}</p>
-                            <p className="text-sm font-bold text-foreground pt-2 mt-auto border-t border-border">A partir de <span className="text-accent">R$ {game.price}</span></p>
-                        </div>
-                    </CardContent>
-                </Card>
-                ))}
-            </div>
-
-            <div className="text-center">
-                <Button asChild size="lg" className="bg-white text-black hover:bg-white/90 transition-transform duration-300 hover:scale-105 shadow-[0_0_15px_rgba(255,255,255,0.5)] hover:shadow-[0_0_25px_rgba(255,255,0.7)]">
-                    <Link href="/pricing">Continuar</Link>
-                </Button>
-            </div>
-        </div>
+          </Link>
+        ))}
+      </div>
+      <div className="text-center mt-12">
+        <Button asChild variant="link" className="text-muted-foreground hover:text-accent font-semibold uppercase tracking-wider text-sm">
+            <Link href="/pricing">
+                Ver todas as categorias
+            </Link>
+        </Button>
+      </div>
     </div>
   );
 }
