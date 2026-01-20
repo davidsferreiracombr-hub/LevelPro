@@ -24,9 +24,9 @@ export default function GamesPage() {
               <Image
                 src={game.imageUrl}
                 alt={game.name}
-                width={200}
-                height={280}
-                className="w-full object-contain aspect-[5/7] rounded-md"
+                width={150}
+                height={200}
+                className="w-full object-cover aspect-[3/4] rounded-lg"
                 data-ai-hint={game.imageHint}
               />
             </div>
