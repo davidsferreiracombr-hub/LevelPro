@@ -1,12 +1,14 @@
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
+import { Instagram } from 'lucide-react';
+import { YoutubeIcon } from '@/components/icons/youtube';
 
 export default function Footer() {
   const socialLinks = [
-    { text: 'T', href: 'https://tiktok.com/@levelpro_game', name: 'TikTok', colorClass: 'hover:text-white' },
-    { text: 'I', href: 'https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==', name: 'Instagram', colorClass: 'hover:text-[#E1306C]' },
-    { text: 'Y', href: 'https://www.youtube.com/@LEVELPRO_GAME', name: 'YouTube', colorClass: 'hover:text-[#FF0000]' },
+    { text: 'T', href: 'https://tiktok.com/@levelpro_game', name: 'TikTok', colorClass: 'hover:text-white', icon: null },
+    { text: 'I', href: 'https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==', name: 'Instagram', colorClass: 'hover:text-[#E1306C]', icon: Instagram },
+    { text: 'Y', href: 'https://www.youtube.com/@LEVELPRO_GAME', name: 'YouTube', colorClass: 'hover:text-[#FF0000]', icon: YoutubeIcon },
   ];
 
   return (
@@ -29,7 +31,7 @@ export default function Footer() {
                 aria-label={social.name} 
                 className={cn("text-muted-foreground transition-colors w-5 h-5 flex items-center justify-center", social.colorClass)}
               >
-                <span className="font-bold text-lg">{social.text}</span>
+                {social.icon ? <social.icon className="h-full w-full" /> : <span className="font-bold text-lg">{social.text}</span>}
               </Link>
             ))}
           </div>

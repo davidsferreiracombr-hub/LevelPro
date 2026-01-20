@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu } from 'lucide-react';
+import { Menu, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Image from 'next/image';
+import { YoutubeIcon } from '@/components/icons/youtube';
 
 const navLinks = [
   { href: '/games', label: 'JOGOS' },
@@ -14,9 +15,9 @@ const navLinks = [
 ];
 
 const socialLinks = [
-    { text: 'T', href: 'https://tiktok.com/@levelpro_game', name: 'TikTok', colorClass: 'hover:text-white' },
-    { text: 'I', href: 'https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==', name: 'Instagram', colorClass: 'hover:text-[#E1306C]' },
-    { text: 'Y', href: 'https://www.youtube.com/@LEVELPRO_GAME', name: 'YouTube', colorClass: 'hover:text-[#FF0000]' },
+    { text: 'T', name: 'TikTok', href: 'https://tiktok.com/@levelpro_game', colorClass: 'hover:text-white', icon: null },
+    { text: 'I', name: 'Instagram', href: 'https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==', colorClass: 'hover:text-[#E1306C]', icon: Instagram },
+    { text: 'Y', name: 'YouTube', href: 'https://www.youtube.com/@LEVELPRO_GAME', colorClass: 'hover:text-[#FF0000]', icon: YoutubeIcon },
 ];
 
 export default function Header() {
@@ -48,7 +49,7 @@ export default function Header() {
                 {socialLinks.map((link) => (
                     <Button asChild variant="ghost" size="icon" className={`text-muted-foreground transition-colors ${link.colorClass}`} key={link.name}>
                         <Link href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.name}>
-                            <span className="font-bold">{link.text}</span>
+                            {link.icon ? <link.icon className="h-5 w-5" /> : <span className="font-bold">{link.text}</span>}
                         </Link>
                     </Button>
                 ))}
@@ -95,7 +96,7 @@ export default function Header() {
                         {socialLinks.map((link) => (
                             <Button asChild variant="ghost" size="icon" className={`h-10 w-10 text-muted-foreground transition-colors ${link.colorClass}`} key={link.name}>
                                 <Link href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.name} onClick={() => setIsMobileMenuOpen(false)}>
-                                    <span className="font-bold text-xl">{link.text}</span>
+                                    {link.icon ? <link.icon className="h-6 w-6" /> : <span className="font-bold text-xl">{link.text}</span>}
                                 </Link>
                             </Button>
                         ))}
