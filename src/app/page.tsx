@@ -1,12 +1,13 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Rocket, Gamepad2, KeyRound, Star } from 'lucide-react';
+import { Rocket, Gamepad2, KeyRound, Star, Instagram } from 'lucide-react';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import Link from 'next/link';
 import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
+import { YoutubeIcon } from '@/components/icons/youtube';
 
 export default function Home() {
   const heroCharacter = PlaceHolderImages.find((img) => img.id === 'hero-character');
@@ -33,6 +34,12 @@ export default function Home() {
       text: 'Qualidade premium',
       description: 'Serviço de alta performance para os jogadores mais exigentes.'
     },
+  ];
+
+  const socialLinks = [
+    { text: 'T', name: 'TikTok', href: 'https://tiktok.com/@levelpro_game', colorClass: 'hover:text-white', icon: null },
+    { name: 'Instagram', href: 'https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==', colorClass: 'hover:text-[#E1306C]', icon: Instagram },
+    { name: 'YouTube', href: 'https://www.youtube.com/@LEVELPRO_GAME', colorClass: 'hover:text-[#FF0000]', icon: YoutubeIcon },
   ];
 
   return (
@@ -79,6 +86,14 @@ export default function Home() {
               </p>
              
               <div className="flex flex-col items-center gap-4 pt-6">
+                <div className="flex items-center gap-4 mb-2">
+                  {socialLinks.map((link) => (
+                      <a key={link.name} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.name} 
+                          className={`p-2 rounded-full text-white/80 transition-colors ${link.colorClass}`}>
+                          {link.icon ? <link.icon className="h-6 w-6" /> : <span className="font-bold text-lg w-6 h-6 flex items-center justify-center">{link.text}</span>}
+                      </a>
+                  ))}
+                </div>
                 <Button asChild size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 transition-colors duration-300 animate-pulse-strong">
                   <Link href="/games">Começar agora</Link>
                 </Button>

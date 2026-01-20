@@ -2,22 +2,15 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, Instagram } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Image from 'next/image';
-import { YoutubeIcon } from '@/components/icons/youtube';
 
 const navLinks = [
   { href: '/games', label: 'JOGOS' },
   { href: '/pricing', label: 'CONTATO' },
   { href: '/how-it-works', label: 'COMO FUNCIONA' },
-];
-
-const socialLinks = [
-    { text: 'T', name: 'TikTok', href: 'https://tiktok.com/@levelpro_game', colorClass: 'hover:text-white', icon: null },
-    { text: 'I', name: 'Instagram', href: 'https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==', colorClass: 'hover:text-[#E1306C]', icon: Instagram },
-    { text: 'Y', name: 'YouTube', href: 'https://www.youtube.com/@LEVELPRO_GAME', colorClass: 'hover:text-[#FF0000]', icon: YoutubeIcon },
 ];
 
 export default function Header() {
@@ -42,17 +35,10 @@ export default function Header() {
           </Link>
 
           <div className="flex items-center justify-end gap-2">
-             <div className="hidden md:flex items-center gap-1">
+             <div className="hidden md:flex">
                 <Button asChild className="font-semibold bg-accent text-accent-foreground hover:bg-accent/90 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_20px_hsl(var(--accent))] transition-[background-color,box-shadow] duration-300">
                   <Link href="/pricing">Começar agora</Link>
                 </Button>
-                {socialLinks.map((link) => (
-                    <Button asChild variant="ghost" size="icon" className={`text-muted-foreground transition-colors ${link.colorClass}`} key={link.name}>
-                        <Link href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.name}>
-                            {link.icon ? <link.icon className="h-5 w-5" /> : <span className="font-bold">{link.text}</span>}
-                        </Link>
-                    </Button>
-                ))}
             </div>
             <div className="md:hidden">
               <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
@@ -92,15 +78,6 @@ export default function Header() {
                       <Button asChild className="w-full py-5 text-base font-semibold bg-accent text-accent-foreground transition-[background-color,box-shadow] duration-300 hover:bg-accent/90 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_20px_hsl(var(--accent))]">
                         <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)}>Começar agora</Link>
                       </Button>
-                      <div className="flex justify-center items-center pt-4 gap-2">
-                        {socialLinks.map((link) => (
-                            <Button asChild variant="ghost" size="icon" className={`h-10 w-10 text-muted-foreground transition-colors ${link.colorClass}`} key={link.name}>
-                                <Link href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.name} onClick={() => setIsMobileMenuOpen(false)}>
-                                    {link.icon ? <link.icon className="h-6 w-6" /> : <span className="font-bold text-xl">{link.text}</span>}
-                                </Link>
-                            </Button>
-                        ))}
-                      </div>
                     </div>
                   </div>
                 </SheetContent>
