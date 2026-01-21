@@ -68,7 +68,7 @@ export default function Home() {
           <div className="absolute inset-0">
             <Image
               src={
-                PlaceHolderImages.find(img => img.id === 'hero-background-hd')
+                PlaceHolderImages.find(img => img.id === 'hero-background')
                   ?.imageUrl || ''
               }
               alt="Fundo de jogo"
@@ -77,13 +77,13 @@ export default function Home() {
               className="object-cover object-center z-0 hidden md:block"
               data-ai-hint={
                 PlaceHolderImages.find(
-                  img => img.id === 'hero-background-hd'
+                  img => img.id === 'hero-background'
                 )?.imageHint || 'game background'
               }
             />
             <Image
               src={
-                PlaceHolderImages.find(img => img.id === 'hero-character-hd')
+                PlaceHolderImages.find(img => img.id === 'hero-character')
                   ?.imageUrl || ''
               }
               alt="Fundo de jogo mobile"
@@ -92,7 +92,7 @@ export default function Home() {
               className="object-cover object-center z-0 md:hidden"
               data-ai-hint={
                 PlaceHolderImages.find(
-                  img => img.id === 'hero-character-hd'
+                  img => img.id === 'hero-character'
                 )?.imageHint || 'game character'
               }
             />
@@ -182,10 +182,10 @@ export default function Home() {
         <section id="contato" className="relative py-10 sm:py-16 bg-background">
           <div className="container mx-auto px-4 space-y-10 md:space-y-12">
             <div className="text-center">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-headline text-white uppercase">
+              <h2 className="text-2xl sm:text-3xl font-bold font-headline text-white uppercase">
                 ENTRE EM CONTATO COM A NOSSA EQUIPE
               </h2>
-              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
                 Conheça nossos especialistas e escolha o ideal para sua jornada.
               </p>
             </div>
