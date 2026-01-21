@@ -116,6 +116,10 @@ export default {
             filter: 'drop-shadow(0 0 8px hsl(var(--accent) / 0.7))',
           },
         },
+        'card-pulse': {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.05)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -123,6 +127,7 @@ export default {
         'pulse-strong': 'pulse-strong 2.5s infinite ease-in-out',
         'title-float': 'title-float 4s ease-in-out infinite',
         'icon-glow': 'icon-glow 2.5s infinite ease-in-out',
+        'card-pulse': 'card-pulse 2.5s infinite ease-in-out',
       },
     },
   },

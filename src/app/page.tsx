@@ -114,9 +114,14 @@ export default function Home() {
               <div className="container mx-auto px-4">
                 <h2 className="text-lg md:text-3xl font-bold mb-4 sm:mb-8 text-foreground text-center uppercase md:pt-0 pt-2">NOSSOS SERVIÇOS</h2>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto">
-                  {games.map((game) => (
-                    <Link href={game.href} key={game.name} className="group block w-36 md:w-36">
-                      <div className="overflow-hidden rounded-lg border-2 border-transparent transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-accent">
+                  {games.map((game, index) => (
+                    <Link
+                      href={game.href}
+                      key={game.name}
+                      className="group block w-36 md:w-36 animate-card-pulse"
+                      style={{ animationDelay: `${index * 300}ms` }}
+                    >
+                      <div className="overflow-hidden rounded-lg border-2 border-transparent transition-all duration-300 ease-in-out group-hover:shadow-xl group-hover:border-accent">
                         <Image
                           src={game.imageUrl}
                           alt={game.name}
