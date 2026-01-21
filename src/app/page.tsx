@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Rocket, Gamepad2, KeyRound, Star, Instagram, Mail } from 'lucide-react';
+import { Rocket, Gamepad2, KeyRound, Star, Instagram, Mail, Phone, MapPin, Briefcase } from 'lucide-react';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import Link from 'next/link';
@@ -59,6 +59,21 @@ export default function Home() {
       ],
     },
   ];
+  
+  const desktopContact = {
+      name: 'Carlos Almeida',
+      title: 'Designer e criador de conteúdo. Apaixonado por tecnologia e viagens.',
+      imageUrl: 'https://i.imgur.com/lVETGOH.png',
+      email: 'carlosalmeida@email.com',
+      phone: '(11) 91234-5678',
+      location: 'São Paulo, SP',
+      link: 'https://chat.whatsapp.com/BlKFlq712KuKCreqnioSMf',
+      tags: [
+          { icon: Briefcase, text: 'Designer' },
+          { icon: Phone, text: 'Telefone' },
+          { icon: MapPin, text: 'São Paulo, SP' },
+      ]
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
@@ -152,15 +167,14 @@ export default function Home() {
                     Escolha o jogo que você quer subir de nível e fale com um de nossos especialistas.
                   </p>
                 </div>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto mt-16 md:mt-16">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto mt-16 md:mt-20">
                   {games.map((game, index) => (
                     <Link
                       href={game.href}
                       key={game.name}
-                      className="group block w-32 md:w-36 animate-card-pulse"
-                      style={{ animationDelay: `${index * 300}ms` }}
+                      className="group block w-32 md:w-36"
                     >
-                      <div className="overflow-hidden rounded-lg border-2 border-transparent transition-all duration-300 ease-in-out group-hover:shadow-xl group-hover:border-accent">
+                      <div className="overflow-hidden rounded-lg border-2 border-transparent transition-all duration-300 ease-in-out group-hover:shadow-xl group-hover:border-accent animate-card-pulse" style={{ animationDelay: `${index * 300}ms` }}>
                         <Image
                           src={game.imageUrl}
                           alt={game.name}
@@ -176,21 +190,21 @@ export default function Home() {
               </div>
             </section>
           </div>
-          <div className="absolute bottom-0 left-0 right-0 h-[450px] bg-gradient-to-t from-background via-background/95 to-transparent z-10" />
+          <div className="absolute bottom-0 left-0 right-0 h-[550px] bg-gradient-to-t from-background via-background/90 to-transparent z-10" />
         </div>
 
-        <section id="contato" className="relative py-10 sm:py-16 bg-background">
+        <section id="contato" className="relative py-10 sm:py-12 bg-background">
           <div className="container mx-auto px-4 space-y-10 md:space-y-12">
             <div className="text-center">
               <h2 className="text-2xl sm:text-3xl font-bold font-headline text-white uppercase">
                 ENTRE EM CONTATO COM A NOSSA EQUIPE
               </h2>
-              <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
+              <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-base">
                 Conheça nossos especialistas e escolha o ideal para sua jornada.
               </p>
             </div>
 
-            <div className="max-w-5xl mx-auto flex justify-center gap-6 md:gap-8">
+            <div className="max-w-5xl mx-auto flex justify-center gap-6 md:gap-8 md:hidden">
               {contacts.map((contact, index) => (
                 <Card
                   key={index}
@@ -231,6 +245,54 @@ export default function Home() {
                   </CardFooter>
                 </Card>
               ))}
+            </div>
+
+            <div className="hidden md:flex justify-center">
+              <Card className="w-full max-w-3xl bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
+                  <div className="p-8">
+                      <div className="flex items-center gap-8">
+                          <Image
+                              src={desktopContact.imageUrl}
+                              alt={`Foto de ${desktopContact.name}`}
+                              width={160}
+                              height={160}
+                              className="w-40 h-40 rounded-full object-cover border-4 border-primary"
+                              data-ai-hint="man portrait"
+                          />
+                          <div className="flex-grow">
+                              <h3 className="text-3xl font-bold font-headline text-white">{desktopContact.name}</h3>
+                              <p className="text-foreground/80 mt-1">{desktopContact.title}</p>
+                              <p className="text-foreground/60 text-sm">{desktopContact.bio}</p>
+
+                              <div className="space-y-3 mt-6">
+                                  <a href={`mailto:${desktopContact.email}`} className="flex items-center gap-3 text-foreground/90 hover:text-primary transition-colors">
+                                      <Mail className="w-5 h-5 text-blue-400" />
+                                      <span>{desktopContact.email}</span>
+                                  </a>
+                                  <a href={`tel:${desktopContact.phone.replace(/\D/g, '')}`} className="flex items-center gap-3 text-foreground/90 hover:text-primary transition-colors">
+                                      <Phone className="w-5 h-5 text-blue-400" />
+                                      <span>{desktopContact.phone}</span>
+                                  </a>
+                                  <div className="flex items-center gap-3 text-foreground/90">
+                                      <MapPin className="w-5 h-5 text-blue-400" />
+                                      <span>{desktopContact.location}</span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <Button asChild size="lg" className="w-full mt-8 bg-blue-600 hover:bg-blue-700 text-white font-bold text-base rounded-lg">
+                          <Link href={desktopContact.link} target="_blank">Entrar em Contato</Link>
+                      </Button>
+                  </div>
+                  <CardFooter className="bg-black/20 px-8 py-4 border-t border-white/10 flex justify-center gap-8">
+                      {desktopContact.tags.map((tag, i) => (
+                          <div key={i} className="flex items-center gap-2 text-sm text-foreground/70">
+                              <tag.icon className="w-4 h-4" />
+                              <span>{tag.text}</span>
+                          </div>
+                      ))}
+                  </CardFooter>
+              </Card>
             </div>
           </div>
         </section>
