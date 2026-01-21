@@ -6,6 +6,7 @@ import Footer from '@/components/layout/footer';
 import Link from 'next/link';
 import { Card, CardContent, CardFooter, CardTitle } from '@/components/ui/card';
 import { YoutubeIcon } from '@/components/icons/youtube';
+import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function Home() {
   const infoBarItems = [
@@ -65,20 +66,20 @@ export default function Home() {
       <main className="flex-grow">
         <div className="relative">
           <Image
-            src="https://i.imgur.com/IJh0TrX.png"
+            src={PlaceHolderImages.find(img => img.id === 'hero-background')?.imageUrl || ''}
             alt="Fundo de jogo"
             fill
             priority
             className="object-cover object-center z-0 hidden md:block"
-            data-ai-hint="game background"
+            data-ai-hint={PlaceHolderImages.find(img => img.id === 'hero-background')?.imageHint || 'game background'}
           />
           <Image
-            src="https://i.imgur.com/FWKepDL.png"
+            src={PlaceHolderImages.find(img => img.id === 'hero-character')?.imageUrl || ''}
             alt="Fundo de jogo mobile"
             fill
             priority
             className="object-cover object-center z-0 md:hidden"
-            data-ai-hint="game character"
+            data-ai-hint={PlaceHolderImages.find(img => img.id === 'hero-character')?.imageHint || 'game character'}
           />
           <div className="absolute inset-0 bg-background/80 z-10" />
 
@@ -128,9 +129,6 @@ export default function Home() {
             <section id="nossos-servicos" className="relative pb-24 sm:pb-32 pt-10 sm:pt-0">
               <div className="container mx-auto px-4">
                 <h2 className="text-lg md:text-3xl font-bold mb-2 text-foreground text-center uppercase md:pt-0 pt-2">NOSSOS SERVIÇOS</h2>
-                <p className="max-w-2xl mx-auto text-center text-muted-foreground mb-8">
-                  Escolha o jogo que você quer subir de nível e fale com nossos especialistas.
-                </p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto">
                   {games.map((game, index) => (
                     <Link
@@ -154,65 +152,65 @@ export default function Home() {
                 </div>
               </div>
             </section>
-
-            <section id="contato" className="relative py-12 sm:py-20">
-              <div className="container mx-auto px-4 space-y-10 md:space-y-16">
-                <div className="text-center">
-                  <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold font-headline text-white uppercase">
-                    ENTRE EM CONTATO COM A NOSSA EQUIPE
-                  </h2>
-                  <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-                    Conheça nossos especialistas e escolha o ideal para sua jornada.
-                  </p>
-                </div>
-
-                <div className="max-w-5xl mx-auto flex justify-center gap-6 md:gap-8">
-                  {contacts.map((contact, index) => (
-                    <Card
-                      key={index}
-                      className="bg-card/70 backdrop-blur-md border border-zinc-800 w-11/12 sm:w-full max-w-sm text-center p-4 sm:p-6 rounded-2xl transition-all duration-300 hover:border-white/50 hover:shadow-2xl hover:shadow-white/10 hover:-translate-y-2 flex flex-col items-center"
-                    >
-                      <div className="relative mb-6">
-                          <Image
-                              src={contact.profiles[0].imageUrl}
-                              alt={`Foto de perfil de ${contact.profiles[0].name}`}
-                              width={112}
-                              height={112}
-                              className="w-28 h-28 rounded-full object-cover border-4 border-white/50"
-                              data-ai-hint="profile picture"
-                          />
-                          <div className="absolute inset-0 rounded-full border-2 border-white animate-ping opacity-50"></div>
-                      </div>
-                      
-                      <CardTitle className="text-3xl font-bold font-headline text-white">{contact.title}</CardTitle>
-                      <p className="text-lg text-white font-semibold mb-4">{contact.profiles[0].name}</p>
-                      
-                      <CardContent className="p-0 flex-grow mb-8">
-                          <p className="text-sm text-muted-foreground text-balance">
-                              {contact.profiles[0].description}
-                          </p>
-                      </CardContent>
-
-                      <CardFooter className="p-0 w-full mt-auto">
-                        <Button
-                            asChild
-                            size="lg"
-                            className="w-full bg-white text-black hover:bg-white/90 transition-transform duration-300 hover:scale-105 shadow-[0_0_15px_rgba(255,255,255,0.5)] hover:shadow-[0_0_25px_rgba(255,255,0.7)]"
-                        >
-                            <Link href={contact.profiles[0].link} target="_blank">
-                                <Mail className="mr-2 h-4 w-4" />
-                                Entrar em contato
-                            </Link>
-                        </Button>
-                      </CardFooter>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-            </section>
           </div>
           <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-background to-transparent z-10" />
         </div>
+
+        <section id="contato" className="relative py-12 sm:py-20">
+          <div className="container mx-auto px-4 space-y-10 md:space-y-16">
+            <div className="text-center">
+              <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold font-headline text-white uppercase">
+                ENTRE EM CONTATO COM A NOSSA EQUIPE
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+                Conheça nossos especialistas e escolha o ideal para sua jornada.
+              </p>
+            </div>
+
+            <div className="max-w-5xl mx-auto flex justify-center gap-6 md:gap-8">
+              {contacts.map((contact, index) => (
+                <Card
+                  key={index}
+                  className="bg-card/70 backdrop-blur-md border border-zinc-800 w-11/12 sm:w-full max-w-sm text-center p-4 sm:p-6 rounded-2xl transition-all duration-300 hover:border-white/50 hover:shadow-2xl hover:shadow-white/10 hover:-translate-y-2 flex flex-col items-center"
+                >
+                  <div className="relative mb-6">
+                      <Image
+                          src={contact.profiles[0].imageUrl}
+                          alt={`Foto de perfil de ${contact.profiles[0].name}`}
+                          width={112}
+                          height={112}
+                          className="w-28 h-28 rounded-full object-cover border-4 border-white/50"
+                          data-ai-hint="profile picture"
+                      />
+                      <div className="absolute inset-0 rounded-full border-2 border-white animate-ping opacity-50"></div>
+                  </div>
+                  
+                  <CardTitle className="text-3xl font-bold font-headline text-white">{contact.title}</CardTitle>
+                  <p className="text-lg text-white font-semibold mb-4">{contact.profiles[0].name}</p>
+                  
+                  <CardContent className="p-0 flex-grow mb-8">
+                      <p className="text-sm text-muted-foreground text-balance">
+                          {contact.profiles[0].description}
+                      </p>
+                  </CardContent>
+
+                  <CardFooter className="p-0 w-full mt-auto">
+                    <Button
+                        asChild
+                        size="lg"
+                        className="w-full bg-white text-black hover:bg-white/90 transition-transform duration-300 hover:scale-105 shadow-[0_0_15px_rgba(255,255,255,0.5)] hover:shadow-[0_0_25px_rgba(255,255,0.7)]"
+                    >
+                        <Link href={contact.profiles[0].link} target="_blank">
+                            <Mail className="mr-2 h-4 w-4" />
+                            Entrar em contato
+                        </Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
 
         <section className="py-12 sm:py-20">
           <div className="container mx-auto px-4">
