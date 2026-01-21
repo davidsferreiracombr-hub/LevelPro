@@ -177,7 +177,7 @@ export default function Home() {
                     >
                       <div
                         className="overflow-hidden rounded-lg border-2 border-transparent transition-all duration-300 ease-in-out group-hover:shadow-xl group-hover:border-accent animate-card-pulse"
-                        style={{ animationDelay: `${index * 150}ms` }}
+                        style={{ animationDelay: `${index * 300}ms` }}
                       >
                         <Image
                           src={game.imageUrl}
