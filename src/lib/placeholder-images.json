@@ -3,13 +3,13 @@
     {
       "id": "hero-character",
       "description": "Futuristic character for mobile background.",
-      "imageUrl": "https://imgur.com/FWKepDL",
+      "imageUrl": "https://i.imgur.com/FWKepDL.png",
       "imageHint": "futuristic character"
     },
     {
       "id": "hero-background",
       "description": "Futuristic warrior for desktop background.",
-      "imageUrl": "https://imgur.com/IJh0TrX",
+      "imageUrl": "https://i.imgur.com/IJh0TrX.jpg",
       "imageHint": "futuristic warrior"
     }
   ]

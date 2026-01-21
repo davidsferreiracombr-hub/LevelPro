@@ -128,13 +128,13 @@ export default function Home() {
 
             <section id="nossos-servicos" className="relative pb-24 sm:pb-32 pt-10 sm:pt-0">
               <div className="container mx-auto px-4">
-                <h2 className="text-lg md:text-3xl font-bold mb-2 text-foreground text-center uppercase md:pt-0 pt-2">NOSSOS SERVIÇOS</h2>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto">
+                <h2 className="text-base md:text-3xl font-bold mb-2 text-foreground text-center uppercase md:pt-0 pt-2 -mt-16 md:mt-0">NOSSOS SERVIÇOS</h2>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto mt-4 md:mt-auto">
                   {games.map((game, index) => (
                     <Link
                       href={game.href}
                       key={game.name}
-                      className="group block w-36 md:w-36 animate-card-pulse"
+                      className="group block w-32 md:w-36 animate-card-pulse"
                       style={{ animationDelay: `${index * 300}ms` }}
                     >
                       <div className="overflow-hidden rounded-lg border-2 border-transparent transition-all duration-300 ease-in-out group-hover:shadow-xl group-hover:border-accent">
