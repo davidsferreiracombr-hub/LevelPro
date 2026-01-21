@@ -158,7 +158,7 @@ export default function Home() {
               </div>
             </section>
 
-            <section id="nossos-servicos" className="relative pb-24 sm:pb-32 pt-10 sm:pt-0">
+            <section id="nossos-servicos" className="relative pb-24 sm:pb-32 pt-10 sm:pt-0 md:pt-16">
               <div className="relative z-20 container mx-auto px-4">
                 <div className="text-center">
                   <h2 className="text-xl md:text-3xl font-bold mb-2 text-foreground text-center uppercase md:pt-0 pt-2 -mt-16 md:mt-0">
@@ -194,7 +194,7 @@ export default function Home() {
               </div>
             </section>
           </div>
-          <div className="absolute bottom-0 left-0 right-0 h-[550px] bg-gradient-to-t from-background via-background/90 to-transparent z-10" />
+          <div className="absolute bottom-0 left-0 right-0 h-[650px] bg-gradient-to-t from-background via-background/90 to-transparent z-10" />
         </div>
 
         <section id="contato" className="relative py-12 sm:py-16 bg-background">
