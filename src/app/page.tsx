@@ -275,12 +275,12 @@ export default function Home() {
                       <div className="space-y-3 md:space-y-4 mt-6">
                           <a href={`mailto:${desktopContact.email}`} className="flex items-center justify-center md:justify-start gap-3 text-foreground/90 hover:text-white transition-colors">
                               <Mail className="w-5 h-5 text-accent" />
-                              <span>{desktopContact.email}</span>
+                              <span>Email Verificado</span>
                               <ShieldCheck className="w-5 h-5 text-green-400" />
                           </a>
                           <a href={`tel:${desktopContact.phone.replace(/\\D/g, '')}`} className="flex items-center justify-center md:justify-start gap-3 text-foreground/90 hover:text-white transition-colors">
                               <Phone className="w-5 h-5 text-accent" />
-                              <span>{desktopContact.phone}</span>
+                              <span>Contato Protegido</span>
                               <ShieldCheck className="w-5 h-5 text-green-400" />
                           </a>
                           <div className="flex items-center justify-center md:justify-start gap-3 text-foreground/90">
