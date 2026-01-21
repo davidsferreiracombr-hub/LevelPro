@@ -50,19 +50,18 @@ export default function Home() {
       <main className="flex-grow">
         <div className="relative">
           <Image
-            src="https://i.imgur.com/l0mbrml.png"
+            src="https://i.imgur.com/5E9rtb4.png"
             alt="Fundo de jogo"
             fill
             priority
             className="object-cover object-center z-0"
             data-ai-hint="game background"
           />
-          <div className="absolute inset-0 bg-background/70 z-10" />
+          <div className="absolute inset-0 bg-background/80 z-10" />
 
           <div className="relative z-20">
             <section className="relative overflow-hidden h-screen flex items-center justify-center text-center text-white pt-24">
               <div className="absolute inset-0 hero-gradient" />
-              <div className="absolute bottom-0 inset-x-0 h-[500px] bg-gradient-to-t from-background to-transparent" />
               
               <div className="container mx-auto px-4 relative z-10">
                 <div className="flex flex-col gap-4 items-center max-w-3xl mx-auto">
@@ -103,7 +102,7 @@ export default function Home() {
               </div>
             </section>
 
-            <section id="nossos-servicos" className="relative pb-12 sm:pb-20">
+            <section id="nossos-servicos" className="relative pb-24 sm:pb-32 pt-16">
               <div className="container mx-auto px-4">
                 <h2 className="text-3xl font-bold mb-8 text-foreground text-center uppercase">NOSSOS SERVIÇOS</h2>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto">
