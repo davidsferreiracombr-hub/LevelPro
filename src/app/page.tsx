@@ -152,7 +152,7 @@ export default function Home() {
                     Escolha o jogo que você quer subir de nível e fale com um de nossos especialistas.
                   </p>
                 </div>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto mt-12 md:mt-16">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto mt-16 md:mt-16">
                   {games.map((game, index) => (
                     <Link
                       href={game.href}
@@ -176,7 +176,7 @@ export default function Home() {
               </div>
             </section>
           </div>
-          <div className="absolute bottom-0 left-0 right-0 h-72 bg-gradient-to-t from-background to-transparent z-10" />
+          <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-t from-background via-background to-transparent z-10" />
         </div>
 
         <section id="contato" className="relative py-12 sm:py-20 bg-background">
