@@ -131,7 +131,7 @@ export default {
         'pulse-strong': 'pulse-strong 2.5s infinite ease-in-out',
         'title-float': 'title-float 4s ease-in-out infinite',
         'icon-glow': 'icon-glow 2.5s infinite ease-in-out',
-        'card-pulse': 'card-pulse 4s infinite ease-in-out',
+        'card-pulse': 'card-pulse 6s infinite ease-in-out',
         'white-neon-pulse': 'white-neon-pulse 2.5s infinite ease-in-out',
       },
     },
