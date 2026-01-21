@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Rocket, Gamepad2, KeyRound, Star, Instagram, Mail, Phone, MapPin, Briefcase } from 'lucide-react';
+import { Rocket, Gamepad2, ShieldCheck, Trophy, Instagram, Mail, Phone, MapPin, Briefcase } from 'lucide-react';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import Link from 'next/link';
@@ -10,25 +10,25 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function Home() {
   const infoBarItems = [
-    { 
-      icon: Rocket, 
+    {
+      icon: Rocket,
       text: 'Boost Rápido',
-      description: 'Nossa equipe experiente garante uma progressão rápida e eficiente.' 
+      description: 'Progresso rápido e eficiente para subir de nível sem esforço.',
     },
-    { 
-      icon: Gamepad2, 
-      text: 'Jogos Mobile',
-      description: 'Focados nos maiores jogos mobile do mercado, oferecemos um serviço especializado.'
+    {
+      icon: Gamepad2,
+      text: 'Especialistas em Jogos Mobile',
+      description: 'Focados nos maiores jogos mobile do mercado.',
     },
-    { 
-      icon: KeyRound, 
-      text: 'Seguro e Discreto',
-      description: 'Sua conta é tratada com máxima confidencialidade e segurança.'
+    {
+      icon: ShieldCheck,
+      text: 'Seguro e Confidencial',
+      description: 'Sua conta tratada com total segurança e sigilo.',
     },
-    { 
-      icon: Star, 
-      text: 'Qualidade Premium',
-      description: 'Serviço de alta performance para jogadores que buscam excelência.'
+    {
+      icon: Trophy,
+      text: 'Serviço de Excelência',
+      description: 'Atendimento profissional e resultados garantidos.',
     },
   ];
 
@@ -199,27 +199,75 @@ export default function Home() {
 
         <section className="py-16 sm:py-24">
           <div className="container mx-auto px-4">
-             <div className="text-center mb-10 md:mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold font-headline text-white">Por que nos escolher?</h2>
-                <p className="mt-3 md:mt-4 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-                    Garantimos uma experiência de alto nível do início ao fim.
-                </p>
+            <div className="text-center mb-10 md:mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold font-headline text-white">
+                Por que nos escolher?
+              </h2>
+              <p className="mt-3 text-base text-muted-foreground max-w-2xl mx-auto">
+                Garantimos uma experiência de alto nível do início ao fim.
+              </p>
             </div>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {infoBarItems.map((item, index) => (
-                <Card
+                <div
                   key={index}
-                  className="rounded-2xl bg-card border border-border/10 overflow-hidden group transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10"
+                  className="relative rounded-2xl p-px bg-gradient-to-b from-accent/20 to-transparent group"
                 >
-                    <div className="h-20 bg-gradient-to-br from-primary/10 to-accent/10" />
-                    <div className="flex flex-col items-center px-4 pb-6 -mt-12 text-center">
-                        <div className="w-20 h-20 rounded-full bg-background border-4 border-background flex items-center justify-center text-primary mb-4 ring-1 ring-border/20 transition-transform duration-300 group-hover:scale-110 group-hover:ring-primary/50">
-                            <item.icon className="h-10 w-10" />
-                        </div>
-                        <h3 className="text-lg font-bold text-foreground">{item.text}</h3>
-                        <p className="mt-1 text-sm text-muted-foreground text-balance">{item.description}</p>
+                  <div className="relative bg-card/60 backdrop-blur-sm rounded-[15px] h-full p-6 text-center flex flex-col items-center transition-all duration-300 group-hover:bg-card/80 group-hover:shadow-2xl group-hover:shadow-accent/10">
+                    <div className="relative w-24 h-24 flex items-center justify-center mb-4">
+                      <svg
+                        width="90"
+                        height="90"
+                        viewBox="0 0 100 95"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="absolute text-accent opacity-20 group-hover:opacity-40 transition-opacity duration-300"
+                      >
+                        <defs>
+                          <radialGradient id={`glow-grad-${index}`} cx="50%" cy="50%" r="50%">
+                            <stop stopColor="hsl(var(--accent))" stopOpacity="0.5" />
+                            <stop offset="1" stopColor="hsl(var(--accent))" stopOpacity="0" />
+                          </radialGradient>
+                        </defs>
+                        <path
+                          d="M50 0L95.2691 23.75V71.25L50 95L4.73091 71.25V23.75L50 0Z"
+                          fill={`url(#glow-grad-${index})`}
+                        />
+                        <path
+                          d="M4.73091 23.75L0.5 28.5V66.5L4.73091 71.25"
+                          stroke="currentColor"
+                          strokeOpacity="0.3"
+                          strokeWidth="1"
+                        />
+                        <path
+                          d="M95.2691 23.75L99.5 28.5V66.5L95.2691 71.25"
+                          stroke="currentColor"
+                          strokeOpacity="0.3"
+                          strokeWidth="1"
+                        />
+                      </svg>
+                      <svg
+                        width="80"
+                        height="80"
+                        viewBox="0 0 100 95"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="absolute text-accent opacity-60 group-hover:opacity-100 transition-opacity duration-300"
+                      >
+                        <path
+                          d="M50 0L95.2691 23.75V71.25L50 95L4.73091 71.25V23.75L50 0Z"
+                          stroke="currentColor"
+                          strokeOpacity="0.8"
+                          strokeWidth="1"
+                        />
+                      </svg>
+                      <item.icon className="w-10 h-10 text-accent relative" />
                     </div>
-                </Card>
+
+                    <h3 className="text-xl font-headline text-white mb-2">{item.text}</h3>
+                    <p className="text-muted-foreground text-sm text-balance">{item.description}</p>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
