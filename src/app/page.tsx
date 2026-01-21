@@ -43,7 +43,7 @@ export default function Home() {
   ];
 
   const games = [
-    { name: 'League of Legends', imageUrl: 'https://i.imgur.com/vBMSe75.jpg', href: '/pricing', imageHint: 'fantasy character' },
+    { name: 'League of Legends', imageUrl: 'https://imgur.com/vBMSe75.jpg', href: '/pricing', imageHint: 'fantasy character' },
     { name: 'Call of Duty: Warzone', imageUrl: 'https://i.imgur.com/h9bxuFv.jpg', href: '/pricing', imageHint: 'soldier war' },
     { name: 'Genshin Impact', imageUrl: 'https://i.imgur.com/DTomfqo.jpg', href: '/pricing', imageHint: 'anime character' },
     { name: 'Free Fire', imageUrl: 'https://i.imgur.com/9bYYdKB.jpg', href: '/pricing', imageHint: 'action character shooting' },
@@ -134,11 +134,11 @@ export default function Home() {
             data-ai-hint="abstract background"
           />
           <div className="absolute inset-0 bg-background/80 z-10" />
-          <div className="relative z-20 container mx-auto px-4 pt-16 sm:pt-28 pb-12">
+          <div className="relative z-20 container mx-auto px-4 pt-16 sm:pt-16 pb-12">
             <h2 className="text-3xl font-bold mb-8 text-foreground text-center uppercase">Nossos Serviços</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto">
               {games.map((game) => (
-                <Link href={game.href} key={game.name} className="group block w-36 sm:w-36">
+                <Link href={game.href} key={game.name} className="group block w-28 sm:w-36">
                   <div className="overflow-hidden rounded-lg border-2 border-transparent transition-all duration-300 ease-in-out group-hover:scale-105 group-hover:shadow-xl group-hover:border-accent">
                     <Image
                       src={game.imageUrl}
