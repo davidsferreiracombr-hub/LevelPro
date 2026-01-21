@@ -50,7 +50,7 @@ export default function Home() {
       <main className="flex-grow">
         <div className="relative">
           <Image
-            src="https://i.imgur.com/5E9rtb4.png"
+            src="https://i.imgur.com/0R4DoLC.png"
             alt="Fundo de jogo"
             fill
             priority
@@ -102,7 +102,7 @@ export default function Home() {
               </div>
             </section>
 
-            <section id="nossos-servicos" className="relative pb-24 sm:pb-32 pt-16">
+            <section id="nossos-servicos" className="relative pb-24 sm:pb-32 pt-20">
               <div className="container mx-auto px-4">
                 <h2 className="text-3xl font-bold mb-8 text-foreground text-center uppercase">NOSSOS SERVIÇOS</h2>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto">
@@ -124,6 +124,7 @@ export default function Home() {
               </div>
             </section>
           </div>
+          <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-background to-transparent z-10" />
         </div>
 
         <section className="py-12 sm:py-20">
