@@ -68,7 +68,7 @@ export default function Home() {
           <div className="absolute inset-0">
             <Image
               src={
-                PlaceHolderImages.find(img => img.id === 'hero-background')
+                PlaceHolderImages.find(img => img.id === 'hero-background-hd')
                   ?.imageUrl || ''
               }
               alt="Fundo de jogo"
@@ -77,13 +77,13 @@ export default function Home() {
               className="object-cover object-center z-0 hidden md:block"
               data-ai-hint={
                 PlaceHolderImages.find(
-                  img => img.id === 'hero-background'
+                  img => img.id === 'hero-background-hd'
                 )?.imageHint || 'game background'
               }
             />
             <Image
               src={
-                PlaceHolderImages.find(img => img.id === 'hero-character')
+                PlaceHolderImages.find(img => img.id === 'hero-character-hd')
                   ?.imageUrl || ''
               }
               alt="Fundo de jogo mobile"
@@ -92,7 +92,7 @@ export default function Home() {
               className="object-cover object-center z-0 md:hidden"
               data-ai-hint={
                 PlaceHolderImages.find(
-                  img => img.id === 'hero-character'
+                  img => img.id === 'hero-character-hd'
                 )?.imageHint || 'game character'
               }
             />
@@ -176,13 +176,13 @@ export default function Home() {
               </div>
             </section>
           </div>
-          <div className="absolute bottom-0 left-0 right-0 h-96 bg-gradient-to-t from-background via-background to-transparent z-10" />
+          <div className="absolute bottom-0 left-0 right-0 h-[450px] bg-gradient-to-t from-background via-background/95 to-transparent z-10" />
         </div>
 
-        <section id="contato" className="relative py-12 sm:py-20 bg-background">
-          <div className="container mx-auto px-4 space-y-10 md:space-y-16">
+        <section id="contato" className="relative py-10 sm:py-16 bg-background">
+          <div className="container mx-auto px-4 space-y-10 md:space-y-12">
             <div className="text-center">
-              <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold font-headline text-white uppercase">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-headline text-white uppercase">
                 ENTRE EM CONTATO COM A NOSSA EQUIPE
               </h2>
               <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
