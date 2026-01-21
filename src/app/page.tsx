@@ -164,7 +164,8 @@ export default function Home() {
                     <Link
                       href={game.href}
                       key={game.name}
-                      className="group block w-32 md:w-36"
+                      className="group block w-32 md:w-36 animate-card-pulse"
+                      style={{ animationDelay: `${index * 300}ms` }}
                     >
                       <div
                         className="overflow-hidden rounded-lg"
