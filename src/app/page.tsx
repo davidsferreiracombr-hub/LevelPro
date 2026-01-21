@@ -139,7 +139,7 @@ export default function Home() {
                       ))}
                     </div>
                     <Button asChild size="lg" className="w-full sm:w-auto bg-accent text-accent-foreground hover:bg-accent/90 transition-colors duration-300 animate-pulse-strong">
-                      <Link href="/#nossos-servicos">Começar agora</Link>
+                      <Link href="/#contato">Começar agora</Link>
                     </Button>
                     <Button asChild variant="outline" className="w-full sm:w-auto bg-transparent border-foreground/30 text-foreground/80 hover:bg-foreground/10 hover:text-foreground">
                       <Link href="/how-it-works">Como funciona</Link>
