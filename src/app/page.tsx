@@ -176,8 +176,8 @@ export default function Home() {
                       className="group block w-32 md:w-36"
                     >
                       <div
-                        className="overflow-hidden rounded-lg border-2 border-transparent transition-all duration-300 ease-in-out group-hover:shadow-xl group-hover:border-accent animate-card-pulse"
-                        style={{ animationDelay: `${index * 300}ms` }}
+                        className="overflow-hidden rounded-lg border-2 border-transparent group-hover:shadow-xl group-hover:border-accent animate-card-pulse"
+                        style={{ animationDelay: `${index * 600}ms` }}
                       >
                         <Image
                           src={game.imageUrl}
