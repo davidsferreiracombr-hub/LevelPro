@@ -207,14 +207,14 @@ export default function Home() {
                 Garantimos uma experiência de alto nível do início ao fim.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
               {infoBarItems.map((item, index) => (
                 <div
                   key={index}
-                  className="relative overflow-hidden rounded-2xl p-6 text-center flex flex-col items-center group transition-all duration-300 bg-zinc-950/50 border border-zinc-800 hover:border-accent/30"
+                  className="relative overflow-hidden rounded-2xl p-4 md:p-6 text-center flex flex-col items-center group transition-all duration-300 bg-zinc-950/50 border border-zinc-800 hover:border-accent/30"
                 >
                   <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                  <div className="relative w-20 h-20 flex items-center justify-center mb-4">
+                  <div className="relative w-16 h-16 md:w-20 md:h-20 flex items-center justify-center mb-3 md:mb-4">
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -229,10 +229,10 @@ export default function Home() {
                         strokeLinejoin="round"
                       />
                     </svg>
-                    <item.icon className="w-9 h-9 text-accent" />
+                    <item.icon className="w-8 h-8 md:w-9 md:h-9 text-accent" />
                   </div>
 
-                  <h3 className="text-xl font-headline text-white mb-2">{item.text}</h3>
+                  <h3 className="text-lg md:text-xl font-headline text-white mb-2">{item.text}</h3>
                   <p className="text-muted-foreground text-sm text-balance">{item.description}</p>
                 </div>
               ))}
