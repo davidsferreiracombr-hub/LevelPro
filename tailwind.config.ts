@@ -120,6 +120,10 @@ export default {
           '0%, 100%': { transform: 'scale(1)' },
           '50%': { transform: 'scale(1.05)' },
         },
+        'white-neon-pulse': {
+          '0%, 100%': { boxShadow: '0 0 15px rgba(255, 255, 255, 0.5)' },
+          '50%': { boxShadow: '0 0 25px rgba(255, 255, 255, 0.7)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -128,6 +132,7 @@ export default {
         'title-float': 'title-float 4s ease-in-out infinite',
         'icon-glow': 'icon-glow 2.5s infinite ease-in-out',
         'card-pulse': 'card-pulse 2.5s infinite ease-in-out',
+        'white-neon-pulse': 'white-neon-pulse 2.5s infinite ease-in-out',
       },
     },
   },

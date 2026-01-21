@@ -175,7 +175,10 @@ export default function Home() {
                       key={game.name}
                       className="group block w-32 md:w-36"
                     >
-                      <div className="overflow-hidden rounded-lg border-2 border-transparent transition-all duration-300 ease-in-out group-hover:shadow-xl group-hover:border-accent group-hover:scale-105">
+                      <div
+                        className="overflow-hidden rounded-lg border-2 border-transparent transition-all duration-300 ease-in-out group-hover:shadow-xl group-hover:border-accent animate-card-pulse"
+                        style={{ animationDelay: `${index * 150}ms` }}
+                      >
                         <Image
                           src={game.imageUrl}
                           alt={game.name}
@@ -236,7 +239,7 @@ export default function Home() {
                     <Button
                         asChild
                         size="lg"
-                        className="w-full bg-white text-black hover:bg-white/90 transition-transform duration-300 hover:scale-105 shadow-[0_0_15px_rgba(255,255,255,0.5)] hover:shadow-[0_0_25px_rgba(255,255,0.7)]"
+                        className="w-full bg-white text-black hover:bg-white/90 transition-transform duration-300 hover:scale-105 animate-white-neon-pulse"
                     >
                         <Link href={contact.profiles[0].link} target="_blank">
                             <Mail className="mr-2 h-4 w-4" />
@@ -281,7 +284,7 @@ export default function Home() {
                               </div>
                           </div>
                       </div>
-                      <Button asChild size="lg" className="w-full mt-8 bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-base rounded-lg">
+                      <Button asChild size="lg" className="w-full mt-8 bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-base rounded-lg animate-pulse-strong">
                           <Link href={desktopContact.link} target="_blank">Entrar em Contato</Link>
                       </Button>
                   </div>
