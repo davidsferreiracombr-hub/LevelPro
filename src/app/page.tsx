@@ -251,89 +251,53 @@ export default function Home() {
               </p>
             </div>
 
-            {/* Card para Mobile */}
-            <div className="md:hidden flex justify-center">
-                <div className="relative w-full max-w-sm rounded-3xl overflow-hidden group">
-                    <Image
-                        src="https://i.imgur.com/36RI4H5.png"
-                        alt="Background Atendimento"
-                        fill
-                        className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
-                        data-ai-hint="profile picture man"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
-                    <div className="relative h-full flex flex-col justify-end text-white p-6 space-y-4">
-                        <div className="text-center">
-                            <h3 className="text-3xl font-bold font-headline">EQUIPE LEVELPRO</h3>
-                            <p className="text-foreground/80 mt-1">Especialistas prontos para te atender.</p>
-                        </div>
-                        <Button asChild size="lg" className="w-full bg-white text-black font-bold hover:bg-white/90 transition-transform duration-300 hover:scale-105 animate-white-neon-pulse">
-                            <Link href={desktopContact.link} target="_blank">
-                                <Mail className="mr-2 h-4 w-4" />
-                                Entrar em contato
-                            </Link>
-                        </Button>
-                        <div className="flex justify-center items-center gap-6 pt-2">
-                           {desktopContact.socials.map((social) => (
-                                <a key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors">
-                                    {typeof social.icon === 'string' ? (
-                                        <span className="font-bold text-xl">{social.icon}</span>
-                                    ) : (
-                                        <social.icon className="h-6 w-6" />
-                                    )}
-                                </a>
-                           ))}
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Card para Desktop */}
-            <div className="hidden md:flex justify-center">
-              <div className="relative w-full max-w-4xl bg-gradient-to-br from-zinc-950/70 to-black/70 backdrop-blur-lg border border-white/10 rounded-2xl shadow-2xl overflow-hidden group">
+            <div className="flex justify-center">
+              <div className="relative w-full max-w-sm md:max-w-4xl bg-gradient-to-br from-zinc-950/70 to-black/70 backdrop-blur-lg border border-white/10 rounded-2xl shadow-2xl overflow-hidden group">
                 <div className="absolute -top-1/2 -left-1/3 w-[600px] h-[600px] bg-primary/20 rounded-full filter blur-3xl opacity-0 group-hover:opacity-50 transition-opacity duration-700 animate-pulse"></div>
                 <div className="absolute -bottom-1/2 -right-1/3 w-[600px] h-[600px] bg-accent/20 rounded-full filter blur-3xl opacity-0 group-hover:opacity-50 transition-opacity duration-700 animate-pulse [animation-delay:500ms]"></div>
                 
-                <div className="relative p-8 flex items-center gap-10">
+                <div className="relative p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 md:gap-10">
                   <div className="flex-shrink-0">
                       <Image
                           src={desktopContact.imageUrl}
                           alt={`Foto de ${desktopContact.name}`}
                           width={200}
                           height={200}
-                          className="w-48 h-48 rounded-full object-cover border-4 border-white/10 shadow-2xl shadow-black transition-transform duration-500 group-hover:scale-105"
+                          className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-white/10 shadow-2xl shadow-black transition-transform duration-500 group-hover:scale-105"
                           data-ai-hint="man portrait"
                       />
                   </div>
-                  <div className="flex-grow">
+                  <div className="flex-grow text-center md:text-left">
                       <h3 className="text-3xl font-bold font-headline text-white">{desktopContact.name}</h3>
                       <p className="text-foreground/80 mt-1">{desktopContact.title}</p>
                       <p className="text-foreground/60 text-sm mt-3">{desktopContact.bio}</p>
 
-                      <div className="space-y-4 mt-6">
-                          <a href={`mailto:${desktopContact.email}`} className="flex items-center gap-3 text-foreground/90 hover:text-white transition-colors">
+                      <div className="space-y-3 md:space-y-4 mt-6">
+                          <a href={`mailto:${desktopContact.email}`} className="flex items-center justify-center md:justify-start gap-3 text-foreground/90 hover:text-white transition-colors">
                               <Mail className="w-5 h-5 text-accent" />
                               <span>{desktopContact.email}</span>
+                              <ShieldCheck className="w-5 h-5 text-green-400" />
                           </a>
-                          <a href={`tel:${desktopContact.phone.replace(/\\D/g, '')}`} className="flex items-center gap-3 text-foreground/90 hover:text-white transition-colors">
+                          <a href={`tel:${desktopContact.phone.replace(/\\D/g, '')}`} className="flex items-center justify-center md:justify-start gap-3 text-foreground/90 hover:text-white transition-colors">
                               <Phone className="w-5 h-5 text-accent" />
                               <span>{desktopContact.phone}</span>
+                              <ShieldCheck className="w-5 h-5 text-green-400" />
                           </a>
-                          <div className="flex items-center gap-3 text-foreground/90">
+                          <div className="flex items-center justify-center md:justify-start gap-3 text-foreground/90">
                               <MapPin className="w-5 h-5 text-accent" />
                               <span>{desktopContact.location}</span>
                           </div>
                       </div>
 
-                      <Button asChild size="lg" className="w-full mt-8 bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-base rounded-lg transition-all duration-300 shadow-[0_0_20px_hsl(var(--accent)_/_0.7)] hover:shadow-[0_0_30px_hsl(var(--accent)_/_1)] group-hover:scale-105">
+                      <Button asChild size="lg" className="w-full mt-6 md:mt-8 bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-base rounded-lg transition-all duration-300 shadow-[0_0_20px_hsl(var(--accent)_/_0.7)] hover:shadow-[0_0_30px_hsl(var(--accent)_/_1)] group-hover:scale-105">
                           <Link href={desktopContact.link} target="_blank">Entrar em Contato via WhatsApp</Link>
                       </Button>
                   </div>
                 </div>
-                 <CardFooter className="bg-black/30 px-8 py-4 border-t border-white/10 flex justify-between items-center">
-                    <div className="flex items-center gap-6">
+                 <CardFooter className="bg-black/30 px-6 md:px-8 py-4 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <div className="flex items-center gap-4 md:gap-6">
                          {desktopContact.tags.map((tag, i) => (
-                          <div key={i} className="flex items-center gap-2 text-sm text-foreground/70">
+                          <div key={i} className="flex items-center gap-2 text-xs md:text-sm text-foreground/70">
                               <tag.icon className="w-4 h-4 text-accent" />
                               <span>{tag.text}</span>
                           </div>
