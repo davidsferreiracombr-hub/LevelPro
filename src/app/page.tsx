@@ -61,7 +61,7 @@ export default function Home() {
   ];
   
   const desktopContact = {
-      name: 'Atendimento LevelPro',
+      name: 'EQUIPE LEVELPRO',
       title: 'Especialistas em boosting de jogos prontos para te atender.',
       bio: 'Nossa equipe de atendimento está disponível para tirar suas dúvidas e iniciar seu boost. Entre em contato para um atendimento rápido e personalizado.',
       imageUrl: 'https://i.imgur.com/36RI4H5.png',
@@ -84,7 +84,7 @@ export default function Home() {
           <div className="absolute inset-0">
             <Image
               src={
-                PlaceHolderImages.find(img => img.id === 'hero-background-desktop')
+                PlaceHolderImages.find(img => img.id === 'hero-background')
                   ?.imageUrl || ''
               }
               alt="Fundo de jogo"
@@ -93,13 +93,13 @@ export default function Home() {
               className="object-cover object-center z-0 hidden md:block"
               data-ai-hint={
                 PlaceHolderImages.find(
-                  img => img.id === 'hero-background-desktop'
+                  img => img.id === 'hero-background'
                 )?.imageHint || 'game background'
               }
             />
             <Image
               src={
-                PlaceHolderImages.find(img => img.id === 'hero-background-mobile')
+                PlaceHolderImages.find(img => img.id === 'hero-character')
                   ?.imageUrl || ''
               }
               alt="Fundo de jogo mobile"
@@ -108,7 +108,7 @@ export default function Home() {
               className="object-cover object-center z-0 md:hidden"
               data-ai-hint={
                 PlaceHolderImages.find(
-                  img => img.id === 'hero-background-mobile'
+                  img => img.id === 'hero-character'
                 )?.imageHint || 'game character'
               }
             />
@@ -168,7 +168,7 @@ export default function Home() {
                     Escolha o jogo que você quer subir de nível e fale com um de nossos especialistas.
                   </p>
                 </div>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto mt-16 md:mt-20">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto mt-20">
                   {games.map((game, index) => (
                     <Link
                       href={game.href}
@@ -197,8 +197,8 @@ export default function Home() {
           <div className="absolute bottom-0 left-0 right-0 h-[550px] bg-gradient-to-t from-background via-background/90 to-transparent z-10" />
         </div>
 
-        <section id="contato" className="relative py-10 sm:py-12 bg-background">
-          <div className="container mx-auto px-4 space-y-10 md:space-y-12">
+        <section id="contato" className="relative py-12 sm:py-16 bg-background">
+          <div className="container mx-auto px-4 space-y-12">
             <div className="text-center">
               <h2 className="text-2xl sm:text-3xl font-bold font-headline text-white uppercase">
                 ENTRE EM CONTATO COM A NOSSA EQUIPE
@@ -220,7 +220,7 @@ export default function Home() {
                           alt={`Foto de perfil de ${contact.profiles[0].name}`}
                           width={112}
                           height={112}
-                          className="w-28 h-28 rounded-full object-cover border-4 border-white/50"
+                          className="w-28 h-28 rounded-full object-cover border-4 border-white/50 shadow-[0_0_20px_rgba(255,255,255,0.6)]"
                           data-ai-hint="profile picture"
                       />
                       <div className="absolute inset-0 rounded-full border-2 border-white animate-ping opacity-50"></div>
@@ -260,7 +260,7 @@ export default function Home() {
                               alt={`Foto de ${desktopContact.name}`}
                               width={160}
                               height={160}
-                              className="w-40 h-40 rounded-full object-cover border-4 border-primary"
+                              className="w-40 h-40 rounded-full object-cover border-4 border-primary shadow-[0_0_25px_hsl(var(--primary))]"
                               data-ai-hint="man portrait"
                           />
                           <div className="flex-grow">

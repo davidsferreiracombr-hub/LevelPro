@@ -97,11 +97,11 @@ export default {
         },
         'pulse-strong': {
           '0%, 100%': {
-            boxShadow: '0 0 15px hsl(var(--accent) / 0.6)',
+            boxShadow: '0 0 20px hsl(var(--accent) / 0.7)',
           },
           '50%': {
             boxShadow:
-              '0 0 20px hsl(var(--accent) / 0.8)',
+              '0 0 30px hsl(var(--accent) / 1)',
           },
         },
         'title-float': {
@@ -121,8 +121,8 @@ export default {
           '50%': { transform: 'scale(1.05)' },
         },
         'white-neon-pulse': {
-          '0%, 100%': { boxShadow: '0 0 15px rgba(255, 255, 255, 0.5)' },
-          '50%': { boxShadow: '0 0 25px rgba(255, 255, 255, 0.7)' },
+          '0%, 100%': { boxShadow: '0 0 20px rgba(255, 255, 255, 0.7)' },
+          '50%': { boxShadow: '0 0 30px rgba(255, 255, 255, 1)' },
         },
       },
       animation: {
