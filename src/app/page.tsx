@@ -211,62 +211,28 @@ export default function Home() {
               {infoBarItems.map((item, index) => (
                 <div
                   key={index}
-                  className="relative rounded-2xl p-px bg-gradient-to-b from-accent/20 to-transparent group"
+                  className="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 text-center flex flex-col items-center group transition-all duration-300 hover:border-accent/50 hover:bg-black"
                 >
-                  <div className="relative bg-card/60 backdrop-blur-sm rounded-[15px] h-full p-6 text-center flex flex-col items-center transition-all duration-300 group-hover:bg-card/80 group-hover:shadow-2xl group-hover:shadow-accent/10">
-                    <div className="relative w-24 h-24 flex items-center justify-center mb-4">
-                      <svg
-                        width="90"
-                        height="90"
-                        viewBox="0 0 100 95"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="absolute text-accent opacity-20 group-hover:opacity-40 transition-opacity duration-300"
-                      >
-                        <defs>
-                          <radialGradient id={`glow-grad-${index}`} cx="50%" cy="50%" r="50%">
-                            <stop stopColor="hsl(var(--accent))" stopOpacity="0.5" />
-                            <stop offset="1" stopColor="hsl(var(--accent))" stopOpacity="0" />
-                          </radialGradient>
-                        </defs>
-                        <path
-                          d="M50 0L95.2691 23.75V71.25L50 95L4.73091 71.25V23.75L50 0Z"
-                          fill={`url(#glow-grad-${index})`}
-                        />
-                        <path
-                          d="M4.73091 23.75L0.5 28.5V66.5L4.73091 71.25"
-                          stroke="currentColor"
-                          strokeOpacity="0.3"
-                          strokeWidth="1"
-                        />
-                        <path
-                          d="M95.2691 23.75L99.5 28.5V66.5L95.2691 71.25"
-                          stroke="currentColor"
-                          strokeOpacity="0.3"
-                          strokeWidth="1"
-                        />
-                      </svg>
-                      <svg
-                        width="80"
-                        height="80"
-                        viewBox="0 0 100 95"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="absolute text-accent opacity-60 group-hover:opacity-100 transition-opacity duration-300"
-                      >
-                        <path
-                          d="M50 0L95.2691 23.75V71.25L50 95L4.73091 71.25V23.75L50 0Z"
-                          stroke="currentColor"
-                          strokeOpacity="0.8"
-                          strokeWidth="1"
-                        />
-                      </svg>
-                      <item.icon className="w-10 h-10 text-accent relative" />
-                    </div>
-
-                    <h3 className="text-xl font-headline text-white mb-2">{item.text}</h3>
-                    <p className="text-muted-foreground text-sm text-balance">{item.description}</p>
+                  <div className="relative w-20 h-20 flex items-center justify-center mb-4">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="absolute w-full h-full text-accent/50 group-hover:text-accent transition-colors duration-300"
+                    >
+                      <path
+                        d="M12 2L3 7V17L12 22L21 17V7L12 2Z"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <item.icon className="w-9 h-9 text-accent" />
                   </div>
+
+                  <h3 className="text-xl font-headline text-white mb-2">{item.text}</h3>
+                  <p className="text-muted-foreground text-sm text-balance">{item.description}</p>
                 </div>
               ))}
             </div>
