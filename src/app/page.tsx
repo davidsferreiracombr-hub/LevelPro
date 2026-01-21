@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Rocket, Gamepad2, ShieldCheck, Trophy, Instagram, Mail, Phone, MapPin, Briefcase } from 'lucide-react';
@@ -45,21 +46,6 @@ export default function Home() {
     { name: 'Free Fire', imageUrl: 'https://i.imgur.com/9bYYdKB.jpg', href: '/#contato', imageHint: 'action character shooting' },
   ];
 
-  const contacts = [
-    {
-      title: 'Fale Conosco',
-      profiles: [
-        {
-          name: 'Atendimento Geral',
-          imageUrl: 'https://i.imgur.com/36RI4H5.png',
-          link: 'https://chat.whatsapp.com/BlKFlq712KuKCreqnioSMf',
-          description:
-            'Nossa equipe está disponível para te atender em qualquer jogo. Clique no botão para um atendimento rápido e sem complicação.',
-        },
-      ],
-    },
-  ];
-  
   const desktopContact = {
       name: 'EQUIPE LEVELPRO',
       title: 'Especialistas em boosting de jogos prontos para te atender.',
@@ -73,6 +59,11 @@ export default function Home() {
           { icon: Briefcase, text: 'Suporte Especializado' },
           { icon: Mail, text: 'Email' },
           { icon: Phone, text: 'Telefone' },
+      ],
+      socials: [
+        { name: 'TikTok', href: 'https://tiktok.com/@levelpro_game', icon: 'T' },
+        { name: 'Instagram', href: 'https://www.instagram.com/levelpro_game?igsh=MTJ4d2hudGcyZTRsMQ==', icon: Instagram },
+        { name: 'YouTube', href: 'https://www.youtube.com/@LEVELPRO_GAME', icon: YoutubeIcon },
       ]
   };
 
@@ -158,9 +149,9 @@ export default function Home() {
               </div>
             </section>
 
-            <section id="nossos-servicos" className="relative pt-12 md:pt-16 pb-16 sm:pb-24">
+            <section id="nossos-servicos" className="relative pt-16 md:pt-24 pb-16 sm:pb-24">
               <div className="relative z-20 container mx-auto px-4">
-                <div className="text-center mb-8">
+                <div className="text-center mb-6">
                   <h2 className="text-xl md:text-3xl font-bold mb-2 text-foreground text-center uppercase pt-2">
                     NOSSOS SERVIÇOS
                   </h2>
@@ -176,15 +167,14 @@ export default function Home() {
                       className="group block w-32 md:w-36"
                     >
                       <div
-                        className="overflow-hidden rounded-lg border-2 border-transparent group-hover:shadow-xl group-hover:border-accent animate-card-pulse"
-                        style={{ animationDelay: `${index * 600}ms` }}
+                        className="overflow-hidden rounded-lg"
                       >
                         <Image
                           src={game.imageUrl}
                           alt={game.name}
                           width={150}
                           height={200}
-                          className="w-full object-cover aspect-[3/4] rounded-lg"
+                          className="w-full object-cover aspect-[3/4] rounded-lg transition-transform duration-300 group-hover:scale-105"
                           data-ai-hint={game.imageHint}
                         />
                       </div>
@@ -196,7 +186,7 @@ export default function Home() {
           </div>
           <div className="absolute bottom-0 left-0 right-0 h-[650px] bg-gradient-to-t from-background via-background/90 to-transparent z-10" />
         </div>
-
+        
         <section className="py-16 sm:py-24">
           <div className="container mx-auto px-4">
             <div className="text-center mb-10 md:mb-16">
@@ -211,10 +201,10 @@ export default function Home() {
               {infoBarItems.map((item, index) => (
                 <div
                   key={index}
-                  className="relative overflow-hidden rounded-2xl p-4 md:p-6 text-center flex flex-col items-center group transition-all duration-300 bg-zinc-950/50 border border-zinc-800 hover:border-accent/30"
+                  className="relative overflow-hidden rounded-2xl p-4 md:p-5 text-center flex flex-col items-center group transition-all duration-300 bg-zinc-950/80 border border-zinc-800 hover:border-accent/30"
                 >
                   <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                  <div className="relative w-16 h-16 md:w-20 md:h-20 flex items-center justify-center mb-3 md:mb-4">
+                  <div className="relative w-14 h-14 md:w-16 md:h-16 flex items-center justify-center mb-3 md:mb-4">
                     <svg
                       viewBox="0 0 24 24"
                       fill="none"
@@ -229,18 +219,28 @@ export default function Home() {
                         strokeLinejoin="round"
                       />
                     </svg>
-                    <item.icon className="w-8 h-8 md:w-9 md:h-9 text-accent" />
+                    <item.icon className="w-7 h-7 md:w-8 md:h-8 text-accent" />
                   </div>
 
-                  <h3 className="text-lg md:text-xl font-headline text-white mb-2">{item.text}</h3>
-                  <p className="text-muted-foreground text-sm text-balance">{item.description}</p>
+                  <h3 className="text-base md:text-lg font-headline text-white mb-2">{item.text}</h3>
+                  <p className="text-muted-foreground text-xs md:text-sm text-balance">{item.description}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="contato" className="relative py-16 sm:py-24 bg-background">
+        <section id="contato" className="relative py-16 sm:py-24 bg-background overflow-hidden">
+          <div className="absolute inset-0 -z-10">
+            <div className="absolute inset-0 bg-gradient-to-b from-background via-background/80 to-background"></div>
+            <Image
+              src="https://i.imgur.com/NtGDzvB.png"
+              alt="Fundo Abstrato Contato"
+              fill
+              className="object-cover opacity-10"
+              data-ai-hint="abstract background"
+            />
+          </div>
           <div className="container mx-auto px-4 space-y-12">
             <div className="text-center">
               <h2 className="text-2xl sm:text-3xl font-bold font-headline text-white uppercase">
@@ -251,95 +251,107 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="max-w-5xl mx-auto flex justify-center gap-6 md:gap-8 md:hidden">
-              {contacts.map((contact, index) => (
-                <Card
-                  key={index}
-                  className="bg-card/70 backdrop-blur-md border border-zinc-800 w-11/12 sm:w-full max-w-sm text-center p-4 sm:p-6 rounded-2xl transition-all duration-300 hover:border-white/50 hover:shadow-2xl hover:shadow-white/10 hover:-translate-y-2 flex flex-col items-center"
-                >
-                  <div className="relative mb-6">
-                      <Image
-                          src={contact.profiles[0].imageUrl}
-                          alt={`Foto de perfil de ${contact.profiles[0].name}`}
-                          width={112}
-                          height={112}
-                          className="w-28 h-28 rounded-full object-cover border-4 border-white shadow-[0_0_20px_rgba(255,255,255,0.6)]"
-                          data-ai-hint="profile picture"
-                      />
-                      <div className="absolute inset-0 rounded-full border-2 border-white animate-ping opacity-50"></div>
-                  </div>
-                  
-                  <CardTitle className="text-3xl font-bold font-headline text-white">{contact.title}</CardTitle>
-                  <p className="text-lg text-white font-semibold mb-4">{contact.profiles[0].name}</p>
-                  
-                  <CardContent className="p-0 flex-grow mb-8">
-                      <p className="text-sm text-muted-foreground text-balance">
-                          {contact.profiles[0].description}
-                      </p>
-                  </CardContent>
-
-                  <CardFooter className="p-0 w-full mt-auto">
-                    <Button
-                        asChild
-                        size="lg"
-                        className="w-full bg-white text-black hover:bg-white/90 transition-transform duration-300 hover:scale-105 animate-white-neon-pulse"
-                    >
-                        <Link href={contact.profiles[0].link} target="_blank">
-                            <Mail className="mr-2 h-4 w-4" />
-                            Entrar em contato
-                        </Link>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              ))}
+            {/* Card para Mobile */}
+            <div className="md:hidden flex justify-center">
+                <div className="relative w-full max-w-sm rounded-3xl overflow-hidden group">
+                    <Image
+                        src="https://i.imgur.com/36RI4H5.png"
+                        alt="Background Atendimento"
+                        fill
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                        data-ai-hint="profile picture man"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+                    <div className="relative h-full flex flex-col justify-end text-white p-6 space-y-4">
+                        <div className="text-center">
+                            <h3 className="text-3xl font-bold font-headline">EQUIPE LEVELPRO</h3>
+                            <p className="text-foreground/80 mt-1">Especialistas prontos para te atender.</p>
+                        </div>
+                        <Button asChild size="lg" className="w-full bg-white text-black font-bold hover:bg-white/90 transition-transform duration-300 hover:scale-105 animate-white-neon-pulse">
+                            <Link href={desktopContact.link} target="_blank">
+                                <Mail className="mr-2 h-4 w-4" />
+                                Entrar em contato
+                            </Link>
+                        </Button>
+                        <div className="flex justify-center items-center gap-6 pt-2">
+                           {desktopContact.socials.map((social) => (
+                                <a key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors">
+                                    {typeof social.icon === 'string' ? (
+                                        <span className="font-bold text-xl">{social.icon}</span>
+                                    ) : (
+                                        <social.icon className="h-6 w-6" />
+                                    )}
+                                </a>
+                           ))}
+                        </div>
+                    </div>
+                </div>
             </div>
 
+            {/* Card para Desktop */}
             <div className="hidden md:flex justify-center">
-              <Card className="w-full max-w-3xl bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl shadow-2xl overflow-hidden">
-                  <div className="p-8">
-                      <div className="flex items-center gap-8">
-                          <Image
-                              src={desktopContact.imageUrl}
-                              alt={`Foto de ${desktopContact.name}`}
-                              width={160}
-                              height={160}
-                              className="w-40 h-40 rounded-full object-cover border-4 border-white shadow-[0_0_25px_rgba(255,255,255,0.7)]"
-                              data-ai-hint="man portrait"
-                          />
-                          <div className="flex-grow">
-                              <h3 className="text-3xl font-bold font-headline text-white">{desktopContact.name}</h3>
-                              <p className="text-foreground/80 mt-1">{desktopContact.title}</p>
-                              <p className="text-foreground/60 text-sm">{desktopContact.bio}</p>
+              <div className="relative w-full max-w-4xl bg-gradient-to-br from-zinc-950/70 to-black/70 backdrop-blur-lg border border-white/10 rounded-2xl shadow-2xl overflow-hidden group">
+                <div className="absolute -top-1/2 -left-1/3 w-[600px] h-[600px] bg-primary/20 rounded-full filter blur-3xl opacity-0 group-hover:opacity-50 transition-opacity duration-700 animate-pulse"></div>
+                <div className="absolute -bottom-1/2 -right-1/3 w-[600px] h-[600px] bg-accent/20 rounded-full filter blur-3xl opacity-0 group-hover:opacity-50 transition-opacity duration-700 animate-pulse [animation-delay:500ms]"></div>
+                
+                <div className="relative p-8 flex items-center gap-10">
+                  <div className="flex-shrink-0">
+                      <Image
+                          src={desktopContact.imageUrl}
+                          alt={`Foto de ${desktopContact.name}`}
+                          width={200}
+                          height={200}
+                          className="w-48 h-48 rounded-full object-cover border-4 border-white/10 shadow-2xl shadow-black transition-transform duration-500 group-hover:scale-105"
+                          data-ai-hint="man portrait"
+                      />
+                  </div>
+                  <div className="flex-grow">
+                      <h3 className="text-3xl font-bold font-headline text-white">{desktopContact.name}</h3>
+                      <p className="text-foreground/80 mt-1">{desktopContact.title}</p>
+                      <p className="text-foreground/60 text-sm mt-3">{desktopContact.bio}</p>
 
-                              <div className="space-y-3 mt-6">
-                                  <a href={`mailto:${desktopContact.email}`} className="flex items-center gap-3 text-foreground/90 hover:text-white transition-colors">
-                                      <Mail className="w-5 h-5 text-white" />
-                                      <span>{desktopContact.email}</span>
-                                  </a>
-                                  <a href={`tel:${desktopContact.phone.replace(/\D/g, '')}`} className="flex items-center gap-3 text-foreground/90 hover:text-white transition-colors">
-                                      <Phone className="w-5 h-5 text-white" />
-                                      <span>{desktopContact.phone}</span>
-                                  </a>
-                                  <div className="flex items-center gap-3 text-foreground/90">
-                                      <MapPin className="w-5 h-5 text-white" />
-                                      <span>{desktopContact.location}</span>
-                                  </div>
-                              </div>
+                      <div className="space-y-4 mt-6">
+                          <a href={`mailto:${desktopContact.email}`} className="flex items-center gap-3 text-foreground/90 hover:text-white transition-colors">
+                              <Mail className="w-5 h-5 text-accent" />
+                              <span>{desktopContact.email}</span>
+                          </a>
+                          <a href={`tel:${desktopContact.phone.replace(/\\D/g, '')}`} className="flex items-center gap-3 text-foreground/90 hover:text-white transition-colors">
+                              <Phone className="w-5 h-5 text-accent" />
+                              <span>{desktopContact.phone}</span>
+                          </a>
+                          <div className="flex items-center gap-3 text-foreground/90">
+                              <MapPin className="w-5 h-5 text-accent" />
+                              <span>{desktopContact.location}</span>
                           </div>
                       </div>
-                      <Button asChild size="lg" className="w-full mt-8 bg-white text-black hover:bg-white/90 font-bold text-base rounded-lg animate-white-neon-pulse">
-                          <Link href={desktopContact.link} target="_blank">Entrar em Contato</Link>
+
+                      <Button asChild size="lg" className="w-full mt-8 bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-base rounded-lg transition-all duration-300 shadow-[0_0_20px_hsl(var(--accent)_/_0.7)] hover:shadow-[0_0_30px_hsl(var(--accent)_/_1)] group-hover:scale-105">
+                          <Link href={desktopContact.link} target="_blank">Entrar em Contato via WhatsApp</Link>
                       </Button>
                   </div>
-                  <CardFooter className="bg-black/20 px-8 py-4 border-t border-white/10 flex justify-center gap-8">
-                      {desktopContact.tags.map((tag, i) => (
+                </div>
+                 <CardFooter className="bg-black/30 px-8 py-4 border-t border-white/10 flex justify-between items-center">
+                    <div className="flex items-center gap-6">
+                         {desktopContact.tags.map((tag, i) => (
                           <div key={i} className="flex items-center gap-2 text-sm text-foreground/70">
-                              <tag.icon className="w-4 h-4" />
+                              <tag.icon className="w-4 h-4 text-accent" />
                               <span>{tag.text}</span>
                           </div>
                       ))}
+                    </div>
+                     <div className="flex items-center gap-4">
+                           {desktopContact.socials.map((social) => (
+                                <a key={social.name} href={social.href} target="_blank" rel="noopener noreferrer" className="text-white/70 hover:text-white transition-colors duration-300 hover:scale-110">
+                                    {typeof social.icon === 'string' ? (
+                                        <span className="font-bold text-xl">{social.icon}</span>
+                                    ) : (
+                                        <social.icon className="h-5 w-5" />
+                                    )}
+                                </a>
+                           ))}
+                        </div>
                   </CardFooter>
-              </Card>
+              </div>
             </div>
           </div>
         </section>
