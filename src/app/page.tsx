@@ -65,22 +65,38 @@ export default function Home() {
       <Header />
       <main className="flex-grow">
         <div className="relative">
-          <Image
-            src={PlaceHolderImages.find(img => img.id === 'hero-background')?.imageUrl || ''}
-            alt="Fundo de jogo"
-            fill
-            priority
-            className="object-cover object-center z-0 hidden md:block"
-            data-ai-hint={PlaceHolderImages.find(img => img.id === 'hero-background')?.imageHint || 'game background'}
-          />
-          <Image
-            src={PlaceHolderImages.find(img => img.id === 'hero-character')?.imageUrl || ''}
-            alt="Fundo de jogo mobile"
-            fill
-            priority
-            className="object-cover object-center z-0 md:hidden"
-            data-ai-hint={PlaceHolderImages.find(img => img.id === 'hero-character')?.imageHint || 'game character'}
-          />
+          <div className="absolute inset-0">
+            <Image
+              src={
+                PlaceHolderImages.find(img => img.id === 'hero-background-desktop')
+                  ?.imageUrl || ''
+              }
+              alt="Fundo de jogo"
+              fill
+              priority
+              className="object-cover object-center z-0 hidden md:block"
+              data-ai-hint={
+                PlaceHolderImages.find(
+                  img => img.id === 'hero-background-desktop'
+                )?.imageHint || 'game background'
+              }
+            />
+            <Image
+              src={
+                PlaceHolderImages.find(img => img.id === 'hero-background-mobile')
+                  ?.imageUrl || ''
+              }
+              alt="Fundo de jogo mobile"
+              fill
+              priority
+              className="object-cover object-center z-0 md:hidden"
+              data-ai-hint={
+                PlaceHolderImages.find(
+                  img => img.id === 'hero-background-mobile'
+                )?.imageHint || 'game character'
+              }
+            />
+          </div>
           <div className="absolute inset-0 bg-background/80 z-10" />
 
           <div className="relative z-20">
@@ -127,9 +143,16 @@ export default function Home() {
             </section>
 
             <section id="nossos-servicos" className="relative pb-24 sm:pb-32 pt-10 sm:pt-0">
-              <div className="container mx-auto px-4">
-                <h2 className="text-base md:text-3xl font-bold mb-2 text-foreground text-center uppercase md:pt-0 pt-2 -mt-16 md:mt-0">NOSSOS SERVIÇOS</h2>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto mt-4 md:mt-auto">
+              <div className="relative z-20 container mx-auto px-4">
+                <div className="text-center">
+                  <h2 className="text-xl md:text-3xl font-bold mb-2 text-foreground text-center uppercase md:pt-0 pt-2 -mt-16 md:mt-0">
+                    NOSSOS SERVIÇOS
+                  </h2>
+                  <p className="mt-2 text-sm md:text-base text-muted-foreground max-w-xl mx-auto">
+                    Escolha o jogo que você quer subir de nível e fale com um de nossos especialistas.
+                  </p>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto mt-10 md:mt-12">
                   {games.map((game, index) => (
                     <Link
                       href={game.href}
@@ -156,7 +179,7 @@ export default function Home() {
           <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-background to-transparent z-10" />
         </div>
 
-        <section id="contato" className="relative py-12 sm:py-20">
+        <section id="contato" className="relative py-12 sm:py-20 bg-background">
           <div className="container mx-auto px-4 space-y-10 md:space-y-16">
             <div className="text-center">
               <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold font-headline text-white uppercase">
