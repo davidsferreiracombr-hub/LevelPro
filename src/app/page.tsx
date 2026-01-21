@@ -47,31 +47,32 @@ export default function Home() {
 
   const contacts = [
     {
-      title: 'Nossa Equipe',
+      title: 'Fale Conosco',
       profiles: [
         {
-          name: 'Sobre Nós',
+          name: 'Atendimento Geral',
           imageUrl: 'https://i.imgur.com/36RI4H5.png',
           link: 'https://chat.whatsapp.com/BlKFlq712KuKCreqnioSMf',
           description:
-            'Aqui no contato Geral, você encontra pessoas que estão disponiveis para te atender a qualquer momento em qualquer jogo, basta clicar no botão e sera atendido sem complicação e de imediato pela equipe',
+            'Nossa equipe está disponível para te atender em qualquer jogo. Clique no botão para um atendimento rápido e sem complicação.',
         },
       ],
     },
   ];
   
   const desktopContact = {
-      name: 'Carlos Almeida',
-      title: 'Designer e criador de conteúdo. Apaixonado por tecnologia e viagens.',
-      imageUrl: 'https://i.imgur.com/lVETGOH.png',
-      email: 'carlosalmeida@email.com',
-      phone: '(11) 91234-5678',
-      location: 'São Paulo, SP',
+      name: 'Atendimento LevelPro',
+      title: 'Especialistas em boosting de jogos prontos para te atender.',
+      bio: 'Nossa equipe de atendimento está disponível para tirar suas dúvidas e iniciar seu boost. Entre em contato para um atendimento rápido e personalizado.',
+      imageUrl: 'https://i.imgur.com/36RI4H5.png',
+      email: 'contato@levelpro.gg',
+      phone: '+55 (11) 99999-8888',
+      location: 'Atendimento 100% Online',
       link: 'https://chat.whatsapp.com/BlKFlq712KuKCreqnioSMf',
       tags: [
-          { icon: Briefcase, text: 'Designer' },
+          { icon: Briefcase, text: 'Suporte Especializado' },
+          { icon: Mail, text: 'Email' },
           { icon: Phone, text: 'Telefone' },
-          { icon: MapPin, text: 'São Paulo, SP' },
       ]
   };
 
@@ -83,7 +84,7 @@ export default function Home() {
           <div className="absolute inset-0">
             <Image
               src={
-                PlaceHolderImages.find(img => img.id === 'hero-background')
+                PlaceHolderImages.find(img => img.id === 'hero-background-desktop')
                   ?.imageUrl || ''
               }
               alt="Fundo de jogo"
@@ -92,13 +93,13 @@ export default function Home() {
               className="object-cover object-center z-0 hidden md:block"
               data-ai-hint={
                 PlaceHolderImages.find(
-                  img => img.id === 'hero-background'
+                  img => img.id === 'hero-background-desktop'
                 )?.imageHint || 'game background'
               }
             />
             <Image
               src={
-                PlaceHolderImages.find(img => img.id === 'hero-character')
+                PlaceHolderImages.find(img => img.id === 'hero-background-mobile')
                   ?.imageUrl || ''
               }
               alt="Fundo de jogo mobile"
@@ -107,7 +108,7 @@ export default function Home() {
               className="object-cover object-center z-0 md:hidden"
               data-ai-hint={
                 PlaceHolderImages.find(
-                  img => img.id === 'hero-character'
+                  img => img.id === 'hero-background-mobile'
                 )?.imageHint || 'game character'
               }
             />
@@ -174,7 +175,7 @@ export default function Home() {
                       key={game.name}
                       className="group block w-32 md:w-36"
                     >
-                      <div className="overflow-hidden rounded-lg border-2 border-transparent transition-all duration-300 ease-in-out group-hover:shadow-xl group-hover:border-accent animate-card-pulse" style={{ animationDelay: `${index * 300}ms` }}>
+                      <div className="overflow-hidden rounded-lg border-2 border-transparent transition-all duration-300 ease-in-out group-hover:shadow-xl group-hover:border-accent group-hover:scale-105">
                         <Image
                           src={game.imageUrl}
                           alt={game.name}
@@ -266,21 +267,21 @@ export default function Home() {
 
                               <div className="space-y-3 mt-6">
                                   <a href={`mailto:${desktopContact.email}`} className="flex items-center gap-3 text-foreground/90 hover:text-primary transition-colors">
-                                      <Mail className="w-5 h-5 text-blue-400" />
+                                      <Mail className="w-5 h-5 text-primary" />
                                       <span>{desktopContact.email}</span>
                                   </a>
                                   <a href={`tel:${desktopContact.phone.replace(/\D/g, '')}`} className="flex items-center gap-3 text-foreground/90 hover:text-primary transition-colors">
-                                      <Phone className="w-5 h-5 text-blue-400" />
+                                      <Phone className="w-5 h-5 text-primary" />
                                       <span>{desktopContact.phone}</span>
                                   </a>
                                   <div className="flex items-center gap-3 text-foreground/90">
-                                      <MapPin className="w-5 h-5 text-blue-400" />
+                                      <MapPin className="w-5 h-5 text-primary" />
                                       <span>{desktopContact.location}</span>
                                   </div>
                               </div>
                           </div>
                       </div>
-                      <Button asChild size="lg" className="w-full mt-8 bg-blue-600 hover:bg-blue-700 text-white font-bold text-base rounded-lg">
+                      <Button asChild size="lg" className="w-full mt-8 bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-base rounded-lg">
                           <Link href={desktopContact.link} target="_blank">Entrar em Contato</Link>
                       </Button>
                   </div>
