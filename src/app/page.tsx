@@ -134,7 +134,7 @@ export default function Home() {
             data-ai-hint="abstract background"
           />
           <div className="absolute inset-0 bg-background/80 z-10" />
-          <div className="relative z-20 container mx-auto px-4 pt-16 sm:pt-16 pb-12">
+          <div className="relative z-20 container mx-auto px-4 pt-8 sm:pt-20 pb-12 sm:pb-20">
             <h2 className="text-3xl font-bold mb-8 text-foreground text-center uppercase">Nossos Serviços</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto">
               {games.map((game) => (
