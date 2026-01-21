@@ -256,23 +256,23 @@ export default function Home() {
                 <div className="absolute -top-1/2 -left-1/3 w-[600px] h-[600px] bg-primary/20 rounded-full filter blur-3xl opacity-0 group-hover:opacity-50 transition-opacity duration-700 animate-pulse"></div>
                 <div className="absolute -bottom-1/2 -right-1/3 w-[600px] h-[600px] bg-accent/20 rounded-full filter blur-3xl opacity-0 group-hover:opacity-50 transition-opacity duration-700 animate-pulse [animation-delay:500ms]"></div>
                 
-                <div className="relative p-6 md:p-8 flex flex-col md:flex-row items-center gap-6 md:gap-10">
+                <div className="relative p-4 md:p-8 flex flex-col md:flex-row items-center gap-4 md:gap-10">
                   <div className="flex-shrink-0">
                       <Image
                           src={desktopContact.imageUrl}
                           alt={`Foto de ${desktopContact.name}`}
                           width={200}
                           height={200}
-                          className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-white/10 shadow-2xl shadow-black transition-transform duration-500 group-hover:scale-105"
+                          className="w-32 h-32 md:w-48 md:h-48 rounded-full object-cover border-4 border-white/10 shadow-2xl shadow-black transition-transform duration-500 group-hover:scale-105"
                           data-ai-hint="man portrait"
                       />
                   </div>
                   <div className="flex-grow text-center md:text-left">
-                      <h3 className="text-3xl font-bold font-headline text-white">{desktopContact.name}</h3>
+                      <h3 className="text-2xl md:text-3xl font-bold font-headline text-white">{desktopContact.name}</h3>
                       <p className="text-foreground/80 mt-1">{desktopContact.title}</p>
-                      <p className="text-foreground/60 text-sm mt-3">{desktopContact.bio}</p>
+                      <p className="text-foreground/60 text-sm mt-2 md:mt-3">{desktopContact.bio}</p>
 
-                      <div className="space-y-3 md:space-y-4 mt-6">
+                      <div className="space-y-2 md:space-y-4 mt-4 md:mt-6">
                           <a href={`mailto:${desktopContact.email}`} className="flex items-center justify-center md:justify-start gap-3 text-foreground/90 hover:text-white transition-colors">
                               <Mail className="w-5 h-5 text-accent" />
                               <span>Email Verificado</span>
@@ -289,7 +289,7 @@ export default function Home() {
                           </div>
                       </div>
 
-                      <Button asChild size="lg" className="w-full mt-6 md:mt-8 bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-base rounded-lg transition-all duration-300 shadow-[0_0_20px_hsl(var(--accent)_/_0.7)] hover:shadow-[0_0_30px_hsl(var(--accent)_/_1)] group-hover:scale-105">
+                      <Button asChild size="lg" className="w-full mt-5 md:mt-8 bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-base rounded-lg transition-all duration-300 shadow-[0_0_20px_hsl(var(--accent)_/_0.7)] hover:shadow-[0_0_30px_hsl(var(--accent)_/_1)] group-hover:scale-105">
                           <Link href={desktopContact.link} target="_blank">Entrar em Contato via WhatsApp</Link>
                       </Button>
                   </div>
