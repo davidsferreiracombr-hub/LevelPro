@@ -9,7 +9,7 @@ import Image from 'next/image';
 
 const navLinks = [
   { href: '/#nossos-servicos', label: 'JOGOS' },
-  { href: '/pricing', label: 'CONTATO' },
+  { href: '/#contato', label: 'CONTATO' },
   { href: '/how-it-works', label: 'COMO FUNCIONA' },
 ];
 
@@ -37,7 +37,7 @@ export default function Header() {
           <div className="flex items-center justify-end gap-2">
              <div className="hidden md:flex">
                 <Button asChild className="font-semibold bg-accent text-accent-foreground hover:bg-accent/90 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_20px_hsl(var(--accent))] transition-[background-color,box-shadow] duration-300">
-                  <Link href="/pricing">Começar agora</Link>
+                  <Link href="/#contato">Começar agora</Link>
                 </Button>
             </div>
             <div className="md:hidden">
@@ -76,7 +76,7 @@ export default function Header() {
                     </nav>
                     <div className="mt-auto pt-8">
                       <Button asChild className="w-full py-5 text-base font-semibold bg-accent text-accent-foreground transition-[background-color,box-shadow] duration-300 hover:bg-accent/90 shadow-[0_0_15px_hsl(var(--accent))] hover:shadow-[0_0_20px_hsl(var(--accent))]">
-                        <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)}>Começar agora</Link>
+                        <Link href="/#contato" onClick={() => setIsMobileMenuOpen(false)}>Começar agora</Link>
                       </Button>
                     </div>
                   </div>
