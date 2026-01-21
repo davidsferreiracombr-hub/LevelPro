@@ -116,7 +116,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-background/80 z-10" />
 
           <div className="relative z-20">
-            <section className="relative overflow-hidden h-screen flex items-center justify-center text-center text-white pt-24">
+            <section className="relative overflow-hidden text-center text-white pt-48 pb-24">
               <div className="absolute inset-0 hero-gradient" />
               
               <div className="container mx-auto px-4 relative z-10">
@@ -158,7 +158,7 @@ export default function Home() {
               </div>
             </section>
 
-            <section id="nossos-servicos" className="relative pb-24 sm:pb-32 pt-16 md:pt-48">
+            <section id="nossos-servicos" className="relative pb-24 sm:pb-32 pt-16 md:pt-20">
               <div className="relative z-20 container mx-auto px-4">
                 <div className="text-center">
                   <h2 className="text-xl md:text-3xl font-bold mb-2 text-foreground text-center uppercase pt-2">
@@ -168,7 +168,7 @@ export default function Home() {
                     Escolha o jogo que você quer subir de nível e fale com um de nossos especialistas.
                   </p>
                 </div>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto mt-12">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto mt-8">
                   {games.map((game, index) => (
                     <Link
                       href={game.href}
