@@ -260,7 +260,7 @@ export default function Home() {
                               alt={`Foto de ${desktopContact.name}`}
                               width={160}
                               height={160}
-                              className="w-40 h-40 rounded-full object-cover border-4 border-primary shadow-[0_0_25px_hsl(var(--primary))]"
+                              className="w-40 h-40 rounded-full object-cover border-4 border-white/50 shadow-[0_0_25px_rgba(255,255,255,0.7)]"
                               data-ai-hint="man portrait"
                           />
                           <div className="flex-grow">
@@ -269,22 +269,22 @@ export default function Home() {
                               <p className="text-foreground/60 text-sm">{desktopContact.bio}</p>
 
                               <div className="space-y-3 mt-6">
-                                  <a href={`mailto:${desktopContact.email}`} className="flex items-center gap-3 text-foreground/90 hover:text-primary transition-colors">
-                                      <Mail className="w-5 h-5 text-primary" />
+                                  <a href={`mailto:${desktopContact.email}`} className="flex items-center gap-3 text-foreground/90 hover:text-white transition-colors">
+                                      <Mail className="w-5 h-5 text-white" />
                                       <span>{desktopContact.email}</span>
                                   </a>
-                                  <a href={`tel:${desktopContact.phone.replace(/\D/g, '')}`} className="flex items-center gap-3 text-foreground/90 hover:text-primary transition-colors">
-                                      <Phone className="w-5 h-5 text-primary" />
+                                  <a href={`tel:${desktopContact.phone.replace(/\D/g, '')}`} className="flex items-center gap-3 text-foreground/90 hover:text-white transition-colors">
+                                      <Phone className="w-5 h-5 text-white" />
                                       <span>{desktopContact.phone}</span>
                                   </a>
                                   <div className="flex items-center gap-3 text-foreground/90">
-                                      <MapPin className="w-5 h-5 text-primary" />
+                                      <MapPin className="w-5 h-5 text-white" />
                                       <span>{desktopContact.location}</span>
                                   </div>
                               </div>
                           </div>
                       </div>
-                      <Button asChild size="lg" className="w-full mt-8 bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-base rounded-lg animate-pulse-strong">
+                      <Button asChild size="lg" className="w-full mt-8 bg-white text-black hover:bg-white/90 font-bold text-base rounded-lg animate-white-neon-pulse">
                           <Link href={desktopContact.link} target="_blank">Entrar em Contato</Link>
                       </Button>
                   </div>
