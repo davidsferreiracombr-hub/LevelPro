@@ -68,7 +68,7 @@ export default function Home() {
           <div className="absolute inset-0">
             <Image
               src={
-                PlaceHolderImages.find(img => img.id === 'hero-background-desktop')
+                PlaceHolderImages.find(img => img.id === 'hero-background')
                   ?.imageUrl || ''
               }
               alt="Fundo de jogo"
@@ -77,13 +77,13 @@ export default function Home() {
               className="object-cover object-center z-0 hidden md:block"
               data-ai-hint={
                 PlaceHolderImages.find(
-                  img => img.id === 'hero-background-desktop'
+                  img => img.id === 'hero-background'
                 )?.imageHint || 'game background'
               }
             />
             <Image
               src={
-                PlaceHolderImages.find(img => img.id === 'hero-background-mobile')
+                PlaceHolderImages.find(img => img.id === 'hero-character')
                   ?.imageUrl || ''
               }
               alt="Fundo de jogo mobile"
@@ -92,7 +92,7 @@ export default function Home() {
               className="object-cover object-center z-0 md:hidden"
               data-ai-hint={
                 PlaceHolderImages.find(
-                  img => img.id === 'hero-background-mobile'
+                  img => img.id === 'hero-character'
                 )?.imageHint || 'game character'
               }
             />
