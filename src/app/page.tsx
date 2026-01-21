@@ -116,7 +116,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-background/80 z-10" />
 
           <div className="relative z-20">
-            <section className="relative overflow-hidden text-center text-white pt-48 pb-24">
+            <section className="relative overflow-hidden text-center text-white pt-32 md:pt-40 pb-12">
               <div className="absolute inset-0 hero-gradient" />
               
               <div className="container mx-auto px-4 relative z-10">
@@ -158,9 +158,9 @@ export default function Home() {
               </div>
             </section>
 
-            <section id="nossos-servicos" className="relative pb-24 sm:pb-32 pt-16 md:pt-20">
+            <section id="nossos-servicos" className="relative pt-12 md:pt-16 pb-16 sm:pb-24">
               <div className="relative z-20 container mx-auto px-4">
-                <div className="text-center">
+                <div className="text-center mb-8">
                   <h2 className="text-xl md:text-3xl font-bold mb-2 text-foreground text-center uppercase pt-2">
                     NOSSOS SERVIÇOS
                   </h2>
@@ -168,7 +168,7 @@ export default function Home() {
                     Escolha o jogo que você quer subir de nível e fale com um de nossos especialistas.
                   </p>
                 </div>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto mt-8">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto">
                   {games.map((game, index) => (
                     <Link
                       href={game.href}
@@ -197,7 +197,35 @@ export default function Home() {
           <div className="absolute bottom-0 left-0 right-0 h-[650px] bg-gradient-to-t from-background via-background/90 to-transparent z-10" />
         </div>
 
-        <section id="contato" className="relative py-12 sm:py-16 bg-background">
+        <section className="py-16 sm:py-24">
+          <div className="container mx-auto px-4">
+             <div className="text-center mb-10 md:mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold font-headline text-white">Por que nos escolher?</h2>
+                <p className="mt-3 md:mt-4 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Garantimos uma experiência de alto nível do início ao fim.
+                </p>
+            </div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+              {infoBarItems.map((item, index) => (
+                <Card
+                  key={index}
+                  className="rounded-2xl bg-card border border-border/10 overflow-hidden group transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10"
+                >
+                    <div className="h-20 bg-gradient-to-br from-primary/10 to-accent/10" />
+                    <div className="flex flex-col items-center px-4 pb-6 -mt-12 text-center">
+                        <div className="w-20 h-20 rounded-full bg-background border-4 border-background flex items-center justify-center text-primary mb-4 ring-1 ring-border/20 transition-transform duration-300 group-hover:scale-110 group-hover:ring-primary/50">
+                            <item.icon className="h-10 w-10" />
+                        </div>
+                        <h3 className="text-lg font-bold text-foreground">{item.text}</h3>
+                        <p className="mt-1 text-sm text-muted-foreground text-balance">{item.description}</p>
+                    </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="contato" className="relative py-16 sm:py-24 bg-background">
           <div className="container mx-auto px-4 space-y-12">
             <div className="text-center">
               <h2 className="text-2xl sm:text-3xl font-bold font-headline text-white uppercase">
@@ -220,7 +248,7 @@ export default function Home() {
                           alt={`Foto de perfil de ${contact.profiles[0].name}`}
                           width={112}
                           height={112}
-                          className="w-28 h-28 rounded-full object-cover border-4 border-white/50 shadow-[0_0_20px_rgba(255,255,255,0.6)]"
+                          className="w-28 h-28 rounded-full object-cover border-4 border-white shadow-[0_0_20px_rgba(255,255,255,0.6)]"
                           data-ai-hint="profile picture"
                       />
                       <div className="absolute inset-0 rounded-full border-2 border-white animate-ping opacity-50"></div>
@@ -260,7 +288,7 @@ export default function Home() {
                               alt={`Foto de ${desktopContact.name}`}
                               width={160}
                               height={160}
-                              className="w-40 h-40 rounded-full object-cover border-4 border-white/50 shadow-[0_0_25px_rgba(255,255,255,0.7)]"
+                              className="w-40 h-40 rounded-full object-cover border-4 border-white shadow-[0_0_25px_rgba(255,255,255,0.7)]"
                               data-ai-hint="man portrait"
                           />
                           <div className="flex-grow">
@@ -297,34 +325,6 @@ export default function Home() {
                       ))}
                   </CardFooter>
               </Card>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-12 sm:py-20">
-          <div className="container mx-auto px-4">
-             <div className="text-center mb-10 md:mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold font-headline text-white">Por que nos escolher?</h2>
-                <p className="mt-3 md:mt-4 text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-                    Garantimos uma experiência de alto nível do início ao fim.
-                </p>
-            </div>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
-              {infoBarItems.map((item, index) => (
-                <Card
-                  key={index}
-                  className="rounded-2xl bg-card border border-border/10 overflow-hidden group transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10"
-                >
-                    <div className="h-20 bg-gradient-to-br from-primary/10 to-accent/10" />
-                    <div className="flex flex-col items-center px-4 pb-6 -mt-12 text-center">
-                        <div className="w-20 h-20 rounded-full bg-background border-4 border-background flex items-center justify-center text-primary mb-4 ring-1 ring-border/20 transition-transform duration-300 group-hover:scale-110 group-hover:ring-primary/50">
-                            <item.icon className="h-10 w-10" />
-                        </div>
-                        <h3 className="text-lg font-bold text-foreground">{item.text}</h3>
-                        <p className="mt-1 text-sm text-muted-foreground text-balance">{item.description}</p>
-                    </div>
-                </Card>
-              ))}
             </div>
           </div>
         </section>
