@@ -158,17 +158,17 @@ export default function Home() {
               </div>
             </section>
 
-            <section id="nossos-servicos" className="relative pb-24 sm:pb-32 pt-10 sm:pt-0 md:pt-16">
+            <section id="nossos-servicos" className="relative pb-24 sm:pb-32 pt-16 md:pt-48">
               <div className="relative z-20 container mx-auto px-4">
                 <div className="text-center">
-                  <h2 className="text-xl md:text-3xl font-bold mb-2 text-foreground text-center uppercase md:pt-0 pt-2 -mt-16 md:mt-0">
+                  <h2 className="text-xl md:text-3xl font-bold mb-2 text-foreground text-center uppercase pt-2">
                     NOSSOS SERVIÇOS
                   </h2>
                   <p className="mt-2 text-sm md:text-base text-muted-foreground max-w-xl mx-auto">
                     Escolha o jogo que você quer subir de nível e fale com um de nossos especialistas.
                   </p>
                 </div>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto mt-20">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-fit mx-auto mt-12">
                   {games.map((game, index) => (
                     <Link
                       href={game.href}
